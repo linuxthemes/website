@@ -242,101 +242,78 @@ xdg-desktop-portals-xapp
                 <h2 id="configuration">
                     <a target="_blank" href="#configuration">Configuration</a>
                 </h2>
-                <pre><code># base 
+<pre><code># base 
 *
 !.gitignore
-!.gitconfig
 
-# files
 !README.md
+!CONTRIBUTING.md # https://github.com/linuxthemes/base
+
 !.bashrc
-!.zshrc
-!.xprofile
-
-# folders
-!Pictures
-!.icons
 !.themes
-!.fonts
-
-# config
+!.themes/**
+!.icons
+!.icons/**
 !.config
+
+!Pictures
+!Pictures/*
+
+!.config/eza
+!.config/eza/*
+
 !.config/rofi
+!.config/rofi/*
+
 !.config/fastfetch
+!.config/fastfetch/*
 
-!.config/xfce4
-.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/session.xml
-.config/xfce4/xfconf/xfce-perchannel-xml/pointers.xml
-
-!.vscode
-!.vscode/extensions
-!.vscode/extensions/extensions.json
+!.config/ghostty
+!.config/ghostty/*
 
 !.config/Code
 !.config/Code/User
 !.config/Code/User/settings.json
 !.config/Code/User/keybindings.json
 
+!.config/Code - OSS
+!.config/Code - OSS/User
+!.config/Code - OSS/User/settings.json
+!.config/Code - OSS/User/keybindings.json
+
+!.config/Thunar
+!.config/Thunar/*
+
+!.config/gtk-3.0
+!.config/gtk-3.0/*
+!.config/gtk-4.0
+!.config/gtk-4.0/*
+
+
+
+!.config/Trolltech.conf
+!.config/konsolerc
+!.config/ksplashrc
+!.config/kdeglobals
+!.config/kdedefaults
+!.config/kdedefaults/*
+
+!.config/xsettingsd
+!.config/xsettingsd/xsettingsd.conf
+
 </code></pre>
+
 <pre><code>user1@computer1 ~$ tree -a
 .
 ├── .bashrc
 ├── .config
 ├── .git
-├── .gitconfig
 ├── .gitignore
 ├── .icons
-├── .themes
-├── .vscode
-│   └── extensions
-│       └── extensions.json
-├── .zshrc
-├── CONTRIBUTING.md
 ├── Pictures
-│   ├── base-ship.png
-│   ├── base-wave.png
-│   ├── catppuccin-circle.png
-│   ├── catppuccin-latte.png
-│   ├── catppuccin-waves.png
-│   ├── catppuccin.png
-│   ├── catppucin-preview.png
-│   ├── catppucin-wave-light.png
-│   ├── everforest.png
-│   ├── gentoo-cowship.png
-│   ├── gentoo-icon.png
-│   ├── gentoo-signet.png
-│   ├── gentoo.png
-│   ├── gnetoo-cow.png
-│   ├── grubox.png
-│   ├── gruvbox-preview.png
-│   ├── jade-city.png
-│   ├── jade-field.png
-│   ├── jade-preview.png
-│   ├── jade.png
-│   ├── matte-black.png
-│   ├── matte-preview.png
-│   ├── nord-corner.png
-│   ├── nord-preview.png
-│   ├── nord-window.png
-│   ├── preview (copy 1).png
-│   ├── preview (copy 2).png
-│   ├── preview (copy 7).png
-│   ├── ristretto-city.png
-│   ├── ristretto-coffee.png
-│   ├── ristretto-preview.png
-│   ├── ristretto.png
-│   ├── rose-pine.png
-│   ├── spaceblue.png
-│   ├── tokoyo-night-lake.png
-│   ├── tokoyo-night.png
-│   ├── tokoyoabstract.png
-│   ├── tokoyoplants.png
-│   └── tokoyowormhole.png
-└── README.md
-
-23 directories, 75 files
+├── README.md
+└── .themes
+6 directories, 3 files
 </code></pre>
                 <ul>
                     <li>
