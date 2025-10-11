@@ -1,9 +1,10 @@
 .hljs {
 	display: block !important;
 	overflow-x: auto !important;
-	padding: .5em !important;
+	padding: 1em !important;
 	color: #abb2bf !important;
 	background: #282c34 !important;
+	border-radius: 4px;
 }
 
 .hljs-comment,
