@@ -1,9 +1,15 @@
 .notification a {
-  background: var(--color-terminal-blue);
-  color: var(--color-background-night);
-  display: block;
-  padding: 0.6em;
-  text-align: center;
+  z-index: 1;
+  position: fixed;
+  top:  0;
+  height: 2rem;
+  width: 100%;
+  color: var(--color-base-dark);
+  background: var(--color-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
   text-decoration: none;
   transition:
     background var(--transition),
@@ -14,8 +20,8 @@
 @media(hover: hover) {
 
   .notification a:hover {
-    background: var(--color-turquoise);
-    color: var(--color-background-night);
+    background: var(--color-teal);
+    color: var(--color-base-dark);
   }
 
 }

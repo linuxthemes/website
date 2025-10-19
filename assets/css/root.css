@@ -1,27 +1,25 @@
 
 :root {
-
-  /* --rgb-background-night: 26, 27, 38; */
-  /* --rgb-background-storm: 36, 40, 59; */
-  --rgb-black: 0, 0, 0;
-  --rgb-green: 158, 206, 106;
-  --rgb-terminal-black: 65, 72, 104;
-  --rgb-terminal-blue: 122, 162, 247;
-  --rgb-terminal-cyan: 125, 207, 255;
-  --rgb-terminal-white: 192, 202, 245;
-  --rgb-turquoise: 180, 249, 248;
-  --rgb-white: 255, 255, 255;
-
-  --color-background-night: #303446;
-  /* --color-background-storm: rgb(var(--rgb-background-storm)); */
   --color-black: #232634;
+  --color-text: #c6d0f5;
   --color-green: #a6d189;
-  --color-terminal-black: #232634;
-  --color-terminal-blue: #8caaee;
-  --color-terminal-cyan: #85c1dc;
-  --color-terminal-white: #c6d0f5;
-  --color-turquoise: #81c8be;
-  --color-white: #c6d0f5;
+  --color-blue: #8caaee;
+  --color-sky: #99d1db;
+  --color-teal: #81c8be;
+
+  --color-subtext: #a5adce;
+  --color-subtext2: #949cbb;
+
+  --color-base: #eff1f5;
+  --color-base-dark: #303446;
+
+  --color-overlay: #9ca0b0;
+  --color-overlay-dark: #737994;
+
+  --color-surface: #ccd0da;
+  --color-surface-dark: #414559;
+  --color-surface-dark2: #626880;
+
 
   --font-family: 'Cascadia Code', Menlo, Monaco, Consolas, 'Courier New',  monospace;
   --font-size: clamp(0.625rem, 1.25vw, 1rem);
@@ -41,5 +39,59 @@
   --space-xxxx-large: 6em;
 
   --transition: 0.15s cubic-bezier(0.33, 1, 0.68, 1);
+}
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* scroll-behavior: smooth; */
+  /* background: var(--color-base-dark); */
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  color: var(--color-text);
+  background: linear-gradient(315deg, var(--color-surface-dark) 0%, var(--color-base-dark)  100%);
+
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  font-weight: 300;
+}
+
+main {
+  width: 100%;
+}
+
+a {
+  color: var(--color-sky);
+  font-weight: 700;
+  text-decoration-thickness: 0.0875em;
+  text-underline-offset: 0.125em;
+  transition: color var(--transition);
+}
+
+
+@media(hover: hover) {
+  a:hover {
+    color: var(--color-white);
+  }
+}
+
+@media(min-width: 64em) {
+  html {
+    scroll-padding-top: 4em;
+  }
+}
+
+
+img,
+source,
+video {
+  height: auto;
+  max-width: 100%;
+  width: 100%;
 }

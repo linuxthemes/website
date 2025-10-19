@@ -1,23 +1,43 @@
 .nav {
-  display: grid;
-  gap: var(--space-medium);
-  margin-top: var(--space-large);
-  padding-left: var(--space-large);
-  padding-right: var(--space-large);
+  z-index: 1;
+  position: fixed;
+  top: 2rem;
+
+
+  /* height: 4rem; */
+  width: 100%;
+  padding-left: 4rem;
+  padding-right: 4rem;
+
+  background-color: var(--color-surface-dark);
+  background-color: transparent;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav__buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-medium);
-  justify-content: center;
+input {
+  border: none;
+  color: var(--color-text);
+  background-color: var(--color-base-dark);
+  border-radius: 0.4em;
+  padding: 0.5em;
+  width: 25em;
+}
+
+
+input:focus {
+  border: none;
+  outline: 2px solid var(--color-blue);
 }
 
 @media(min-width: 64em) {
 
   .nav {
-    padding-left: var(--space-xx-large);
-    padding-right: var(--space-xx-large);
+    border-radius: 0.3em;
+    font-size: var(--font-size-medium);
   }
 
 }
