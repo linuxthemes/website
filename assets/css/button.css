@@ -12,17 +12,15 @@
     0 1.2em 1.2em -1.6em rgba(0, 0, 0, 0.6)
   ;
 
-  color: var(--color-text);
+  color: var(--color-text-dark);
   cursor: pointer;
   display: flex;
   font-weight: 700;
   gap: 1ch;
   height: 2.9em;
-  line-height: 1;
   padding-left: 1em;
   padding-right: 1em;
   text-decoration: none;
-  text-transform: uppercase;
   transition:
     background var(--transition),
     color var(--transition)
