@@ -165,6 +165,22 @@ html {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
 <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
 
+
+<!-- page data -->
+<script>
+const pageData = {
+    icon: "", 
+    program: "xfce",
+    descripton: "fdsafasdfsafsfsa",
+    pageSource: "https://raw.githubusercontent.com/linuxthemes/website/refs/heads/main/index.html",
+    fileArray: [
+      "README.md", 
+      ".gitignore",
+      ".bashrc",
+    ]
+}
+</script>
+
 <!-- toggle -->
 <script>
 function setListener() {
@@ -175,23 +191,12 @@ function setListener() {
         if (currentTheme == 'dark') document.documentElement.setAttribute('data-theme', 'light');  
     });
 };
+setListener(); // execute then set
 document.addEventListener("astro:after-swap", setListener);
 </script>
 
-<!-- template  -->
+<!-- file preview -->
 <script>
-
-const pageData = {
-    icon: "", 
-    program: "xfce",
-    descripton: "fdsafasdfsafsfsa",
-    fileArray: [
-      "README.md", 
-      ".bashrc"
-    ]
-}
-
-
 function openTab(event, file) {
     var index
     var tablinks
@@ -211,7 +216,6 @@ function openTab(event, file) {
     event.currentTarget.className += " active";
 } 
 
-
 const fetchPromises = pageData.fileArray.map(file => {
     return fetch(`https://raw.githubusercontent.com/linuxthemes/base/refs/heads/main/${file}`)
     .then(response => {
@@ -222,7 +226,17 @@ const fetchPromises = pageData.fileArray.map(file => {
     .catch(error => { console.error(`Error fetching ${file}:`, error) })
 })
 
-Promise.all(fetchPromises).then(results => {
+const pageSourcePromise = fetch(pageData.pageSource)
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
+        return response.text();
+    })
+    .then(data => { return { file: "template.html", fileContents: data.replaceAll("<","&lt;").replaceAll(">","&gt;")} })
+    .catch(error => { console.error(`Error fetching ${"template.html"}:`, error) })
+
+
+
+Promise.all([...fetchPromises, pageSourcePromise]).then(results => {
     const tabs = document.getElementById('tab');
     const contentsContainer = document.getElementById('tabcontent');
 
@@ -245,11 +259,7 @@ Promise.all(fetchPromises).then(results => {
 
     hljs.addPlugin(new CopyButtonPlugin());
     hljs.highlightAll();
-    setListener();
 });
 
 </script>
-
-  
-
 </html>
