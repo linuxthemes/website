@@ -25,92 +25,82 @@
     <link rel="stylesheet" type="text/css" href="hljs-theme.css" />
     <style>
 :root {
-  --color-sky: #99d1db;
-  --color-blue: #8caaee;
-  --color-teal: #81c8be;
-  --color-green: #a6d189;
-  --color-black: #232634;
+    --color-sky: #99d1db;
+    --color-blue: #8caaee;
+    --color-teal: #81c8be;
+    --color-green: #a6d189;
+    --color-black: #232634;
 
-  --color-text: #4c4f69;
-  --color-text-dark: #c6d0f5;
-  
-  --color-subtext: #a5adce;
-  --color-subtext1: #5c5f77;
-  --color-subtext2: #949cbb;
+    --color-text: #4c4f69;
+    --color-text-dark: #c6d0f5;
 
-  --color-base: #eff1f5;
-  --color-base-dark: #303446;
+    --color-subtext: #a5adce;
+    --color-subtext1: #5c5f77;
+    --color-subtext2: #949cbb;
 
-  --color-overlay: #9ca0b0;
-  --color-overlay-dark: #737994;
+    --color-base: #eff1f5;
+    --color-base-dark: #303446;
 
-  --color-surface: #ccd0da;
-  --color-surface-dark: #414559;
-  --color-surface-dark2: #626880;
+    --color-overlay: #9ca0b0;
+    --color-overlay-dark: #737994;
 
-  --font-family: 'Cascadia Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
-  --font-size: clamp(0.625rem, 1.25vw, 1rem);
-  --font-size-small: 80%;
-  --font-size-medium: 125%;
-  --font-size-large: 200%;
-  --font-size-x-large: 400%;
+    --color-surface: #ccd0da;
+    --color-surface-dark: #414559;
+    --color-surface-dark2: #626880;
 
-  --space-small: 0.5em;
-  --space-medium: 1em;
-  --space-large: 2em;
-  --space-x-large: 3em;
-  --space-xx-large: 4em;
-  --space-xxx-large: 5em;
-  --space-xxxx-large: 6em;
+    --font-family: 'Cascadia Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
+    --font-size: clamp(0.625rem, 1.25vw, 1rem);
+    --font-size-small: 80%;
+    --font-size-medium: 125%;
+    --font-size-large: 200%;
+    --font-size-x-large: 400%;
 
-  --transition: 0.15s cubic-bezier(0.33, 1, 0.68, 1);
+    --space-small: 0.5em;
+    --space-medium: 1em;
+    --space-large: 2em;
+    --space-x-large: 3em;
+    --space-xx-large: 4em;
+    --space-xxx-large: 5em;
+    --space-xxxx-large: 6em;
+
+    --transition: 0.15s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: var(--font-family);
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family);
 }
 
 html {
-    /* background-color: red; */
     background-color: var(--color-base-dark);
 }
 
-body { 
-    /* background-color: blue; */
-    /* width: 100%; */
-    /* height: 100%; */
-}
-
 a {
-  color: var(--color-sky);
-  font-weight: 700;
-  text-decoration-thickness: 0.0875em;
-  text-underline-offset: 0.125em;
-  transition: color var(--transition);
+    font-weight: 700;
+    text-underline-offset: 0.125em;
 }
 
 .notification {
-  z-index: 1;
-  position: fixed;
-  min-width: 100vw;
-  height: 5%;
-  top:  0;
-  left:  0;
+    z-index: 1;
+    position: fixed;
+    min-width: 100vw;
+    height: 5%;
+    top:  0;
+    left:  0;
 
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  font-size: medium;
+    font-size: medium;
 
-  color: var(--color-text);
-  background: var(--color-blue);
-  text-decoration: none;
-  transition: background var(--transition), color var(--transition);
+    color: var(--color-text);
+    background: var(--color-blue);
+    text-decoration: none;
+    transition: background var(--transition), color var(--transition);
 }
 
 .notification:hover {
@@ -136,30 +126,27 @@ a {
 }
 
 input {
-  border: none;
-  color: var(--color-text-dark);
-  background-color: var(--color-base-dark);
-  border-radius: 0.4em;
-  padding: 0.5em;
-  width: 30%;
+    border: none;
+    color: var(--color-text-dark);
+    background-color: var(--color-base-dark);
+    border-radius: 0.4em;
+    padding: 0.5em;
+    width: 30%;
 }
 
 input:focus {
-  border: none;
-  outline: 2px solid var(--color-blue);
+    border: none;
+    outline: 2px solid var(--color-blue);
 }
 
 .hero {
-  margin-top: -1rem;
-  padding-top: 4rem;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: row;
+    margin-top: -1rem;
+    /* padding-top: 4rem; */
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
     padding: 4rem;
-
-  /* justify-content: space-around; */
-  background: linear-gradient(315deg, var(--color-surface-dark) 0%, var(--color-base-dark)  100%);
+    background: linear-gradient(315deg, var(--color-surface-dark) 0%, var(--color-base-dark)  100%);
 }
 
 .hero-header {
@@ -168,75 +155,80 @@ input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
-}
-
-.hero-buttons {
-  display: flex;
-  flex-direction: row;
-  padding: 1rem;
-  padding-top: 2rem;
-  justify-content: center;
-  gap: var(--space-medium);
 }
 
 .hero h1 {
-  color: var(--color-green);
-  font-size: var(--font-size-x-large);
+    color: var(--color-green);
+    font-size: var(--font-size-x-large);
+}
+
+.hero a {
+    color: var(--color-sky);
+    text-decoration-thickness: 0.0875em;
+    transition: color var(--transition);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    padding-top: 2rem;
+    justify-content: center;
+    gap: var(--space-medium);
 }
 
 .command-container {
-  width: 75%;
-  padding-top: 2rem;
+    width: 75%;
+    padding-top: 2rem;
 }
 
 .carousel {
-  position: relative;
-  width: min(100%, 64em);
-  margin: 4rem;
+    position: relative;
+    width: min(100%, 64em);
+    margin: 4rem;
 }
 
 .carousel-cell {
-  border-radius: 1rem;
-  overflow: hidden;
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
 .carousel img {
-  height: auto;
-  width: 100%;
-  max-width: 100%;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
 }
 
 .button {
-  align-items: center;
-  background: var(--color-surface-dark2);
-  border: none;
-  border-radius: 0.4em;
-  box-shadow:
-    0 1px 0 0 rgba(0, 0, 0, 0.1),
-    0 0.2em 1.2em -0.4em rgba(0, 0, 0, 0.2),
-    0 0.4em 2.0em -0.8em rgba(0, 0, 0, 0.3),
-    0 0.4em 0.4em -0.8em rgba(0, 0, 0, 0.4),
-    0 0.8em 0.8em -1.2em rgba(0, 0, 0, 0.5),
-    0 1.2em 1.2em -1.6em rgba(0, 0, 0, 0.6)
-  ;
+    align-items: center;
+    background: var(--color-surface-dark2);
+    border: none;
+    border-radius: 0.4em;
+    box-shadow:
+      0 1px 0 0 rgba(0, 0, 0, 0.1),
+      0 0.2em 1.2em -0.4em rgba(0, 0, 0, 0.2),
+      0 0.4em 2.0em -0.8em rgba(0, 0, 0, 0.3),
+      0 0.4em 0.4em -0.8em rgba(0, 0, 0, 0.4),
+      0 0.8em 0.8em -1.2em rgba(0, 0, 0, 0.5),
+      0 1.2em 1.2em -1.6em rgba(0, 0, 0, 0.6)
+    ;
 
-  color: var(--color-text-dark);
-  cursor: pointer;
-  display: flex;
-  font-weight: 700;
-  gap: 1ch;
-  height: 2.9em;
-  padding-left: 1em;
-  padding-right: 1em;
-  text-decoration: none;
-  transition: background var(--transition), color var(--transition);
+    color: var(--color-text-dark);
+    cursor: pointer;
+    display: flex;
+    font-weight: 700;
+    gap: 1ch;
+    height: 2.9em;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-decoration: none;
+    transition: background var(--transition), color var(--transition);
 }
 
 .button svg {
-  height: 1.4em;
-  overflow: visible;
-  width: 1.4em;
+    height: 1.4em;
+    overflow: visible;
+    width: 1.4em;
 }
 
 .button:hover {
@@ -244,15 +236,13 @@ input:focus {
     color: var(--color-base-dark);
 }
 
-
 @media(max-width: 96em) {
     .hero {
         flex-direction: column;
-      align-items: center;
+        align-items: center;
     }
     .hero-header{
         padding-top: 4rem;
-
     }
 }
 
@@ -278,7 +268,6 @@ input:focus {
         padding: 1rem;
     }
 
-
     .hero-header {
         text-align: center;
     }
@@ -288,7 +277,7 @@ input:focus {
     }
 
     .command-container {
-    display: none;    
+        display: none;    
     }
 
     .hero p {
@@ -298,7 +287,6 @@ input:focus {
     .hero-buttons {
         flex-direction: column;
     }
-
 }
     </style>
 </head>
@@ -306,7 +294,6 @@ input:focus {
 <body>
     <!-- banner -->
     <a class="notification" target="_blank" href="https://github.com/linuxthemes/base"> <p> Themes is in <em>Beta</em> ! Click <em>here</em> to Contribute !</p> </a>
-    <!-- <a class="notification" target="_blank" href="https://github.com/linuxthemes/base"> Themes is in <em>Beta</em> ! Click <em>here</em> to Contribute ! </a> -->
     
     <!-- nav  -->
     <nav class="nav">
@@ -329,7 +316,7 @@ input:focus {
                 <pre><code>git init $HOME; git remote add origin https://github.com/linuxthemes/base; git pull</code></pre>
             </div>
         
-            <!-- buttons -->
+        <!-- buttons -->
         <section class="hero-buttons">
         <a class="button" target="_blank" href="http://linuxthemes.github.io/docs/" aria-label="The Manual" >
             <img style="width: 1.5rem; height: 1.5rem;" src="assets/linuxthemes.png"/>
@@ -346,6 +333,7 @@ input:focus {
             <span>Codeberg</span>
         </a>
         </section>
+
         </div>
 
         <!-- carousel -->
