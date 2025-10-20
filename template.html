@@ -67,6 +67,7 @@
 }
 
 * {
+    color: var(--color-text-dark);
     font-family: var(--font-family);
 }
 
@@ -182,7 +183,7 @@ html {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
-  background-color: var(--color-green);
+  background-color: var(--color-surface-dark2);
 } 
 
 @media(max-width: 96em) {
@@ -231,62 +232,24 @@ html {
     <section class="hero">
         <div class="pt-16 flex flex-col items-center text-center text-(--color-text-dark)">
             <h1 class="p-4 max-[400px]:text-4xl text-6xl text-(--color-green)">Program</h1>
-            <p class="">Program description, program homepage, program version, program docs, program issues </p>
+            <!-- <p class="">Program description, program homepage, program version, program docs, program issues </p> -->
            
         <!-- buttons -->
-        <section class="hero-buttons">
+        <!-- <section class="hero-buttons">
         <a class="button" target="_blank" href="http://linuxthemes.github.io/docs/" aria-label="The Manual" >
             <img style="width: 1.5rem; height: 1.5rem;" src="assets/linuxthemes.png"/>
             <span>Details</span>
         </a>
-        </section>
+        </section> -->
 
         </div>
 
-        <!-- carousel -->
-        <section class="carousel" data-flickity='{ "autoPlay": true }'>
-            <img class="carousel-cell" src="assets/nord.png" alt="" />
-            <img class="carousel-cell" src="https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/matte-black/preview.png" alt="" />
-            <img class="carousel-cell" src="assets/space.png" alt="" />
-            <img class="carousel-cell" src="https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/osaka-jade/preview.png" alt="" />
-            <img class="carousel-cell" src="https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/tokyo-night/preview.png" alt="" />
-            <img class="carousel-cell" src="https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/catppuccin/preview.png" alt="" />
-            <img class="carousel-cell" src="https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/catppuccin-latte/preview.png" alt="" />
-            <img class="carousel-cell" src="assets/opal.png" alt="" />
-            <img class="carousel-cell" src="assets/base.png" alt="" />
-        </section>
-    </section>
-
     <!-- details -->
-    <section>
-        <title>Program</title>
-        <filepreview id="file">file preview</filepreview>
-        <details id="details">configuration details</details>
-    </section>
+    <!-- file preview -->
+    <div id="tab"></div>
+    <div id="tabcontent"></div>
+
 </main>
-    
-     <!-- Tab links -->
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">theme/one.config</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">one.toml</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">one.jsonc</button>
-</div>
-
-<!-- Tab content -->
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p>
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div> 
     
 
 </body>
@@ -303,8 +266,8 @@ html {
 <!-- toggle -->
 <script>
 function setListener() {
-    document.getElementById("theme-toggle")?.addEventListener("click", () => {
-      document.documentElement.classList.toggle("dark");
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark"); // ?
       const currentTheme = document.documentElement.getAttribute('data-theme'); 
       if (currentTheme != 'dark') document.documentElement.setAttribute('data-theme', 'dark');  
       if (currentTheme == 'dark') document.documentElement.setAttribute('data-theme', 'light');  
@@ -314,25 +277,73 @@ setListener();
 document.addEventListener("astro:after-swap", setListener);
 </script>
 
-<!-- tabs -->
+<!-- template  -->
 <script>
-    function openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
 
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+const pageData = {
+    icon: "", 
+    program: "xfce",
+    descripton: "fdsafasdfsafsfsa",
+    fileArray: [
+      "README.md", 
+      ".bashrc"
+    ]
+}
 
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
 
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
+function openTab(event, file) {
+    var index
+    var tablinks
+    var tabcontent 
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (index = 0; index < tabcontent.length; index++) {
+      tabcontent[index].style.display = "none";
+    }
+    
+    tablinks = document.getElementsByClassName("tablinks");
+    for (index = 0; index < tablinks.length; index++) {
+      tablinks[index].className = tablinks[index].className.replace(" active", "");
+    }
+    console.log(document.getElementById(file))
+    document.getElementById(file).style.display = "block";
+    event.currentTarget.className += " active";
 } 
-openCity(event,"London")
+
+
+const fetchPromises = pageData.fileArray.map(file => {
+    return fetch(`https://raw.githubusercontent.com/linuxthemes/base/refs/heads/main/${file}`)
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
+        return response.text();
+    })
+    .then(data => { return { file: file, fileContents: data} })
+    .catch(error => { console.error(`Error fetching ${file}:`, error) })
+})
+
+Promise.all(fetchPromises).then(results => {
+    const tabs = document.getElementById('tab');
+    const contentsContainer = document.getElementById('tabcontent');
+
+    var tabsHTML = ""
+    var contentsHTML = ""
+
+    results.forEach(result => {
+        tabsHTML += `<button class="tablinks" onclick="openTab(event, '${result.file}')">${result.file}</button>` 
+        contentsHTML += `<div id="${result.file}" class="tabcontent"><h3>${result.file}</h3><p>${result.fileContents}</p></div>`
+    })
+
+    tabs.innerHTML = tabsHTML;
+    contentsContainer.innerHTML = contentsHTML;
+
+    const firstTabButton = document.querySelector('.tablinks');
+    if (firstTabButton) {
+        firstTabButton.click();
+    }
+});
+
 </script>
+
+  
+
 </html>
