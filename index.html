@@ -24,6 +24,10 @@
 
     <link rel="icon" href="assets/linuxthemes.png" />
     <link rel="stylesheet" type="text/css" href="hljs-theme.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+
       <!-- tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
@@ -174,7 +178,7 @@ html {
             <img class="w-6 h-6" src="assets/linuxthemes.png"/>
             <p class="pl-2">Themes</p>
         </div>
-        <input class="p-1 max-[400px]:w-30 w-50 rounded-sm fg-(--color-text-dark) bg-(--color-base-dark)" type="search" name="query" id="search-query" placeholder="Search"/>
+        <input id="searchInput" class="p-1 max-[400px]:w-30 w-50 rounded-sm fg-(--color-text-dark) bg-(--color-base-dark)" type="search" name="query" id="search-query" placeholder="Search"/>
     </nav>
 <main>
 
@@ -224,7 +228,7 @@ html {
 
     <!-- cards -->
 <h2 class="max-[400px]:pt-64 text-2xl text-(--color-text-dark) w-full text-center">Supported Programs</h2>
-<div class="flex flex-wrap justify-center mt-10">
+<div id="cardsContainer" class="pb-16 flex flex-wrap justify-center mt-10">
 
     <card class="p-4 max-w-sm">
         <div class="flex rounded-lg h-full bg-(--color-surface-dark2) text-(--color-text-dark) p-8 flex-col">
@@ -233,7 +237,9 @@ html {
             </div>
 
             <div class="flex flex-col justify-between flex-grow">
-                <p class="leading-relaxed text-base">Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.</p>
+                <p class="leading-relaxed text-base">
+                KDE Plasma is a graphical shell developed by the KDE community for Unix-like operating systems.
+                </p>
                 <a href="#" class="mt-3 text-(--color-text-dark) hover:text-(--color-green) inline-flex items-center">Learn More
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg>
                 </a>
@@ -248,7 +254,9 @@ html {
             </div>
 
             <div class="flex flex-col justify-between flex-grow">
-                <p class="leading-relaxed text-base">Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.</p>
+                <p class="leading-relaxed text-base">
+                    Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.
+                </p>
                 <a href="#" class="mt-3 text-(--color-text-dark) hover:text-(--color-green) inline-flex items-center">Learn More
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg>
                 </a>
@@ -263,7 +271,9 @@ html {
             </div>
 
             <div class="flex flex-col justify-between flex-grow">
-                <p class="leading-relaxed text-base">Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.</p>
+                <p class="leading-relaxed text-base">
+                    GNOME is a free and open-source desktop environment for Linux and other Unix-like operating systems. 
+                </p>
                 <a href="#" class="mt-3 text-(--color-text-dark) hover:text-(--color-green) inline-flex items-center">Learn More
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg>
                 </a>
@@ -279,7 +289,9 @@ html {
             </div>
 
             <div class="flex flex-col justify-between flex-grow">
-                <p class="leading-relaxed text-base">Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.</p>
+                <p class="leading-relaxed text-base">
+                Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks. 
+                </p>
                 <a href="#" class="mt-3 text-(--color-text-dark) hover:text-(--color-green) inline-flex items-center">Learn More
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg>
                 </a>
@@ -295,7 +307,9 @@ html {
             </div>
 
             <div class="flex flex-col justify-between flex-grow">
-                <p class="leading-relaxed text-base">Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.</p>
+                <p class="leading-relaxed text-base">
+                Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux, macOS and web browsers. 
+                </p>
                 <a href="#" class="mt-3 text-(--color-text-dark) hover:text-(--color-green) inline-flex items-center">Learn More
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg>
                 </a>
@@ -311,7 +325,9 @@ html {
             </div>
 
             <div class="flex flex-col justify-between flex-grow">
-                <p class="leading-relaxed text-base">Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.</p>
+                <p class="leading-relaxed text-base">
+                Neovim is a modern, fast and feature-rich editor that is fully compatible with Vim. It supports plugins, GUIs, LSP, Lua, and more.
+                </p>
                 <a href="#" class="mt-3 text-(--color-text-dark) hover:text-(--color-green) inline-flex items-center">Learn More
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg>
                 </a>
@@ -325,20 +341,39 @@ html {
 
 </main>
 </body>
-
-    <!-- js-flickity -->
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-    <!-- highlight.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
-
-    <!-- highlightjs-copy -->
     <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
     <script> 
         hljs.addPlugin(new CopyButtonPlugin());
         hljs.highlightAll();
     </script>
+
+<script>
+const searchInput = document.getElementById('searchInput');
+const cardsContainer = document.getElementById('cardsContainer');
+
+   console.log(searchInput)
+
+
+searchInput.addEventListener('input', () => {
+    const filter = searchInput.value.toLowerCase();
+   
+   console.log(filter)
+   
+    const cards = cardsContainer.getElementsByTagName('card');
+
+    Array.from(cards).forEach(card => {
+      const text = card.textContent.toLowerCase();
+    
+        console.log(text)
+
+      if (text.includes(filter)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+</script>
 </html>
