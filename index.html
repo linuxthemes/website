@@ -5,7 +5,8 @@
     <title>Linux Themes</title>
 
     <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="initial-scale=1, width=device-width" /> -->
     <meta name="description" content="Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command."/>
 
     <meta property="og:site_name" content="Linuxthemes" />
@@ -23,8 +24,10 @@
 
     <link rel="icon" href="assets/linuxthemes.png" />
     <link rel="stylesheet" type="text/css" href="hljs-theme.css" />
-    <style>
-:root {
+      <!-- tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+@theme {
     --color-sky: #99d1db;
     --color-blue: #8caaee;
     --color-teal: #81c8be;
@@ -55,21 +58,10 @@
     --font-size-large: 200%;
     --font-size-x-large: 400%;
 
-    --space-small: 0.5em;
-    --space-medium: 1em;
-    --space-large: 2em;
-    --space-x-large: 3em;
-    --space-xx-large: 4em;
-    --space-xxx-large: 5em;
-    --space-xxxx-large: 6em;
-
     --transition: 0.15s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
     font-family: var(--font-family);
 }
 
@@ -80,63 +72,6 @@ html {
 a {
     font-weight: 700;
     text-underline-offset: 0.125em;
-}
-
-.notification {
-    z-index: 1;
-    position: fixed;
-    min-width: 100vw;
-    height: 5%;
-    top:  0;
-    left:  0;
-
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: medium;
-
-    color: var(--color-text);
-    background: var(--color-blue);
-    text-decoration: none;
-    transition: background var(--transition), color var(--transition);
-}
-
-.notification:hover {
-    color: var(--color-text);
-    background: var(--color-teal);
-}
-
-.nav {
-    z-index: 1;
-    position: sticky;
-    top: 5%;
-    width: 100%;
-    padding: 1rem;
-
-    color: var(--color-text-dark);
-    background-color: transparent;
-    /* background-color: var(--color-surface-dark); */
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-input {
-    border: none;
-    color: var(--color-text-dark);
-    background-color: var(--color-base-dark);
-    border-radius: 0.4em;
-    padding: 0.5em;
-    width: 30%;
-}
-
-input:focus {
-    border: none;
-    outline: 2px solid var(--color-blue);
 }
 
 .hero {
@@ -174,7 +109,7 @@ input:focus {
     padding: 1rem;
     padding-top: 2rem;
     justify-content: center;
-    gap: var(--space-medium);
+    gap: 1em;
 }
 
 .command-container {
@@ -250,13 +185,6 @@ input:focus {
 }
 
 @media(max-width: 32em) {
-    .notification {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        height: 10%;
-        font-size: small;
-    }
-
     .nav {
         top: 10%;
         padding: .75rem;
@@ -293,17 +221,16 @@ input:focus {
 
 <body>
     <!-- banner -->
-    <a class="notification" target="_blank" href="https://github.com/linuxthemes/base"> <p> Themes is in <em>Beta</em> ! Click <em>here</em> to Contribute !</p> </a>
+    <a class="fixed top-0 left-0 h-10 max-[400px]:h-15 p-4  text-center w-full flex place-content-center place-items-center hover:bg-(--color-green) bg-(--color-blue) " target="_blank" href="https://github.com/linuxthemes/base"> <p> Themes is in <em>Beta</em> ! Click <em>here</em> to Contribute !</p> </a>
     
     <!-- nav  -->
-    <nav class="nav">
-        <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
-            <img style="width: 1.5rem; height: 1.5rem;" src="assets/linuxthemes.png"/>
-            <p style="padding-left: 1rem;">Themes</p>
+    <nav class="sticky flex text-(--color-text-dark) top-10 min-[320px]:top-15 p-4 justify-between">
+        <div class="flex flex-row align-center justify-center">
+            <img class="w-6 h-6" src="assets/linuxthemes.png"/>
+            <p class="pl-2">Themes</p>
         </div>
-        <input type="search" name="query" id="search-query" placeholder="Search"/>
+        <input class="p-1 max-[400px]:w-30 w-50 rounded-sm fg-(--color-text-dark) bg-(--color-base-dark)" type="search" name="query" id="search-query" placeholder="Search"/>
     </nav>
-
 <main>
 
     <!-- hero  -->
@@ -368,8 +295,4 @@ input:focus {
         hljs.addPlugin(new CopyButtonPlugin());
         hljs.highlightAll();
     </script>
-
-    <!-- tailwind -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/tailwindcss@4.1.14/dist/lib.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@4.1.14/index.min.css"> -->
 </html>
