@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Linux Themes</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="initial-scale=1, width=device-width" /> -->
+    <meta name="description" content="Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command."/>
+
+    <meta property="og:site_name" content="Linuxthemes" />
+    <meta property="og:title" content="Linuxthemes" />
+    <meta property="og:description" content="Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command."/>
+    <!-- <meta property="og:image" content="https://linuxthemes.org/assets/opengraph.png"> -->
+    <!-- <meta property="og:url" content="https://linuxthemes.org"> -->
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:title" content="Linuxthemes" />
+    <meta name="twitter:description" content="Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command."/>
+    <!-- <meta name="twitter:image" content="https://linuxthemes.org/assets/opengraph.png"> -->
+    <meta name="twitter:image:alt" content="Linuxthemes" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="assets/linuxthemes.png" />
+    <link rel="stylesheet" type="text/css" href="hljs-theme.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+
+      <!-- tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+@variant dark (&:where(.dark, .dark *));
+@theme {
+    --color-sky: #99d1db;
+    --color-blue: #8caaee;
+    --color-teal: #81c8be;
+    --color-green: #a6d189;
+    --color-black: #232634;
+
+    --color-text: #4c4f69;
+    --color-text-dark: #c6d0f5;
+
+    --color-subtext: #a5adce;
+    --color-subtext1: #5c5f77;
+    --color-subtext2: #949cbb;
+
+    --color-base: #eff1f5;
+    --color-base-dark: #303446;
+
+    --color-overlay: #9ca0b0;
+    --color-overlay-dark: #737994;
+
+    --color-surface: #ccd0da;
+    --color-surface-dark: #414559;
+    --color-surface-dark2: #626880;
+
+    --font-family: 'Cascadia Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
+    --font-size: clamp(0.625rem, 1.25vw, 1rem);
+    --font-size-small: 80%;
+    --font-size-medium: 125%;
+    --font-size-large: 200%;
+    --font-size-x-large: 400%;
+
+    --transition: 0.15s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+* {
+    font-family: var(--font-family);
+}
+
+html {
+    background: linear-gradient(315deg, var(--color-surface-dark) 0%, var(--color-base-dark)  100%);
+  }
+  
+  a {
+    font-weight: 700;
+    text-underline-offset: 0.125em;
+  }
+  
+  .hero {
+    display: flex;
+    flex-direction: row;
+    padding: 4rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2rem;
+    gap: 1em;
+}
+
+.carousel {
+    position: relative;
+    width: min(100%, 64em);
+    margin: 4rem;
+}
+
+.carousel-cell {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.carousel img {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+.button {
+    align-items: center;
+    background: var(--color-surface-dark2);
+    border: none;
+    border-radius: 0.4em;
+    box-shadow:
+      0 1px 0 0 rgba(0, 0, 0, 0.1),
+      0 0.2em 1.2em -0.4em rgba(0, 0, 0, 0.2),
+      0 0.4em 2.0em -0.8em rgba(0, 0, 0, 0.3),
+      0 0.4em 0.4em -0.8em rgba(0, 0, 0, 0.4),
+      0 0.8em 0.8em -1.2em rgba(0, 0, 0, 0.5),
+      0 1.2em 1.2em -1.6em rgba(0, 0, 0, 0.6)
+    ;
+
+    color: var(--color-text-dark);
+    cursor: pointer;
+    display: flex;
+    font-weight: 700;
+    gap: 1ch;
+    height: 2.9em;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-decoration: none;
+    transition: background var(--transition), color var(--transition);
+}
+
+.button svg {
+    height: 1.4em;
+    overflow: visible;
+    width: 1.4em;
+}
+
+.button:hover {
+    background: var(--color-green);
+    color: var(--color-base-dark);
+}
+
+ /* Style the tab */
+.tab {
+    height: 50%;
+    width: 50%;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: var(--color-green);
+} 
+
+@media(max-width: 96em) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-header{
+        padding-top: 4rem;
+    }
+}
+
+@media(max-width: 32em) {
+    .hero {
+        margin-top: 15%;
+        height: 100vh;
+        padding: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+
+<body >
+    <!-- banner -->
+    <a class="fixed top-0 left-0 h-10 max-[400px]:h-15 p-4  text-center w-full flex place-content-center place-items-center hover:bg-(--color-green) bg-(--color-blue) " target="_blank" href="https://github.com/linuxthemes/base"> <p> Themes is in <em>Beta</em> ! Click <em>here</em> to Contribute !</p> </a>
+    
+    <!-- nav  -->
+    <nav class="sticky flex text-(--color-text-dark) top-10 min-[320px]:top-15 p-4 justify-between">
+        <div class="flex flex-row align-center justify-center">
+            <img class="w-6 h-6" src="assets/linuxthemes.png"/>
+            <p class="pl-2">Themes</p>
+        </div>
+        
+        <button id="theme-toggle" class="inline-flex items-center rounded-md border p-1 transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-800 [&_svg]:text-zinc-500 [&_svg]:hover:text-zinc-900 [&_svg]:dark:hover:text-zinc-100" aria-label="Toggle theme">
+            <span class="sr-only">Toggle theme</span>
+            <svg id="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 dark:hidden"><path d="M14.438 10.148c.19-.425-.321-.787-.748-.601A5.5 5.5 0 0 1 6.453 2.31c.186-.427-.176-.938-.6-.748a6.501 6.501 0 1 0 8.585 8.586Z"></path></svg>
+            <svg id="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="hidden size-4 dark:block"><path d="M8 1a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 1ZM10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM12.95 4.11a.75.75 0 1 0-1.06-1.06l-1.062 1.06a.75.75 0 0 0 1.061 1.062l1.06-1.061ZM15 8a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 15 8ZM11.89 12.95a.75.75 0 0 0 1.06-1.06l-1.06-1.062a.75.75 0 0 0-1.062 1.061l1.061 1.06ZM8 12a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 12ZM5.172 11.89a.75.75 0 0 0-1.061-1.062L3.05 11.89a.75.75 0 1 0 1.06 1.06l1.06-1.06ZM4 8a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 4 8ZM4.11 5.172A.75.75 0 0 0 5.173 4.11L4.11 3.05a.75.75 0 1 0-1.06 1.06l1.06 1.06Z"></path></svg>
+        </button>
+    </nav>
+<main>
+
+    <!-- hero  -->
+    <section class="hero">
+        <div class="pt-16 flex flex-col items-center text-center text-(--color-text-dark)">
+            <h1 class="p-4 max-[400px]:text-4xl text-6xl text-(--color-green)">Program</h1>
+            <p class="">Program description, program homepage, program version, program docs, program issues </p>
+           
+        <!-- buttons -->
+        <section class="hero-buttons">
+        <a class="button" target="_blank" href="http://linuxthemes.github.io/docs/" aria-label="The Manual" >
+            <img style="width: 1.5rem; height: 1.5rem;" src="assets/linuxthemes.png"/>
+            <span>Details</span>
+        </a>
+        </section>
+
+        </div>
+
+        <!-- carousel -->
+        <section class="carousel" data-flickity='{ "autoPlay": true }'>
+            <img class="carousel-cell" src="assets/nord.png" alt="" />
+            <img class="carousel-cell" src="https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/matte-black/preview.png" alt="" />
+            <img class="carousel-cell" src="assets/space.png" alt="" />
+            <img class="carousel-cell" src="https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/osaka-jade/preview.png" alt="" />
+            <img class="carousel-cell" src="https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/tokyo-night/preview.png" alt="" />
+            <img class="carousel-cell" src="https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/catppuccin/preview.png" alt="" />
+            <img class="carousel-cell" src="https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/catppuccin-latte/preview.png" alt="" />
+            <img class="carousel-cell" src="assets/opal.png" alt="" />
+            <img class="carousel-cell" src="assets/base.png" alt="" />
+        </section>
+    </section>
+
+    <!-- details -->
+    <section>
+        <title>Program</title>
+        <filepreview id="file">file preview</filepreview>
+        <details id="details">configuration details</details>
+    </section>
+</main>
+    
+     <!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">theme/one.config</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">one.toml</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">one.jsonc</button>
+</div>
+
+<!-- Tab content -->
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div> 
+    
+
+</body>
+
+<!-- cdn -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+<script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+<script> 
+    hljs.addPlugin(new CopyButtonPlugin());
+    hljs.highlightAll();
+</script>
+
+<!-- toggle -->
+<script>
+function setListener() {
+    document.getElementById("theme-toggle")?.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      const currentTheme = document.documentElement.getAttribute('data-theme'); 
+      if (currentTheme != 'dark') document.documentElement.setAttribute('data-theme', 'dark');  
+      if (currentTheme == 'dark') document.documentElement.setAttribute('data-theme', 'light');  
+    });
+};
+setListener();
+document.addEventListener("astro:after-swap", setListener);
+</script>
+
+<!-- tabs -->
+<script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+} 
+openCity(event,"London")
+</script>
+</html>
