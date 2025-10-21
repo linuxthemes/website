@@ -85,7 +85,7 @@ html {
             <img class="w-6 h-6" src="assets/linuxthemes.png"/>
             <p class="pl-2">Themes</p>
         </div>
-        <input id="searchInput" autofocus class="max-[400px]:hidden p-1 max-[400px]:w-30 w-75 rounded-sm fg-(--color-text-dark) bg-(--color-base-dark)" type="search" name="query" id="search-query" placeholder="Search"/>
+        <input id="search" class="hidden max-[400px]:hidden p-1 max-[400px]:w-30 w-75 rounded-sm fg-(--color-text-dark) bg-(--color-base-dark)" type="search" name="query" id="search-query" placeholder="Search"/>
         
         <button id="theme-toggle" class="inline-flex items-center rounded-md border p-1 transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-800 [&_svg]:text-zinc-500 [&_svg]:hover:text-zinc-900 [&_svg]:dark:hover:text-zinc-100" aria-label="Toggle theme">
             <span class="sr-only">Toggle theme</span>
@@ -157,11 +157,12 @@ html {
 <!-- toggle -->
 <script>
 function setListener() {
-    document.getElementById("theme-toggle")?.addEventListener("click", () => {
-      document.documentElement.classList.toggle("dark");
-      const currentTheme = document.documentElement.getAttribute('data-theme'); 
-      if (currentTheme != 'dark') document.documentElement.setAttribute('data-theme', 'dark');  
-      if (currentTheme == 'dark') document.documentElement.setAttribute('data-theme', 'light');  
+    document.getElementById("theme-toggle")?.addEventListener("click", () => 
+    {
+        document.documentElement.classList.toggle("dark");
+        const currentTheme = document.documentElement.getAttribute('data-theme'); 
+        if (currentTheme != 'dark') document.documentElement.setAttribute('data-theme', 'dark');  
+        if (currentTheme == 'dark') document.documentElement.setAttribute('data-theme', 'light');  
     });
 };
 setListener();
@@ -244,9 +245,10 @@ const cardData = [
     //     description: "A monitor of resources."
     // },
 ]
-const cardsContainer = document.getElementById('cardsContainer');
 
-cardData.forEach(card => {
+const cardsContainer = document.getElementById('cardsContainer');
+cardData.forEach(card => 
+{
     const innerHTML = `
 <card class="p-4 max-w-sm">
     <div class="flex rounded-lg h-full bg-(--color-surface-dark2) text-(--color-text-dark) p-8 flex-col">
@@ -268,17 +270,22 @@ cardData.forEach(card => {
 });
 
 const searchInput = document.getElementById('searchInput');
-searchInput.addEventListener('input', () => {
+searchInput.addEventListener('input', () => 
+{
     const filter = searchInput.value.toLowerCase();
     const cards = cardsContainer.getElementsByTagName('card');
 
-    Array.from(cards).forEach(card => {
-      const text = card.textContent.toLowerCase();
-      if (text.includes(filter)) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
+    Array.from(cards).forEach(card => 
+    {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(filter)) 
+        {
+            card.classList.remove('hidden');
+        } 
+        else 
+        {
+            card.classList.add('hidden');
+        }
     });
 });
 </script>
@@ -287,10 +294,16 @@ searchInput.addEventListener('input', () => {
 <script>
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('bg-(--color-base-dark)');
-    } else {
-      navbar.classList.remove('bg-(--color-base-dark)');
+    const search = document.getElementById('search');
+    if (window.scrollY > 50) 
+    {
+          search.classList.remove('hidden');
+          navbar.classList.add('bg-(--color-base-dark)');
+    } 
+    else 
+    {
+          search.classList.add('hidden');
+          navbar.classList.remove('bg-(--color-base-dark)');
     }
 });
 </script>
