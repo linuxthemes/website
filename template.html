@@ -100,7 +100,7 @@ html {
         </button>
     </nav>
 <main>
-    <!-- details -->
+    <!-- header -->
     <section class="flex flex-col p-4">
         <div class="pt-16 flex flex-col items-center text-center text-(--color-text-dark)">
             <h1 id="program-title" class="outline-1 rounded p-4 max-[400px]:text-4xl text-6xl text-(--color-green)">Program</h1>
@@ -110,6 +110,46 @@ html {
                 <span>Manual</span>
             </a>
         </div>
+
+    <!-- image preview  -->
+
+    <div id="float" class="m-4 flex flex-row justify-end">
+
+
+    <!-- details  -->
+    <section id="details-container" class="flex flex-col gap-2 bg-(--color-base) p-4 text-(--color-text) flex flex-col outline-2 outline-(--color-green) rounded">
+        
+        <h1 id="details" class="rounded p-2 text-(--color-text) bg-(--color-green)">Details</h1>
+        <div id="details-home" class="gap-2 flex flex-row">
+            <img style="width: 1.5rem; height: 1.5rem;" src="assets/home.svg"/>
+            <p>Home</p>
+        </div>
+        <div id="details-docs" class="gap-2 flex flex-row">
+            <img style="width: 1.5rem; height: 1.5rem;" src="assets/docs.svg"/>
+            Offcial documententation
+        </div>
+        <div id="details-information" class="gap-2 flex flex-row">
+            <img style="width: 1.5rem; height: 1.5rem;" src="assets/package.svg"/>
+            Package information
+        </div>
+        <div id="deatils-guide" class="gap-2 flex flex-row">
+            <img style="width: 1.5rem; height: 1.5rem;" src="assets/guide.svg"/>
+            Guide
+        </div>
+        <div id="details-wiki" class="gap-2 flex flex-row">
+            <img style="width: 1.5rem; height: 1.5rem;" src="assets/wiki.svg"/>
+            Wikipedia
+        </div>
+        <div id="details-issues" class="gap-2 flex flex-row">
+            <img style="width: 1.5rem; height: 1.5rem;" src="assets/bug.svg"/>
+            Issues
+        </div>
+    </section>
+    
+
+    </div>
+
+
 
     <!-- file preview -->
      <filepreview class="flex flex-col outline-2 outline-(--color-green) rounded">
