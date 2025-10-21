@@ -171,12 +171,41 @@ document.addEventListener("astro:after-swap", setListener);
 <!-- cards -->
 <script>
 const cardData = [
-    {title: "kde", icon: "", link: "", description: "KDE Plasma is a graphical shell developed by the KDE community for Unix-like operating systems."},
-    {title: "xfce", icon: "", link: "", description: "Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly."},
-    {title: "gnome", icon: "", link: "", description: "GNOME is a free and open-source desktop environment for Linux and other Unix-like operating systems."},
-    {title: "hyprland", icon: "", link: "", description: "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks."},
-    {title: "vscode", icon: "", link: "", description: "Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux, macOS and web browsers."},
-    {title: "neovim", icon: "", link: "", description: "Neovim is a modern, fast and feature-rich editor that is fully compatible with Vim. It supports plugins, GUIs, LSP, Lua, and more."},
+    {
+        title: "kde",
+        icon: "assets/kde.svg",
+        link: "",
+        description: "KDE Plasma is a graphical shell developed by the KDE community for Unix-like operating systems."
+    },    
+    {
+        title: "gnome",
+        icon: "assets/gnome.svg",
+        link: "",
+        description: "GNOME is a free and open-source desktop environment for Linux and other Unix-like operating systems."
+    },
+    {
+        title: "hyprland",
+        icon: "assets/hyprland.svg",
+        link: "",
+        description: "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks."
+    },
+    {
+        title: "xfce",  
+        icon: "assets/xfce.svg",
+        link: "", 
+        description: "Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.", 
+    },
+    {
+        title: "vscode",
+        icon: "assets/vscode.svg",
+        link: "",
+        description: "Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux, macOS and web browsers."
+    },
+    {
+        title: "neovim",
+        icon: "assets/neovim.svg",
+        link: "",
+        description: "Neovim is a modern, fast and feature-rich editor that is fully compatible with Vim. It supports plugins, GUIs, LSP, Lua, and more."},
 ]
 const cardsContainer = document.getElementById('cardsContainer');
 
@@ -185,7 +214,7 @@ cardData.forEach(card => {
 <card class="p-4 max-w-sm">
     <div class="flex rounded-lg h-full bg-(--color-surface-dark2) text-(--color-text-dark) p-8 flex-col">
         <div class="flex items-center mb-3">
-            ${card.icon}
+            <img class="w-[32px] h-[32px]" src="${card.icon}"" />
             <h2 class="pl-2 text-lg font-medium">${card.title}</h2>
         </div>
 
