@@ -70,40 +70,6 @@ html {
     background: linear-gradient(315deg, var(--color-surface-dark) 0%, var(--color-base-dark)  100%);
 }
 
-.button {
-    color: var(--color-text-dark);
-    background: var(--color-surface-dark2);
-    box-shadow:
-      0 1px 0 0 rgba(0, 0, 0, 0.1),
-      0 0.2em 1.2em -0.4em rgba(0, 0, 0, 0.2),
-      0 0.4em 2.0em -0.8em rgba(0, 0, 0, 0.3),
-      0 0.4em 0.4em -0.8em rgba(0, 0, 0, 0.4),
-      0 0.8em 0.8em -1.2em rgba(0, 0, 0, 0.5),
-      0 1.2em 1.2em -1.6em rgba(0, 0, 0, 0.6)
-    ;
-    cursor: pointer;
-    font-weight: 700;
-    gap: 1ch;
-    height: 2.9em;
-    padding-left: 1em;
-    padding-right: 1em;
-    transition: 0.3s
-}
-
-.button:hover {
-    background: var(--color-green);
-    color: var(--color-base-dark);
-}
-
-.tab button {
-    color: var(--color-text-dark);
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-}
-
 .tab button:hover {
     color: var(--color-text);
   background-color: var(--color-green);
@@ -113,10 +79,7 @@ html {
   background-color: var(--color-surface-dark);
 }
 
-.tabcontent {
-    display: none;
-}
-    </style>
+</style>
 </head>
 
 <body >
@@ -142,8 +105,10 @@ html {
         <div class="pt-16 flex flex-col items-center text-center text-(--color-text-dark)">
             <h1 class="p-4 max-[400px]:text-4xl text-6xl text-(--color-green)">Program</h1>
             <!-- <p class="">Program description, program homepage, program version, program docs, program issues </p> -->
+    
             
-            <a class="m-4 flex items-center rounded-md button" target="_blank" href="http://linuxthemes.github.io/docs/" aria-label="The Manual" >
+
+            <a class="hover:bg-(--color-green) hover:text-(--color-text) shadow-md text-(--color-text-dark) bg-(--color-surface-dark2) transition duration-300 pl-[1em] pr-[1em] font-[700] gap-[1ch] h-[2.9em] cursor-pointer m-4 flex items-center rounded-md button" target="_blank" href="http://linuxthemes.github.io/docs/" aria-label="The Manual" >
                 <img style="width: 1.5rem; height: 1.5rem;" src="assets/linuxthemes.png"/>
                 <span>Details</span>
             </a>
@@ -211,7 +176,7 @@ function openTab(event, file) {
     for (index = 0; index < tablinks.length; index++) {
       tablinks[index].className = tablinks[index].className.replace(" active", "");
     }
-    console.log(document.getElementById(file))
+
     document.getElementById(file).style.display = "block";
     event.currentTarget.className += " active";
 } 
@@ -244,14 +209,14 @@ Promise.all([...fetchPromises, pageSourcePromise]).then(results => {
     var contentsHTML = ""
 
     results.forEach(result => {
-        tabsHTML += `<button class="tablinks" onclick="openTab(event, '${result.file}')">${result.file}</button>` 
-        contentsHTML += `<div id="${result.file}" class="tabcontent" ><pre><code>${result.fileContents}</code></pre></div>`
+        tabsHTML += `<button class="tablinks cursor-pointer px-4 py-3.5 transition duration-300 text-(--color-text-dark) hover:text-(--color-text) bg-(--color-color-text-dark) " onclick="openTab(event, '${result.file}')">${result.file}</button>` 
+        contentsHTML += `<div id="${result.file}" class="tabcontent" style="display: none;"><pre><code>${result.fileContents}</code></pre></div>`
     })
 
     tabs.innerHTML = tabsHTML;
     contentsContainer.innerHTML = contentsHTML;
 
-
+    // post render
     const firstTabButton = document.querySelector('.tablinks');
     if (firstTabButton) {
         firstTabButton.click();
@@ -262,4 +227,5 @@ Promise.all([...fetchPromises, pageSourcePromise]).then(results => {
 });
 
 </script>
+
 </html>
