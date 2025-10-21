@@ -103,17 +103,16 @@ html {
     <!-- details -->
     <section class="flex flex-col p-4">
         <div class="pt-16 flex flex-col items-center text-center text-(--color-text-dark)">
-            <h1 class="p-4 max-[400px]:text-4xl text-6xl text-(--color-green)">Program</h1>
-            <!-- <p class="">Program description, program homepage, program version, program docs, program issues </p> -->
-            
-            <a class="hover:bg-(--color-green) hover:text-(--color-text) shadow-md text-(--color-text-dark) bg-(--color-surface-dark2) transition duration-300 pl-[1em] pr-[1em] font-[700] gap-[1ch] h-[2.9em] cursor-pointer m-4 flex items-center rounded-md button" target="_blank" href="http://linuxthemes.github.io/docs/" aria-label="The Manual" >
+            <h1 id="program-title" class="outline-1 rounded p-4 max-[400px]:text-4xl text-6xl text-(--color-green)">Program</h1>
+            <p id="program-description" class="">Program description</p>
+            <a target="_blank" href="http://docs.linuxthemes.org/" aria-label="Manual" class="hover:bg-(--color-green) hover:text-(--color-text) shadow-md text-(--color-text-dark) bg-(--color-surface-dark2) transition duration-300 pl-[1em] pr-[1em] font-[700] gap-[1ch] h-[2.9em] cursor-pointer m-4 flex items-center rounded-md button" >
                 <img style="width: 1.5rem; height: 1.5rem;" src="assets/linuxthemes.png"/>
-                <span>Details</span>
+                <span>Manual</span>
             </a>
         </div>
 
     <!-- file preview -->
-     <filepreview class="flex flex-col outline-2 outline-(--color-subtext)">
+     <filepreview class="flex flex-col outline-2 outline-(--color-green) rounded">
          <div id="tab" class="tab rounded-top-md bg-(--color-surface-dark2)"></div>
          <div id="tabcontent"></div>
     </filepreview>
