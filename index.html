@@ -80,12 +80,12 @@ html {
     <a class="z-1 fixed top-0 left-0 h-10 max-[400px]:h-15 p-4  text-center w-screen flex place-content-center place-items-center hover:bg-(--color-green) bg-(--color-blue) " target="_blank" href="https://github.com/linuxthemes/base"> <p> Themes is in <em>Beta</em> ! Click <em>here</em> to Contribute !</p> </a>
     
     <!-- nav  -->
-    <nav class="z-1 bg-(--color-base-dark) sticky flex text-(--color-text-dark) top-10 max-[400px]:top-15 p-4 justify-between">
+    <nav id="navbar" class="z-1  sticky flex text-(--color-text-dark) top-10 max-[400px]:top-15 p-4 justify-between">
         <div class="flex flex-row align-center justify-center">
             <img class="w-6 h-6" src="assets/linuxthemes.png"/>
             <p class="pl-2">Themes</p>
         </div>
-        <input id="searchInput" autofocus class="max-[400px]:hidden p-1 max-[400px]:w-30 w-50 rounded-sm fg-(--color-text-dark) bg-(--color-base-dark)" type="search" name="query" id="search-query" placeholder="Search"/>
+        <input id="searchInput" autofocus class="max-[400px]:hidden p-1 max-[400px]:w-30 w-75 rounded-sm fg-(--color-text-dark) bg-(--color-base-dark)" type="search" name="query" id="search-query" placeholder="Search"/>
         
         <button id="theme-toggle" class="inline-flex items-center rounded-md border p-1 transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-800 [&_svg]:text-zinc-500 [&_svg]:hover:text-zinc-900 [&_svg]:dark:hover:text-zinc-100" aria-label="Toggle theme">
             <span class="sr-only">Toggle theme</span>
@@ -282,4 +282,17 @@ searchInput.addEventListener('input', () => {
     });
 });
 </script>
+
+
+<script>
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('bg-(--color-base-dark)');
+    } else {
+      navbar.classList.remove('bg-(--color-base-dark)');
+    }
+});
+</script>
+
 </html>
