@@ -23,7 +23,7 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="assets/linuxthemes.png" />
-    <link rel="stylesheet" type="text/css" href="hljs-theme.css" />
+    <link rel="stylesheet" type="text/css" href="themes/hljs-theme.css" />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
@@ -138,6 +138,7 @@ html {
 </body>
 
 <!-- cdn -->
+<script src="data.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
@@ -182,84 +183,8 @@ window.addEventListener('scroll', () => {
 
 <!-- cards -->
 <script>
-const cardData = [
-    {
-        title: "kde",
-        icon: "assets/kde.svg",
-        link: "template.html",
-        description: "KDE Plasma is a graphical shell developed by the KDE community for Unix-like operating systems."
-    },    
-    {
-        title: "gnome",
-        icon: "assets/gnome.svg",
-        link: "template.html",
-        description: "GNOME is a free and open-source desktop environment for Linux and other Unix-like operating systems."
-    },
-    {
-        title: "hyprland",
-        icon: "assets/hyprland.svg",
-        link: "template.html",
-        description: "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks."
-    },
-    {
-        title: "xfce",  
-        icon: "assets/xfce.svg",
-        link: "template.html", 
-        description: "Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.", 
-    },
-    {
-        title: "vscode",
-        icon: "assets/vscode.svg",
-        link: "template.html",
-        description: "Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux, macOS and web browsers."
-    },
-    {
-        title: "neovim",
-        icon: "assets/neovim.svg",
-        link: "template.html",
-        description: "Neovim is a modern, fast and feature-rich editor that is fully compatible with Vim. It supports plugins, GUIs, LSP, Lua, and more."
-    },
-    {
-        title: "micro",
-        icon: "assets/micro.svg",
-        link: "template.html",
-        description: "Micro is a modern and intuitive text editor that runs in your terminal. It has features like multiple cursors, syntax highlighting, colorschemes, plugins, and a terminal emulator."
-    },
-    { 
-        title: "bash",
-        icon: "assets/bash.svg",
-        link: "template.html",
-        description: "Bash is a free software shell that supports command-line editing, job control, shell functions, arrays, and more. It is compatible with sh and conforms to the POSIX standard."
-    },
-    { 
-        title: "eza",
-        icon: "assets/shell.svg",
-        link: "template.html",
-        description: "eza is a modern alternative for the venerable file-listing command-line program ls that ships with Unix and Linux operating systems, giving it more features and better defaults."
-    },
-    {
-        title: "ghostty",
-        icon: "assets/ghostty.png",
-        link: "template.html",
-        description: "Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration."
-    },
-    { 
-        title: "kitty",
-        icon: "assets/shell.svg",
-        link: "template.html",
-        description: "kitty is a fast, feature-rich, and cross-platform terminal emulator that uses GPU and SIMD vector CPU instructions for best performance. It supports graphics, ligatures, hyperlinks, scripting, kittens, and more."
-    },
-    { 
-        title: "alacritty",
-        icon: "assets/shell.svg",
-        link: "template.html",
-        description: "Alacritty is a modern terminal emulator that integrates with other applications and allows for extensive configuration."
-    },
-
-]
-
 const cardsContainer = document.getElementById('cardsContainer');
-cardData.forEach(card => 
+programData.forEach(card => 
 {
 const innerHTML = `
 <card class="p-4 max-w-sm">
@@ -281,7 +206,7 @@ const innerHTML = `
     cardsContainer.insertAdjacentHTML('beforeend', innerHTML);
 });
 
-const searchInput = document.getElementById('searchInput');
+const searchInput = document.getElementById('search');
 searchInput.addEventListener('input', () => 
 {
     const filter = searchInput.value.toLowerCase();
