@@ -87,7 +87,7 @@ html {
     <a class="z-1 fixed top-0 left-0 h-10 max-[400px]:h-15 p-4  text-center w-full flex place-content-center place-items-center hover:bg-(--color-green) bg-(--color-blue) " target="_blank" href="https://github.com/linuxthemes/base"> <p> Themes is in <em>Beta</em> ! Click <em>here</em> to Contribute !</p> </a>
     
     <!-- nav  -->
-    <nav id="navbar" class="z-1 sticky flex text-(--color-text-dark) top-10 p-4 justify-between">
+    <nav id="navbar" class="max-[400px]:top-15 z-1 sticky flex text-(--color-text-dark) top-10 p-4 justify-between">
         <div class="flex flex-row align-center justify-center">
             <img class="w-6 h-6" src="assets/linuxthemes.png"/>
             <p class="pl-2">Themes</p>
@@ -103,17 +103,15 @@ html {
 <main>
     <section id="mainContainer" class="flex flex-col p-4" >
     
-<!-- header -->
-
     <!-- image preview  -->
-    <section class="pt-16 p-4 xl:w-[50%] flex place-content-center ">
-        <img id="program-preview" class="w-[90%] rounded-lg" src="assets/nord.png" />
+    <section class="mt-16 p-4 xl:w-full  flex justify-center ">
+        <img id="program-preview" class="max-[400px]:w-[95%] w-[70%] xl:w-[50%] rounded-lg" src="assets/nord.png" />
     </section>
-
         
-    <div class="p-4 pl-8 flex flex-row justify-between">
-        <h1 id="program-title" class=" outline-1 rounded p-4 max-[400px]:text-4xl text-6xl text-(--color-green)">Program</h1>
-        <a target="_blank" href="" aria-label="Manual" class="hover:bg-(--color-green) hover:text-(--color-text) shadow-md text-(--color-text-dark) bg-(--color-surface-dark2) transition duration-300 pl-[1em] pr-[1em] font-[700] gap-[1ch] h-[2.9em] cursor-pointer m-4 flex items-center rounded-md button" >
+    <!-- header -->
+    <div class="p-4 pl-8 flex flex-row max-[400px]:flex-col justify-between">
+        <h1 id="program-title" class=" max-[400px]:m-2 flex place-content-center outline-1 rounded p-4 max-[400px]:text-4xl text-6xl text-(--color-green)">Program</h1>
+        <a target="_blank" href="" aria-label="Manual" class="flex place-content-center hover:bg-(--color-green) hover:text-(--color-text) shadow-md text-(--color-text-dark) bg-(--color-surface-dark2) transition duration-300 pl-[1em] pr-[1em] font-[700] gap-[1ch] h-[2.9em] cursor-pointer m-4 flex items-center rounded-md button" >
             <img style="width: 1.5rem; height: 1.5rem;" src="assets/linuxthemes.png"/>
             <span>Get Theme</span>
         </a>
@@ -121,8 +119,8 @@ html {
 
 
 
-<div class="flex flex-row p-4" >
-    <section id="file-preview" class="w-[60%] gap-4 m-4 flex flex-col ">
+<div class="flex flex-row p-4 max-[400px]:flex-col " >
+    <section id="file-preview" class="max-[400px]:order-2 w-[60%] max-[400px]:w-full gap-4 max-[400px]:m-0 m-4 flex flex-col ">
 
         <!-- file preview -->
          <div class=" h-[500px] flex flex-col outline-2 outline-(--color-green) rounded"></div>
@@ -136,8 +134,8 @@ html {
     </section>
 
     <!-- details  -->
-    <div class="sticky top-30 h-fit ml-auto bg-zinc-50 m-4 flex flex-row">
-    <section id="details-container" class="flex flex-col gap-2 bg-(--color-base) p-4 text-(--color-text) flex flex-col outline-2 outline-(--color-green) rounded">
+    <div class="max-[400px]:order-1 max-[400px]:static sticky top-30 h-fit max-[400px]:m-0 ml-auto  m-4 flex flex-row">
+    <section id="details-container" class="max-[400px]:mb-4 flex flex-col gap-2 bg-(--color-base) p-4 text-(--color-text) flex flex-col outline-2 outline-(--color-green) rounded">
         
         <h1 id="details" class="rounded p-2 text-(--color-text) bg-(--color-green)">Details</h1>
         <div id="details-home" class="gap-2 flex flex-row">
