@@ -97,7 +97,7 @@ html {
         </button>
     </nav>
 
-<main class="flex flex-col items-center ">
+<main >
     <section id="mainContainer" class="flex flex-col p-4 xl:w-[85%] " >
     
         <!-- image preview  -->
@@ -180,7 +180,9 @@ const pageData = programData[9]
 const title = document.getElementById('program-title')
 const description = document.getElementById('program-description')
 
-title.innerHTML = pageData.title
+title.innerHTML += `<img src="../${pageData.icon}" class="w-16 p-1 pr-4" >`
+title.innerHTML += pageData.title
+
 description.innerHTML = pageData.description
 </script>
 
