@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <title>Linux Themes</title>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command."/>
+    <meta name="description" content="Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command." />
 
     <meta property="og:site_name" content="Linux Themes" />
     <meta property="og:title" content="Linux Themes" />
-    <meta property="og:description" content="Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command."/>
+    <meta property="og:description" content="Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command." />
     <!-- <meta property="og:image" content="https://linuxthemes.org/assets/opengraph.png"> -->
     <!-- <meta property="og:url" content="https://linuxthemes.org"> -->
     <meta property="og:type" content="website" />
 
     <meta name="twitter:title" content="Linux Themes" />
-    <meta name="twitter:description" content="Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command."/>
+    <meta name="twitter:description" content="Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command." />
     <!-- <meta name="twitter:image" content="https://linuxthemes.org/assets/opengraph.png"> -->
     <meta name="twitter:image:alt" content="Linux Themes" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -27,8 +28,8 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
-<style type="text/tailwindcss">
-@custom-variant dark (&:where(.dark, .dark *)); 
+    <style type="text/tailwindcss">
+        @custom-variant dark (&:where(.dark, .dark *)); 
 .tab button:hover {
     color: var(--color-text);
     background-color: var(--color-lavender);
@@ -40,17 +41,19 @@
 </style>
 </head>
 
-<body class="bg-(--color-base) font-semibold  " >
+<body class="bg-(--color-base) font-semibold  ">
     <!-- banner -->
-    <a class="transition duration-300 z-1 fixed top-0 left-0 h-10 max-[400px]:h-15 p-4  text-center w-full flex place-content-center place-items-center hover:bg-(--color-green) bg-(--color-lavender)  " target="_blank" href="https://github.com/linuxthemes/base"> <p> Themes is in <em>Beta</em> ! Click <em>here</em> to Contribute !</p> </a>
-    
+    <a class="transition duration-300 z-1 fixed top-0 left-0 h-10 max-[400px]:h-15 p-4  text-center w-full flex place-content-center place-items-center hover:bg-(--color-green) bg-(--color-lavender)  " target="_blank" href="https://github.com/linuxthemes/base">
+        <p> Themes is in <em>Beta</em> ! Click <em>here</em> to Contribute !</p>
+    </a>
+
     <!-- nav  -->
     <nav id="navbar" class="max-[400px]:top-15 z-1 sticky flex text-(--color-text) top-10 p-4 justify-between">
         <div class="flex flex-row align-center justify-center">
-            <img class="w-6 h-6" src="../assets/linuxthemes.png"/>
+            <img class="w-6 h-6" src="../assets/linuxthemes.png" />
             <p class="pl-2">Themes</p>
         </div>
-        
+
         <button id="theme-toggle" class="inline-flex items-center rounded-md border p-1 transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-800 [&_svg]:text-zinc-500 [&_svg]:hover:text-zinc-900 [&_svg]:dark:hover:text-zinc-100" aria-label="Toggle theme">
             <span class="sr-only">Toggle theme</span>
             <svg id="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 dark:hidden"><path d="M14.438 10.148c.19-.425-.321-.787-.748-.601A5.5 5.5 0 0 1 6.453 2.31c.186-.427-.176-.938-.6-.748a6.501 6.501 0 1 0 8.585 8.586Z"></path></svg>
@@ -58,72 +61,74 @@
         </button>
     </nav>
 
-<main class="flex flex-col items-center">
-    <section id="mainContainer" class="flex flex-col p-4 w-[95%] xl:w-[85%] " >
-    
-        <!-- image preview  -->
-        <section class="mt-16 p-4 xl:w-full  flex justify-center ">
-            <img id="program-preview" class="max-[400px]:w-full w-[70%] xl:w-[50%] rounded-lg" src="../assets/nord.png" />
-        </section>
-            
-        <!-- header -->
-        <div class="p-4 pl-8 flex flex-row max-[400px]:flex-col justify-between">
-            <h1 id="program-title" class=" max-[400px]:m-2 flex place-content-center outline-1 rounded p-4 max-[400px]:text-4xl text-6xl text-(--color-text) outline-(--color-lavender)"></h1>
-            <a target="_blank" href="" aria-label="Manual" class="flex place-content-center hover:bg-(--color-green) hover:text-(--color-text) shadow-md text-(--color-text) bg-(--color-surface2) transition duration-300 pl-[1em] pr-[1em] font-[700] gap-[1ch] h-[2.9em] cursor-pointer m-4 flex items-center rounded-md button" >
-                <img style="width: 1.5rem; height: 1.5rem;" src="../assets/linuxthemes.png"/>
-                <span>Get Theme</span>
-            </a>
-        </div>
 
-        <!-- content -->
-        <div class=" flex flex-row p-4 max-[400px]:flex-col " >
-            <section id="file-preview" class="max-[400px]:order-2 w-[60%] max-[400px]:w-full gap-4 max-[400px]:m-0 m-4 flex flex-col ">
 
-                <!-- description -->
-                <div id="program-description" class="text-xl h-fit text-(--color-text) p-4 flex flex-col outline-2 outline-(--color-lavender) rounded"></div>
+    <main class="flex flex-col items-center">
+        <section id="mainContainer" class="flex flex-col p-4 w-[95%] xl:w-[85%] ">
 
-                <!-- file preview -->
-                <filepreview class=" flex flex-col outline-2 outline-(--color-lavender) rounded">
-                    <div id="tab" class="tab rounded-top-md bg-(--color-surface2)"></div>
-                    <div id="tabcontent"></div>
-                </filepreview>
+            <!-- image preview  -->
+            <section class="mt-16 p-4 xl:w-full  flex justify-center ">
+                <img id="program-preview" class="max-[400px]:w-full w-[70%] xl:w-[50%] rounded-lg" src="../assets/nord.png" />
             </section>
 
-            <!-- details  -->
-            <div class="max-[400px]:order-1 max-[400px]:static sticky top-30 h-fit max-[400px]:m-0 ml-auto m-4 flex flex-row">
-            <section id="details-container" class="max-[400px]:mb-4 flex flex-col gap-2 dark:bg-(--color-surface2) transition duration-300 p-4 text-(--color-text) flex flex-col outline-2 outline-(--color-lavender) rounded">
-                
-                <h1 id="details" class="rounded p-2 dark:text-(--color-text-override)  bg-(--color-lavender)">Details</h1>
-                <div id="details-home" class="gap-2 flex flex-row">
-                    <img style="width: 1.5rem; height: 1.5rem;" src="../assets/home.svg"/>
-                    <p>Home</p>
-                </div>
-                <div id="details-docs" class="gap-2 flex flex-row">
-                    <img style="width: 1.5rem; height: 1.5rem;" src="../assets/docs.svg"/>
-                    Offcial documententation
-                </div>
-                <div id="details-information" class="gap-2 flex flex-row">
-                    <img style="width: 1.5rem; height: 1.5rem;" src="../assets/package.svg"/>
-                    Package information
-                </div>
-                <div id="deatils-guide" class="gap-2 flex flex-row">
-                    <img style="width: 1.5rem; height: 1.5rem;" src="../assets/guide.svg"/>
-                    Guide
-                </div>
-                <div id="details-wiki" class="gap-2 flex flex-row">
-                    <img style="width: 1.5rem; height: 1.5rem;" src="../assets/wiki.svg"/>
-                    Wikipedia
-                </div>
-                <div id="details-issues" class="gap-2 flex flex-row">
-                    <img style="width: 1.5rem; height: 1.5rem;" src="../assets/bug.svg"/>
-                    Issues
-                </div>
-            </section>
+            <!-- header -->
+            <div class="p-4 pl-8 flex flex-row max-[400px]:flex-col justify-between">
+                <h1 id="program-title" class=" max-[400px]:m-2 flex place-content-center outline-1 rounded p-4 max-[400px]:text-4xl text-6xl text-(--color-text) outline-(--color-lavender)"></h1>
+                <a target="_blank" href="" aria-label="Manual" class="flex place-content-center hover:bg-(--color-green) hover:text-(--color-text) shadow-md text-(--color-text) bg-(--color-surface2) transition duration-300 pl-[1em] pr-[1em] font-[700] gap-[1ch] h-[2.9em] cursor-pointer m-4 flex items-center rounded-md button">
+                    <img style="width: 1.5rem; height: 1.5rem;" src="../assets/linuxthemes.png" />
+                    <span>Get Theme</span>
+                </a>
             </div>
-        </div>
 
-</section>
-</main>
+            <!-- content -->
+            <div class=" flex flex-row p-4 max-[400px]:flex-col ">
+                <section id="file-preview" class="max-[400px]:order-2 w-[60%] max-[400px]:w-full gap-4 max-[400px]:m-0 m-4 flex flex-col ">
+
+                    <!-- description -->
+                    <div id="program-description" class="text-xl h-fit text-(--color-text) p-4 flex flex-col outline-2 outline-(--color-lavender) rounded"></div>
+
+                    <!-- file preview -->
+                    <filepreview class=" flex flex-col outline-2 outline-(--color-lavender) rounded">
+                        <div id="tab" class="tab rounded-top-md bg-(--color-surface2)"></div>
+                        <div id="tabcontent"></div>
+                    </filepreview>
+                </section>
+
+                <!-- details  -->
+                <div class="max-[400px]:order-1 max-[400px]:static sticky top-30 h-fit max-[400px]:m-0 ml-auto m-4 flex flex-row">
+                    <section id="details-container" class="max-[400px]:mb-4 flex flex-col gap-2 dark:bg-(--color-surface2) transition duration-300 p-4 text-(--color-text) flex flex-col outline-2 outline-(--color-lavender) rounded">
+
+                        <h1 id="details" class="rounded p-2 dark:text-(--color-text-override)  bg-(--color-lavender)">Details</h1>
+                        <div id="details-home" class="gap-2 flex flex-row">
+                            <img style="width: 1.5rem; height: 1.5rem;" src="../assets/home.svg" />
+                            <p>Home</p>
+                        </div>
+                        <div id="details-docs" class="gap-2 flex flex-row">
+                            <img style="width: 1.5rem; height: 1.5rem;" src="../assets/docs.svg" />
+                            Offcial documententation
+                        </div>
+                        <div id="details-information" class="gap-2 flex flex-row">
+                            <img style="width: 1.5rem; height: 1.5rem;" src="../assets/package.svg" />
+                            Package information
+                        </div>
+                        <div id="deatils-guide" class="gap-2 flex flex-row">
+                            <img style="width: 1.5rem; height: 1.5rem;" src="../assets/guide.svg" />
+                            Guide
+                        </div>
+                        <div id="details-wiki" class="gap-2 flex flex-row">
+                            <img style="width: 1.5rem; height: 1.5rem;" src="../assets/wiki.svg" />
+                            Wikipedia
+                        </div>
+                        <div id="details-issues" class="gap-2 flex flex-row">
+                            <img style="width: 1.5rem; height: 1.5rem;" src="../assets/bug.svg" />
+                            Issues
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </section>
+    </main>
 
 </body>
 
@@ -136,118 +141,123 @@
 
 <!-- page data -->
 <script>
-console.log(programData)
-const pageData = programData[6]
-const title = document.getElementById('program-title')
-const description = document.getElementById('program-description')
+    console.log(programData)
+    const pageData = programData[6]
+    const title = document.getElementById('program-title')
+    const description = document.getElementById('program-description')
 
-title.innerHTML += `<img src="../${pageData.icon}" class="w-16 p-1 pr-4" >`
-title.innerHTML += pageData.title
+    title.innerHTML += `<img src="../${pageData.icon}" class="w-16 p-1 pr-4" >`
+    title.innerHTML += pageData.title
 
-description.innerHTML = pageData.description
+    description.innerHTML = pageData.description
 </script>
 
 <!-- navbar transition -->
 <script>
-window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) 
-    { 
-        navbar.classList.add('bg-(--color-base)');
-    } 
-    else 
+    window.addEventListener('scroll', () =>
     {
-          navbar.classList.remove('bg-(--color-base)');
-    }
-});
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50)
+        {
+            navbar.classList.add('bg-(--color-base)');
+        }
+        else
+        {
+            navbar.classList.remove('bg-(--color-base)');
+        }
+    });
 </script>
 
 <!-- toggle -->
 <script>
-function setListener() {
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
-        const currentTheme = document.documentElement.getAttribute('data-theme'); 
-        if (currentTheme != 'dark') document.documentElement.setAttribute('data-theme', 'dark');  
-        if (currentTheme == 'dark') document.documentElement.setAttribute('data-theme', 'light');  
-    });
-};
-setListener(); // execute then set
-document.addEventListener("astro:after-swap", setListener);
+    function setListener()
+    {
+        document.getElementById("theme-toggle").addEventListener("click", () =>
+        {
+            document.documentElement.classList.toggle("dark");
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme != 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+            if (currentTheme == 'dark') document.documentElement.setAttribute('data-theme', 'light');
+        });
+    };
+    setListener(); // execute then set
+    document.addEventListener("astro:after-swap", setListener);
 </script>
 
 <!-- file preview -->
 <script>
-function openTab(event, file) {
-    var index
-    var tablinks
-    var tabcontent 
-
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (index = 0; index < tabcontent.length; index++) 
+    function openTab(event, file)
     {
-      tabcontent[index].style.display = "none";
+        var index
+        var tablinks
+        var tabcontent
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (index = 0; index < tabcontent.length; index++)
+        {
+            tabcontent[index].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (index = 0; index < tablinks.length; index++)
+        {
+            tablinks[index].className = tablinks[index].className.replace(" active", "");
+        }
+
+        document.getElementById(file).style.display = "block";
+        event.currentTarget.className += " active";
     }
-    
-    tablinks = document.getElementsByClassName("tablinks");
-    for (index = 0; index < tablinks.length; index++) 
+
+    const fetchPromises = pageData.fileArray.map(file =>
     {
-      tablinks[index].className = tablinks[index].className.replace(" active", "");
-    }
+        url = `https://raw.githubusercontent.com/linuxthemes/base/refs/heads/main/${file}`
 
-    document.getElementById(file).style.display = "block";
-    event.currentTarget.className += " active";
-} 
+        if (file == "CONTRIBUTING.md") url = `https://raw.githubusercontent.com/linuxthemes/base/refs/heads/base/${file}`
 
-const fetchPromises = pageData.fileArray.map(file => {
-    url = `https://raw.githubusercontent.com/linuxthemes/base/refs/heads/main/${file}`
-    
-    if (file == "CONTRIBUTING.md") url = `https://raw.githubusercontent.com/linuxthemes/base/refs/heads/base/${file}`
-    
-    console.log(file)
-    console.log(url)
+        console.log(file)
+        console.log(url)
 
 
-    return fetch(url)
-    .then(response => 
-    {
-        if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
-        return response.text();
-    })
-    .then(data => 
-    { 
-        return { file: file, fileContents: data}
-    })
-    .catch(error => 
-    {
-         console.error(`Error fetching ${file}:`, error) 
-    })
-})
-
-Promise.all(fetchPromises).then(results => 
-{
-    const tabs = document.getElementById('tab');
-    const contentsContainer = document.getElementById('tabcontent');
-
-    var tabsHTML = ""
-    var contentsHTML = ""
-
-    results.forEach(result => 
-    {
-        tabsHTML += `<button class="tablinks cursor-pointer px-4 py-3.5 transition duration-300 text-(--color-text) hover:text-(--color-text) bg-(--color-color-text) " onclick="openTab(event, '${result.file}')">${result.file}</button>` 
-        contentsHTML += `<div id="${result.file}" class="tabcontent" style="display: none;"><pre><code>${result.fileContents}</code></pre></div>`
+        return fetch(url)
+            .then(response =>
+            {
+                if (!response.ok) throw new Error('Network response was not ok ' + response.statusText);
+                return response.text();
+            })
+            .then(data =>
+            {
+                return { file: file, fileContents: data }
+            })
+            .catch(error =>
+            {
+                console.error(`Error fetching ${file}:`, error)
+            })
     })
 
-    tabs.innerHTML = tabsHTML;
-    contentsContainer.innerHTML = contentsHTML;
+    Promise.all(fetchPromises).then(results =>
+    {
+        const tabs = document.getElementById('tab');
+        const contentsContainer = document.getElementById('tabcontent');
 
-    // post render
-    const firstTabButton = document.querySelector('.tablinks');
-    if (firstTabButton) firstTabButton.click();
+        var tabsHTML = ""
+        var contentsHTML = ""
 
-    hljs.addPlugin(new CopyButtonPlugin());
-    hljs.highlightAll();
-});
+        results.forEach(result =>
+        {
+            tabsHTML += `<button class="tablinks cursor-pointer px-4 py-3.5 transition duration-300 text-(--color-text) hover:text-(--color-text) bg-(--color-color-text) " onclick="openTab(event, '${result.file}')">${result.file}</button>`
+            contentsHTML += `<div id="${result.file}" class="tabcontent" style="display: none;"><pre><code>${result.fileContents}</code></pre></div>`
+        })
+
+        tabs.innerHTML = tabsHTML;
+        contentsContainer.innerHTML = contentsHTML;
+
+        // post render
+        const firstTabButton = document.querySelector('.tablinks');
+        if (firstTabButton) firstTabButton.click();
+
+        hljs.addPlugin(new CopyButtonPlugin());
+        hljs.highlightAll();
+    });
 </script>
 
 </html>

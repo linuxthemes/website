@@ -1,0 +1,12 @@
+{
+    // javascript formatter
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+
+    // html formatter
+    "html.format.indentInnerHtml": false,
+    "html.format.wrapLineLength": 0,
+    "html.format.unformatted": "svg, path"
+}
+
+
