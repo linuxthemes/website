@@ -65,4 +65,7 @@
     --color-base: #303446;
     --color-mantle: #292c3c;
     --color-crust: #232634;
+
+
+    --color-text-override: #4c4f69; 
 }
