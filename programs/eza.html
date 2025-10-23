@@ -22,69 +22,30 @@
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" href="../assets/linuxthemes.png" />
+    <link rel="stylesheet" href="/themes/catppuccin.css" />
     <link rel="stylesheet" type="text/css" href="../themes/hljs-theme.css" />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
-    <style type="text/tailwindcss">
-@variant dark (&:where(.dark, .dark *));
-@theme {
-    --color-sky: #99d1db;
-    --color-blue: #8caaee;
-    --color-teal: #81c8be;
-    --color-green: #a6d189;
-    --color-black: #232634;
-
-    --color-text: #4c4f69;
-    --color-text-dark: #c6d0f5;
-
-    --color-subtext: #a5adce;
-    --color-subtext1: #5c5f77;
-    --color-subtext2: #949cbb;
-
-    --color-base: #eff1f5;
-    --color-base-dark: #303446;
-
-    --color-overlay: #9ca0b0;
-    --color-overlay-dark: #737994;
-
-    --color-surface: #ccd0da;
-    --color-surface-dark: #414559;
-    --color-surface-dark2: #626880;
-    
-    --transition: 0.15s cubic-bezier(0.33, 1, 0.68, 1);
-    
-    --font-family: 'Cascadia Code', Menlo, Monaco, Consolas, 'Courier New', monospace;
-    --font-size: clamp(0.625rem, 1.25vw, 1rem);
-    --font-size-small: 80%;
-    --font-size-medium: 125%;
-    --font-size-large: 200%;
-    --font-size-x-large: 400%;
-
-}
-
-html {
-    background: linear-gradient(315deg, var(--color-surface-dark) 0%, var(--color-base-dark)  100%);
-}
-
+<style type="text/tailwindcss">
+/* @custom-variant dark (&:where(.dark, .dark *)); */
 .tab button:hover {
     color: var(--color-text);
     background-color: var(--color-green);
 }
 
 .tab button.active {
-    background-color: var(--color-surface-dark);
+    background-color: var(--color-surface);
 }
-
 </style>
 </head>
 
-<body >
+<body class="bg-(--color-base) font-semibold  " >
     <!-- banner -->
-    <a class="z-1 fixed top-0 left-0 h-10 max-[400px]:h-15 p-4  text-center w-full flex place-content-center place-items-center hover:bg-(--color-green) bg-(--color-blue) " target="_blank" href="https://github.com/linuxthemes/base"> <p> Themes is in <em>Beta</em> ! Click <em>here</em> to Contribute !</p> </a>
+    <a class="transition duration-300 z-1 fixed top-0 left-0 h-10 max-[400px]:h-15 p-4  text-center w-full flex place-content-center place-items-center hover:bg-(--color-green) bg-(--color-lavender)  " target="_blank" href="https://github.com/linuxthemes/base"> <p> Themes is in <em>Beta</em> ! Click <em>here</em> to Contribute !</p> </a>
     
     <!-- nav  -->
-    <nav id="navbar" class="max-[400px]:top-15 z-1 sticky flex text-(--color-text-dark) top-10 p-4 justify-between">
+    <nav id="navbar" class="max-[400px]:top-15 z-1 sticky flex text-(--color-text) top-10 p-4 justify-between">
         <div class="flex flex-row align-center justify-center">
             <img class="w-6 h-6" src="../assets/linuxthemes.png"/>
             <p class="pl-2">Themes</p>
@@ -97,7 +58,7 @@ html {
         </button>
     </nav>
 
-<main >
+<main class="flex flex-col items-center">
     <section id="mainContainer" class="flex flex-col p-4 xl:w-[85%] " >
     
         <!-- image preview  -->
@@ -107,8 +68,8 @@ html {
             
         <!-- header -->
         <div class="p-4 pl-8 flex flex-row max-[400px]:flex-col justify-between">
-            <h1 id="program-title" class=" max-[400px]:m-2 flex place-content-center outline-1 rounded p-4 max-[400px]:text-4xl text-6xl text-(--color-text-dark) outline-(--color-green)"></h1>
-            <a target="_blank" href="" aria-label="Manual" class="flex place-content-center hover:bg-(--color-green) hover:text-(--color-text) shadow-md text-(--color-text-dark) bg-(--color-surface-dark2) transition duration-300 pl-[1em] pr-[1em] font-[700] gap-[1ch] h-[2.9em] cursor-pointer m-4 flex items-center rounded-md button" >
+            <h1 id="program-title" class=" max-[400px]:m-2 flex place-content-center outline-1 rounded p-4 max-[400px]:text-4xl text-6xl text-(--color-text) outline-(--color-lavender)"></h1>
+            <a target="_blank" href="" aria-label="Manual" class="flex place-content-center hover:bg-(--color-green) hover:text-(--color-text) shadow-md text-(--color-text) bg-(--color-surface2) transition duration-300 pl-[1em] pr-[1em] font-[700] gap-[1ch] h-[2.9em] cursor-pointer m-4 flex items-center rounded-md button" >
                 <img style="width: 1.5rem; height: 1.5rem;" src="../assets/linuxthemes.png"/>
                 <span>Get Theme</span>
             </a>
@@ -119,20 +80,20 @@ html {
             <section id="file-preview" class="max-[400px]:order-2 w-[60%] max-[400px]:w-full gap-4 max-[400px]:m-0 m-4 flex flex-col ">
 
                 <!-- description -->
-                <div id="program-description" class="text-xl h-fit text-(--color-text-dark) p-4 flex flex-col outline-2 outline-(--color-green) rounded"></div>
+                <div id="program-description" class="text-xl h-fit text-(--color-text) p-4 flex flex-col outline-2 outline-(--color-lavender) rounded"></div>
 
                 <!-- file preview -->
-                <filepreview class=" flex flex-col outline-2 outline-(--color-green) rounded">
-                    <div id="tab" class="tab rounded-top-md bg-(--color-surface-dark2)"></div>
+                <filepreview class=" flex flex-col outline-2 outline-(--color-lavender) rounded">
+                    <div id="tab" class="tab rounded-top-md bg-(--color-surface2)"></div>
                     <div id="tabcontent"></div>
                 </filepreview>
             </section>
 
             <!-- details  -->
             <div class="max-[400px]:order-1 max-[400px]:static sticky top-30 h-fit max-[400px]:m-0 ml-auto  m-4 flex flex-row">
-            <section id="details-container" class="max-[400px]:mb-4 flex flex-col gap-2 bg-(--color-base) p-4 text-(--color-text) flex flex-col outline-2 outline-(--color-green) rounded">
+            <section id="details-container" class="max-[400px]:mb-4 flex flex-col gap-2 bg-(--color-surface2) transition duration-300 p-4 text-(--color-text) flex flex-col outline-2 outline-(--color-lavender) rounded">
                 
-                <h1 id="details" class="rounded p-2 text-(--color-text) bg-(--color-green)">Details</h1>
+                <h1 id="details" class="rounded p-2 text-(--color-text) bg-(--color-lavender)">Details</h1>
                 <div id="details-home" class="gap-2 flex flex-row">
                     <img style="width: 1.5rem; height: 1.5rem;" src="../assets/home.svg"/>
                     <p>Home</p>
@@ -192,11 +153,11 @@ window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) 
     { 
-        navbar.classList.add('bg-(--color-base-dark)');
+        navbar.classList.add('bg-(--color-base)');
     } 
     else 
     {
-          navbar.classList.remove('bg-(--color-base-dark)');
+          navbar.classList.remove('bg-(--color-base)');
     }
 });
 </script>
@@ -273,7 +234,7 @@ Promise.all(fetchPromises).then(results =>
 
     results.forEach(result => 
     {
-        tabsHTML += `<button class="tablinks cursor-pointer px-4 py-3.5 transition duration-300 text-(--color-text-dark) hover:text-(--color-text) bg-(--color-color-text-dark) " onclick="openTab(event, '${result.file}')">${result.file}</button>` 
+        tabsHTML += `<button class="tablinks cursor-pointer px-4 py-3.5 transition duration-300 text-(--color-text) hover:text-(--color-text) bg-(--color-color-text) " onclick="openTab(event, '${result.file}')">${result.file}</button>` 
         contentsHTML += `<div id="${result.file}" class="tabcontent" style="display: none;"><pre><code>${result.fileContents}</code></pre></div>`
     })
 
