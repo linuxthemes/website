@@ -23,5 +23,5 @@ for index in "${!names[@]}"; do
     name="${names[$index]}"
     cp "$template" "programs/${name}.html"
     new_index=$((index - 1))
-    sed -i "s/programData\[0\]/programData\[${index}\]/g" "programs/${name}.html"
+    sed -i "s/programData\[6\]/programData\[${index}\]/g" "programs/${name}.html"
 done
