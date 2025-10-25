@@ -61,8 +61,6 @@
         </button>
     </nav>
 
-
-
     <main class="flex flex-col items-center">
         <section id="mainContainer" class="flex flex-col p-4 w-[95%] xl:w-[85%] ">
 
@@ -231,13 +229,7 @@
 
     const fetchPromises = pageData.fileArray.map(file =>
     {
-        url = `https://raw.githubusercontent.com/linuxthemes/base/refs/heads/main/${file}`
-
-        if (file == "CONTRIBUTING.md") url = `https://raw.githubusercontent.com/linuxthemes/base/refs/heads/base/${file}`
-
-        console.log(file)
-        console.log(url)
-
+        url = `https://raw.githubusercontent.com/linuxthemes/base/refs/heads/base/${file}`
 
         return fetch(url)
             .then(response =>
