@@ -32,7 +32,6 @@
 <style type="text/tailwindcss">
 @custom-variant dark (&:where(.dark, .dark *)); 
 </style>
-
 </head>
 
 <body class="bg-(--color-base) font-semibold  ">
@@ -67,7 +66,13 @@
                 </div>
 
                 <!-- buttons -->
-                <section class="max-[400px]:p-1 p-8 flex flex-col md:flex-row">
+                <!-- <section class="max-[400px]:p-1 p-4 pt-8 flex flex-col md:flex-row gap-4">
+                    <a class="github-button" href="https://github.com/linuxthemes" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Follow @linuxthemes on GitHub">Follow @linuxthemes</a>
+                    <a class="github-button" href="https://github.com/linuxthemes/base" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" aria-label="Star linuxthemes/base on GitHub">Star</a>
+                    <a class="github-button" href="https://github.com/linuxthemes/base/fork" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork linuxthemes/base on GitHub">Fork</a>
+                </section> -->
+
+                <section class="max-[400px]:p-1 p-4 pb-8 flex flex-col md:flex-row">
                     <a class="hover:bg-(--color-lavender) shadow-md text-(--color-text) bg-(--color-surface) transition duration-300 pl-[1em] pr-[1em] font-[700] gap-[1ch] h-[2.9em] cursor-pointer m-4 flex items-center rounded-md button" target="_blank" href="http://linuxthemes.github.io/docs/" aria-label="Docs">
                         <img style="width: 1.5rem; height: 1.5rem;" src="assets/linuxthemes.png" />
                         <span>Manual</span>
@@ -107,6 +112,7 @@
 </body>
 
 <!-- cdn -->
+<!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
 <script src="data.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
@@ -130,7 +136,6 @@
         });
     };
     setListener();
-    document.addEventListener("astro:after-swap", setListener);
 </script>
 
 <!-- navbar transition -->
@@ -166,7 +171,7 @@
         </div>
 
         <div class="flex flex-col justify-between flex-grow">
-            <p class="leading-relaxed text-base">${card.description}</p>
+            <p class="leading-relaxed text-(--color-subtext)">${card.description}</p>
             <a href="${card.link}" class="mt-3 text-(--color-text) hover:text-(--color-green) inline-flex items-center">Learn More
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg>
             </a>
