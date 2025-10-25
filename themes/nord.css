@@ -1,70 +1,69 @@
 :root {
-    --color-rosewater: #dc8a78;
-    --color-flamingo: #dd7878;
-    --color-pink: #ea76cb;
-    --color-mauve: #8839ef;
-    --color-red: #d20f39;
-    --color-maroon: #e64553;
-    --color-peach: #fe640b;
-    --color-yellow: #df8e1d;
-    --color-green: #40a02b;
-    --color-teal: #179299;
-    --color-sky: #04a5e5;
-    --color-sapphire: #209fb5;
-    --color-blue: #1e66f5;
-    --color-lavender: #7287fd;
+    --color-rosewater: #D8DEE9; /* Light Nord color for rosewater */
+    --color-flamingo: #EBCB8B; /* Light Nord color for flamingo */
+    --color-pink: #B48EAD; /* Light Nord color for pink */
+    --color-mauve: #D08770; /* Light Nord color for mauve */
+    --color-red: #BF616A; /* Light Nord color for red */
+    --color-maroon: #A3BE8C; /* Light Nord color for maroon */
+    --color-peach: #EBCB8B; /* Light Nord color for peach (similar to flamingo) */
+    --color-yellow: #EBCB8B; /* Yellow approximation */
+    --color-green: #A3BE8C; /* Green Nord */
+    --color-teal: #88C0D0; /* Teal Nord */
+    --color-sky: #81A1C1; /* Sky Nord */
+    --color-sapphire: #5E81AC; /* Sapphire Nord */
+    --color-blue: #81A1C1; /* Blue Nord */
+    --color-lavender: #B48EAD; /* Lavender Nord */
 
-    --color-text: #4c4f69;
+    --color-text: #D8DEE9; /* Default text color for Nord light theme */
 
-    --color-subtext1: #5c5f77;
-    --color-subtext: #6c6f85;
+    --color-subtext1: #E5E9F0; /* Subtext lighter */
+    --color-subtext: #D8DEE9; /* Subtext */
 
-    --color-overlay2: #7c7f93;
-    --color-overlay1: #8c8fa1;
-    --color-overlay: #9ca0b0;
+    --color-overlay2: #4C566A; /* Overlay darker */
+    --color-overlay1: #434C5E; /* Overlay lighter */
+    --color-overlay: #3B4252; /* Overlay base */
 
-    --color-surface2: #acb0be;
-    --color-surface1: #bcc0cc;
-    --color-surface: #ccd0da;
+    --color-surface2: #2E3440; /* Surface darker */
+    --color-surface1: #3B4252; /* Surface lighter */
+    --color-surface: #4C566A; /* Surface base */
 
-    --color-base: #eff1f5;
-    --color-mantle: #e6e9ef;
-    --color-crust: #dce0e8;
+    --color-base: #D8DEE9; /* Base background */
+    --color-mantle: #E5E9F0; /* Mantle background */
+    --color-crust: #ECEFF4; /* Crust background */
 }
 
 .dark {
-    --color-rosewater: #f2d5cf;
-    --color-flamingo: #eebebe;
-    --color-pink: #f4b8e4;
-    --color-mauve: #ca9ee6;
-    --color-red: #e78284;
-    --color-maroon: #ea999c;
-    --color-peach: #ef9f76;
-    --color-yellow: #e5c890;
-    --color-green: #a6d189;
-    --color-teal: #81c8be;
-    --color-sky: #99d1db;
-    --color-sapphire: #85c1dc;
-    --color-blue: #8caaee;
-    --color-lavender: #babbf1;
+    --color-rosewater: #E5E9F0; /* Light Nord color for rosewater in dark mode */
+    --color-flamingo: #D08770; /* Darker Nord color for flamingo */
+    --color-pink: #B48EAD; /* Pink Nord */
+    --color-mauve: #D8DEE9; /* Mauve Nord */
+    --color-red: #BF616A; /* Red Nord */
+    --color-maroon: #A3BE8C; /* Maroon Nord */
+    --color-peach: #EBCB8B; /* Peach Nord */
+    --color-yellow: #EBCB8B; /* Yellow approximation */
+    --color-green: #A3BE8C; /* Green Nord */
+    --color-teal: #88C0D0; /* Teal Nord */
+    --color-sky: #81A1C1; /* Sky Nord */
+    --color-sapphire: #5E81AC; /* Sapphire Nord */
+    --color-blue: #81A1C1; /* Blue Nord */
+    --color-lavender: #B48EAD; /* Lavender Nord */
 
-    --color-text: #c6d0f5;
+    --color-text: #E5E9F0; /* Text color in dark mode */
 
-    --color-subtext1: #b5bfe2;
-    --color-subtext: #a5adce;
+    --color-subtext1: #D8DEE9; /* Subtext lighter */
+    --color-subtext: #C0C5CE; /* Subtext */
 
-    --color-overlay2: #949cbb;
-    --color-overlay1: #838ba7;
-    --color-overlay: #737994;
+    --color-overlay2: #3B4252; /* Overlay darker */
+    --color-overlay1: #2E3440; /* Overlay lighter */
+    --color-overlay: #1E222A; /* Overlay base */
 
-    --color-surface2: #626880;
-    --color-surface1: #51576d;
-    --color-surface: #414559;
+    --color-surface2: #1E222A; /* Surface darker */
+    --color-surface1: #2E3440; /* Surface lighter */
+    --color-surface: #3B4252; /* Surface base */
 
-    --color-base: #303446;
-    --color-mantle: #292c3c;
-    --color-crust: #232634;
+    --color-base: #2E3440; /* Base background in dark mode */
+    --color-mantle: #3B4252; /* Mantle background */
+    --color-crust: #434C5E; /* Crust background */
 
-
-    --color-text-override: #4c4f69; 
+    --color-text-override: #D8DEE9; /* Override text color */
 }

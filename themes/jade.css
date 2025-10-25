@@ -1,0 +1,69 @@
+:root {
+    --color-rosewater: #c8b9a6; /* Soft beige */
+    --color-flamingo: #a67f7f; /* Warm mauve */
+    --color-pink: #b5838d; /* Dusty rose */
+    --color-mauve: #7f6f8f; /* Muted mauve */
+    --color-red: #8b5a4b; /* Muddy red-brown */
+    --color-maroon: #5a3b3b; /* Deep maroon */
+    --color-peach: #d4b48c; /* Gentle peach */
+    --color-yellow: #a1876f; /* Warm tan/yellow */
+    --color-green: #7a8b6f; /* Olive muted green */
+    --color-teal: #6b7f7d; /* Desaturated teal */
+    --color-sky: #8a9a9d; /* Soft blue-gray */
+    --color-sapphire: #4a5a6a; /* Deep slate blue */
+    --color-blue: #445560; /* Muted blue */
+    --color-lavender: #9a8c8f; /* Dusty lavender */
+
+    --color-text: #3b3b3b; /* Darker neutral for text */
+
+    --color-subtext1: #565656; 
+    --color-subtext: #6f6f6f;
+
+    --color-overlay2: #8b8b8b; 
+    --color-overlay1: #a0a0a0; 
+    --color-overlay: #b0b0b0;
+
+    --color-surface2: #d0cbbd; 
+    --color-surface1: #e0d8c7; 
+    --color-surface: #f0e2d8; 
+
+    --color-base: #f8f4f0; /* Light neutral background */
+    --color-mantle: #e2d4c7; 
+    --color-crust: #d4bfa3; 
+}
+
+.dark {
+    --color-rosewater: #b8a18f; /* Muted beige */
+    --color-flamingo: #8f6f6f; /* Dark mauve */
+    --color-pink: #9c7f89; /* Dusky pink */
+    --color-mauve: #6f5a7f; /* Deep muted mauve */
+    --color-red: #7a4b3b; /* Dark red-brown */
+    --color-maroon: #4a3b3b; /* Dark maroon */
+    --color-peach: #a58f78; /* Dark peach */
+    --color-yellow: #7a6f5f; /* Muted yellow */
+    --color-green: #647a4f; /* Olive drab */
+    --color-teal: #5a6b6b; /* Deep teal */
+    --color-sky: #6f7a7d; /* Blue-gray */
+    --color-sapphire: #3a4a5a; /* Slate blue */
+    --color-blue: #354550; /* Dark muted blue */
+    --color-lavender: #7f6f6f; /* Dusky lavender */
+
+    --color-text: #e0d4c7; /* Light text for dark mode */
+
+    --color-subtext1: #a0a0a0;
+    --color-subtext: #8a8a8a;
+
+    --color-overlay2: #4b4b4b;
+    --color-overlay1: #3b3b3b;
+    --color-overlay: #2a2a2a;
+
+    --color-surface2: #222218;
+    --color-surface1: #2c2c2c;
+    --color-surface: #383838;
+
+    --color-base: #1f1f1f; /* Dark base background */
+    --color-mantle: #292929;
+    --color-crust: #383838;
+
+    --color-text-override: #e0d4c7;
+}
