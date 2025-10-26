@@ -1,69 +1,60 @@
 :root {
-    --color-rosewater: #b16a54;
-    --color-flamingo: #b34d4d;
-    --color-pink: #a856a8;
-    --color-mauve: #6f2fa9;
-    --color-red: #8a1f2b;
-    --color-maroon: #8b4748;
-    --color-peach: #b15a2f;
-    --color-yellow: #9b6f1d;
-    --color-green: #306d26;
-    --color-teal: #21707a;
-    --color-sky: #297b8f;
-    --color-sapphire: #1d5f83;
-    --color-blue: #1a4a8b;
-    --color-lavender: #576b9b;
+    --color-pink: #ea76cb;
+    --color-purple: #8839ef;
+    --color-red: #d20f39;
+    --color-orange: #fe640b;
+    --color-yellow: #df8e1d;
+    --color-green: #40a02b;
+    --color-cyna: #04a5e5;
+    --color-blue: #1e66f5;
 
-    --color-text: #3b3b4f;
-
-    --color-subtext1: #4c4c66;
-    --color-subtext: #595973;
-
-    --color-overlay2: #6a6a81;
-    --color-overlay1: #7a7a8d;
-    --color-overlay: #8b8b9a;
-
-    --color-surface2: #9999a4;
-    --color-surface1: #a8a8b0;
-    --color-surface: #b8b8bc;
-
-    --color-base: #d0d0d0;
-    --color-mantle: #c0c0c0;
-    --color-crust: #b0b0b0;
+    --color-text: #4c4f69;
+    --color-subtext: #6c6f85;
+    --color-overlay: #9ca0b0;
+    --color-surface: #ccd0da;
+    --color-base: #eff1f5;
 }
 
 .dark {
-    --color-rosewater: #8a5c4b;
-    --color-flamingo: #8b4d4d;
-    --color-pink: #8c3d7c;
-    --color-mauve: #5a258d;
-    --color-red: #6f1f2b;
-    --color-maroon: #6f3f3e;
-    --color-peach: #8a4f2f;
-    --color-yellow: #7a5f1d;
-    --color-green: #2f6620;
-    --color-teal: #1f5a66;
-    --color-sky: #297b8f;
-    --color-sapphire: #1d5f83;
-    --color-blue: #1a4a8b;
-    --color-lavender: #576b9b;
+    --color-pink: #ea76cb;
+    --color-purple: #8839ef;
+    --color-red: #d20f39;
+    --color-orange: #fe640b;
+    --color-yellow: #df8e1d;
+    --color-green: #40a02b;
+    --color-cyna: #04a5e5;
+    --color-blue: #1e66f5;
 
-    --color-text: #b0b0d0;
-
-    --color-subtext1: #a0a0b0;
-    --color-subtext: #9090a0;
-
-    --color-overlay2: #7a7a8d;
-    --color-overlay1: #6a6a81;
-    --color-overlay: #5a5a70;
-
-    --color-surface2: #464656;
-    --color-surface1: #353542;
-    --color-surface: #242432;
-
-    --color-base: #1e1e2e;
-    --color-mantle: #1a1a2e;
-    --color-crust: #16161e;
-
-    --color-text-override: #b0b0d0; 
+    --color-text: #4c4f69;
+    --color-subtext: #6c6f85;
+    --color-overlay: #9ca0b0;
+    --color-surface: #ccd0da;
+    --color-base: #eff1f5;
 }
+/* 
+
+# primary
+background = #111c18
+foreground = #C1C497
+cursor-color = #D7C995
+cursor-text = #000000
+
+# normal colors
+palette = 0=#23372B
+palette = 1=#FF5345
+palette = 2=#549e6a
+palette = 3=#459451
+palette = 4=#509475
+palette = 5=#D2689C
+palette = 6=#2DD5B7
+palette = 7=#F6F5DD
+
+# bright colors
+palette = 8=#53685B
+palette = 9=#db9f9c
+palette = 10=#63b07a
+palette = 11=#E5C736
+palette = 12=#ACD4CF
+palette = 13=#75bbb3
+palette = 14=#8CD3CB
+palette = 15=#9eebb3 */

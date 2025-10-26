@@ -1,29 +1,57 @@
 :root {
-    --color-red: #BF616A; /* Light Nord color for red */
-    --color-yellow: #EBCB8B; /* Yellow approximation */
-    --color-green: #A3BE8C; /* Green Nord */
-    --color-cyan: #81A1C1; /* Sky Nord */
-    --color-blue: #81A1C1; /* Blue Nord */
+    --color-pink: #ea76cb;
+    --color-purple: #8839ef;
+    --color-red: #d20f39;
+    --color-orange: #fe640b;
+    --color-yellow: #df8e1d;
+    --color-green: #40a02b;
+    --color-cyna: #04a5e5;
+    --color-blue: #1e66f5;
 
-    --color-text: #D8DEE9; /* Default text color for Nord light theme */
-    --color-subtext: #D8DEE9; /* Subtext */
-    --color-overlay: #3B4252; /* Overlay base */
-    --color-surface: #4C566A; /* Surface base */
-    --color-base: #D8DEE9; /* Base background */
+    --color-text: #4c4f69;
+    --color-subtext: #6c6f85;
+    --color-overlay: #9ca0b0;
+    --color-surface: #ccd0da;
+    --color-base: #eff1f5;
 }
 
 .dark {
-    --color-red: #BF616A; /* Red Nord */
-    --color-yellow: #EBCB8B; /* Yellow approximation */
-    --color-green: #A3BE8C; /* Green Nord */
-    --color-cyan: #81A1C1; /* Sky Nord */
-    --color-blue: #81A1C1; /* Blue Nord */
+    --color-pink: #ea76cb;
+    --color-purple: #8839ef;
+    --color-red: #d20f39;
+    --color-orange: #fe640b;
+    --color-yellow: #df8e1d;
+    --color-green: #40a02b;
+    --color-cyna: #04a5e5;
+    --color-blue: #1e66f5;
 
-    --color-text: #E5E9F0; /* Text color in dark mode */
-    --color-subtext: #C0C5CE; /* Subtext */
-    --color-overlay: #1E222A; /* Overlay base */
-    --color-surface: #3B4252; /* Surface base */
-    --color-base: #2E3440; /* Base background in dark mode */
-
-    --color-text-override: #D8DEE9; /* Override text color */
+    --color-text: #4c4f69;
+    --color-subtext: #6c6f85;
+    --color-overlay: #9ca0b0;
+    --color-surface: #ccd0da;
+    --color-base: #eff1f5;
 }
+/* 
+
+
+:root {
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a; 
+
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+} */
