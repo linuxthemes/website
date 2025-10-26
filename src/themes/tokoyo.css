@@ -1,0 +1,69 @@
+:root {
+    --color-rosewater: #f4a261; /* Warm orange, reminiscent of sunset */
+    --color-flamingo: #e76f51; /* Bright coral */
+    --color-pink: #e63946; /* Vibrant pink */
+    --color-mauve: #6a4c93; /* Deep purple */
+    --color-red: #d62828; /* Bold red */
+    --color-maroon: #800020; /* Maroon for depth */
+    --color-peach: #f2cc8f; /* Soft peach */
+    --color-yellow: #f4a261; /* Warm orange/yellow */
+    --color-green: #2a9d8f; /* Teal green */
+    --color-teal: #264653; /* Dark teal */
+    --color-sky: #457b9d; /* Bright blue sky */
+    --color-sapphire: #1d3557; /* Deep sapphire */
+    --color-blue: #0f4c81; /* Vivid blue */
+    --color-lavender: #b5838d; /* Soft lavender */
+
+    --color-text: #22223b; /* Dark text for contrast */
+
+    --color-subtext1: #4a4e69; 
+    --color-subtext: #6b6e7f;
+
+    --color-overlay2: #9a8c98; 
+    --color-overlay1: #b5a5a4; 
+    --color-overlay: #d7cac8;
+
+    --color-surface2: #ffe8d6; 
+    --color-surface1: #ffe5b4; 
+    --color-surface: #ffe0b2;
+
+    --color-base: #ffffff; /* Bright base for clean look */
+    --color-mantle: #f1f1f1; 
+    --color-crust: #e0e0e0; 
+}
+
+.dark {
+    --color-rosewater: #f4a261;
+    --color-flamingo: #e76f51;
+    --color-pink: #e63946;
+    --color-mauve: #6a4c93;
+    --color-red: #d62828;
+    --color-maroon: #800020;
+    --color-peach: #f2cc8f;
+    --color-yellow: #f4a261;
+    --color-green: #2a9d8f;
+    --color-teal: #264653;
+    --color-sky: #457b9d;
+    --color-sapphire: #1d3557;
+    --color-blue: #0f4c81;
+    --color-lavender: #b5838d;
+
+    --color-text: #f1f1f1;
+
+    --color-subtext1: #a0a0a0;
+    --color-subtext: #8a8a8a;
+
+    --color-overlay2: #4b3b4a;
+    --color-overlay1: #3b2a3a;
+    --color-overlay: #2a1919;
+
+    --color-surface2: #222831; 
+    --color-surface1: #393e46; 
+    --color-surface: #222831; 
+
+    --color-base: #121212; 
+    --color-mantle: #1f1f1f; 
+    --color-crust: #2c2c2c; 
+
+    --color-text-override: #f1f1f1;
+}

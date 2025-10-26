@@ -1,0 +1,29 @@
+:root {
+    --color-red: #BF616A; /* Light Nord color for red */
+    --color-yellow: #EBCB8B; /* Yellow approximation */
+    --color-green: #A3BE8C; /* Green Nord */
+    --color-cyan: #81A1C1; /* Sky Nord */
+    --color-blue: #81A1C1; /* Blue Nord */
+
+    --color-text: #D8DEE9; /* Default text color for Nord light theme */
+    --color-subtext: #D8DEE9; /* Subtext */
+    --color-overlay: #3B4252; /* Overlay base */
+    --color-surface: #4C566A; /* Surface base */
+    --color-base: #D8DEE9; /* Base background */
+}
+
+.dark {
+    --color-red: #BF616A; /* Red Nord */
+    --color-yellow: #EBCB8B; /* Yellow approximation */
+    --color-green: #A3BE8C; /* Green Nord */
+    --color-cyan: #81A1C1; /* Sky Nord */
+    --color-blue: #81A1C1; /* Blue Nord */
+
+    --color-text: #E5E9F0; /* Text color in dark mode */
+    --color-subtext: #C0C5CE; /* Subtext */
+    --color-overlay: #1E222A; /* Overlay base */
+    --color-surface: #3B4252; /* Surface base */
+    --color-base: #2E3440; /* Base background in dark mode */
+
+    --color-text-override: #D8DEE9; /* Override text color */
+}
