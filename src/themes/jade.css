@@ -1,76 +1,40 @@
 :root {
-    --color-pink: #ea76cb;
-    --color-purple: #8839ef;
-    --color-red: #d20f39;
-    --color-orange: #fe640b;
-    --color-yellow: #df8e1d;
-    --color-green: #40a02b;
-    --color-cyna: #04a5e5;
-    --color-blue: #1e66f5;
+    --color-black: #53685B;
+    --color-white: #9eebb3;
+    
+    --color-purple: #75bbb3;
+    --color-red: #db9f9c;
+    --color-orange: ;
+    --color-yellow: #E5C736;
+    --color-green: #63b07a;
+    --color-cyan: #8CD3CB;
+    --color-blue: #ACD4CF;
 
-    --color-text: #4c4f69;
-    --color-subtext: #6c6f85;
-    --color-overlay: #9ca0b0;
-    --color-surface: #ccd0da;
-    --color-base: #eff1f5;
+    --color-text: #000000;
+    --color-subtext: #D7C995;
+    --color-overlay: ;
+    --color-surface: ;
+    --color-base: #C1C497;
 }
 
 .dark {
-    --color-pink: #ea76cb;
-    --color-purple: #8839ef;
-    --color-red: #d20f39;
-    --color-orange: #fe640b;
-    --color-yellow: #df8e1d;
-    --color-green: #40a02b;
-    --color-cyna: #04a5e5;
-    --color-blue: #1e66f5;
+    --color-white: #F6F5DD;
+    --color-black: #;
 
-    --color-text: #4c4f69;
-    --color-subtext: #6c6f85;
-    --color-overlay: #9ca0b0;
-    --color-surface: #ccd0da;
-    --color-base: #eff1f5;
+    --color-purple: #D2689C;
+    --color-red: #FF5345;
+    --color-orange: ;
+    --color-yellow: #459451;
+    --color-green: #549e6a;
+    --color-cyan: #2DD5B7;
+    --color-blue: #509475;
+
+    --color-text: #ebfff2;
+    --color-subtext: #D7C995;
+    --color-overlay: ;
+    --color-surface: ;
+    --color-base: #111c18;
 }
-/* 
-
-[colors]
-[colors.primary]
-background = '#111c18'
-foreground = '#C1C497'
-
-[colors.normal]
-black   = "#23372B"
-red     = "#FF5345"
-green   = "#549e6a"
-yellow  = "#459451"
-blue    = "#509475"
-magenta = "#D2689C"
-cyan    = "#2DD5B7"
-white   = "#F6F5DD"
-
-[colors.bright]
-black   = "#53685B"
-red     = "#db9f9c"
-green   = "#63b07a"
-yellow  = "#E5C736"
-blue    = "#ACD4CF"
-magenta = "#75bbb3"
-cyan    = "#8CD3CB"
-white   = "#9eebb3"
-
-[colors.cursor]
-text   = "#000000"
-cursor = "#D7C995"
-
-
-
-@define-color selected-text #e1b55e;
-@define-color text #ebfff2;
-@define-color base #11221C;
-@define-color border #214237;
-@define-color foreground #11221C;
-@define-color background #11221C; */
-
 /* 
 # primary
 background = #111c18
