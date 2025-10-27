@@ -6,10 +6,12 @@ import '../styles/global.css'
 	function toggleMode() {
 		document.getElementById('mode-toggle')?.addEventListener('click', () => {
 			document.documentElement.classList.toggle('dark')
-			const currentTheme = document.documentElement.getAttribute('data-theme')
-			if (currentTheme != 'dark') document.documentElement.setAttribute('data-theme', 'dark')
-			if (currentTheme == 'dark') document.documentElement.setAttribute('data-theme', 'light')
-		})
+    
+      const currentTheme = document.documentElement.getAttribute('data-theme'); 
+            if (currentTheme == 'catppuccin-latte') document.documentElement.setAttribute('data-theme', 'catppuccin-macchiato');  
+      if (currentTheme == 'catppuccin-macchiato') document.documentElement.setAttribute('data-theme', 'catppuccin-latte');  
+
+        })
 	}
 
 	function toggleTheme() {
@@ -21,6 +23,11 @@ import '../styles/global.css'
 				if (themeButton) {
 					themeButton.textContent = element.textContent
 				}
+                            
+			const currentTheme = document.documentElement.getAttribute('data-theme')
+      if (currentTheme == 'catppuccin-latte') document.documentElement.setAttribute('data-theme', 'catppuccin-macchiato');  
+      if (currentTheme == 'catppuccin-macchiato') document.documentElement.setAttribute('data-theme', 'catppuccin-latte');  
+
 			})
 		})
 	}
@@ -44,7 +51,7 @@ import '../styles/global.css'
 	transitionBackground()
 </script>
 
-<nav id='navbar' class='z-1 flex justify-between p-4 text-(--color-text)'>
+<nav id='navbar' class='sticky top-10 z-1 flex justify-between p-4 text-(--color-text)'>
 	<div class='align-center flex flex-row justify-center'>
 		<a href='/'><img class='h-6 w-6' src='/src/assets/linuxthemes.png' /></a>
 		<a href='/' class='pl-2'>Themes</a>

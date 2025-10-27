@@ -1,2 +1,11 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+.tab button:hover {
+    color: var(--color-text);
+    background-color: var(--color-lavender);
+}
+
+.tab button.active {
+    background-color: var(--color-surface2);
+}

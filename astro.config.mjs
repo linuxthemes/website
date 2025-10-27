@@ -5,9 +5,15 @@ import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
 import tailwindcss from "@tailwindcss/vite";
 
+import mdx from "@astrojs/mdx";
+
 export default defineConfig({
-  integrations: [expressiveCode()],
+  integrations: [expressiveCode({
+      themes: ['catppuccin-macchiato', 'catppuccin-latte'],
+    // plugins: [pluginLineNumbers()],
+  }), mdx()],
   vite: {
     plugins: [tailwindcss()],
   },
+  
 });
