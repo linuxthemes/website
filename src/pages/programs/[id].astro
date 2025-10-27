@@ -1,128 +1,79 @@
 ---
+import '../../styles/global.css'
 import Layout from '../../layouts/Layout.astro'
-import { programData } from '../../data'
 import { Code } from 'astro-expressive-code/components'
+import { programData } from '../../data'
 
 export async function getStaticPaths() {
-	return programData.map(program => {
-        const dataT = program.fileArray.map(async (file) => {
-		    var url = `https://raw.githubusercontent.com/linuxthemes/base/refs/heads/base/${file}`
-            const response = await fetch(url)
-            if (!response.ok) throw new Error()
-            const data = await response.text()
-            return { file: file, fileContents: data }
-        })
-
-		return {
-			params: { id: program.id },
-			props: { program, dataT: Promise.all(dataT) },
-		}
-    	})
-
-    }
+	return await Promise.all(
+		programData.map(async program => {
+			const files = await Promise.all(
+				program.fileArray.map(async fileName => {
+					const response = await fetch(`https://raw.githubusercontent.com/linuxthemes/base/refs/heads/base/${fileName}`)
+					const data = await response.text()
+					return { file: fileName, fileContents: data }
+				}),
+			)
+			return {
+				params: { id: program.id },
+				props: { program, files },
+			}
+		}),
+	)
+}
 
 const { id } = Astro.params
+const { files } = Astro.props
 const { program } = Astro.props
-const dataTPromise = Astro.props.dataT
-const dataT = await dataTPromise
-
-console.log(dataT)
 ---
 
-<script define:vars={{program}} >
-	function openTab(event, file) {
-		var index
-		var tablinks
-		var tabcontent
-
-		tabcontent = document.getElementsByClassName('tabcontent')
-		for (index = 0; index < tabcontent.length; index++) {
-			const element = tabcontent[index]
-			if (element instanceof HTMLElement) {
-				element.style.display = 'none'
-			}
-		}
-
-		tablinks = document.getElementsByClassName('tablinks')
-		for (index = 0; index < tablinks.length; index++) {
-			tablinks[index].className = tablinks[index].className.replace(' active', '')
-		}
-
-		const element = document.getElementById(file)
-		if (element) {
-			element.style.display = 'block'
-		}
-
-		event.currentTarget.className += ' active'
-	}
-
-
-	// Promise.all(fetchPromises).then(results => {
-	// 	const tabs = document.getElementById('tab')
-	// 	const contentsContainer = document.getElementById('tabcontent')
-
-	// 	var tabsHTML = ''
-	// 	var contentsHTML = ''
-
-	// 	results.forEach(result => {
-	// 		tabsHTML += `<button class="tablinks cursor-pointer px-4 py-3.5 transition duration-300 text-(--color-text) hover:text-(--color-text) bg-(--color-color-text) " onclick="openTab(event, '${result.file}')">${result.file}</button>`
-	// 		contentsHTML += `<div id="${result.file}" class="tabcontent" style="display: none;"><pre><code>${result.fileContents}</code></pre></div>`
-	// 	})
-
-	// 	if (tabs) tabs.innerHTML = tabsHTML
-	// 	if (contentsContainer) contentsContainer.innerHTML = contentsHTML
-
-	// 	// post render
-	// 	const firstTabButton = document.querySelector('.tablinks')
-	// 	// if (firstTabButton) firstTabButton.click()
-	// })
-</script>
-
 <Layout>
-	<!-- main  -->
-	<main class='flex flex-col items-center'>
-		<section id='mainContainer' class='flex w-[95%] flex-col p-4 xl:w-[85%]'>
+	<main class='flex flex-col items-center justify-center '>
+		<section id='mainContainer' class='flex w-[95%] items-center justify-center flex-col p-4 xl:w-[85%] bg-blue-300 m-4 rounded shadow-2xl'>
 			<!-- image preview  -->
-			<section class='mt-16 flex justify-center p-4 xl:w-full'>
-				<!-- <img id='program-preview' class='w-[70%] rounded-lg max-[400px]:w-full xl:w-[50%]' src='../assets/nord.png' /> -->
+			<section class='mt-16  flex justify-center p-4 xl:w-full'>
+				<img id='program-preview' class='shadow-2xl w-[70%] rounded-lg max-[400px]:w-full xl:w-[50%]' src='/src/assets/nord.png' />
 			</section>
 
 			<!-- header -->
-			<div class='flex flex-row justify-between p-4 pl-8 max-[400px]:flex-col'>
-				<h1 id='program-title' class='flex place-content-center rounded p-4 text-6xl text-(--color-text) outline-1 outline-(--color-lavender) max-[400px]:m-2 max-[400px]:text-4xl'>
+			<div class='flex flex-row w-[85%] justify-between p-4 pl-8 max-[400px]:flex-col'>
+				<h1 id='program-title' class='shadow-2xl bg-(--color-base) flex betweenplace-content-center rounded p-4 text-6xl text-(--color-text) outline-2 outline-(--color-cyan) max-[400px]:m-2 max-[400px]:text-4xl'>
 					<img src=`${program.icon}` class='w-16 p-1 pr-4' />
 					{program.id}
 				</h1>
-				<a target='_blank' href='https://github.com/linuxthemes/base' aria-label='Manual' class='button m-4 flex h-[2.9em] cursor-pointer place-content-center items-center gap-[1ch] rounded-md bg-(--color-surface) pr-[1em] pl-[1em] font-bold text-(--color-text) shadow-md transition duration-300 hover:bg-(--color-green) hover:text-(--color-text)'>
-					<!-- <img style='width: 1.5rem; height: 1.5rem' src='../../assets/linuxthemes.png' /> -->
+				<a target='_blank' href='https://github.com/linuxthemes/base' aria-label='Manual' class='shadow-2xl button m-4 flex h-[2.9em] cursor-pointer place-content-center items-center gap-[1ch] rounded-md bg-(--color-surface) pr-[1em] pl-[1em] font-bold text-(--color-text) shadow-md transition duration-300 hover:bg-(--color-green) hover:text-(--color-text)'>
+					<img style='width: 1.5rem; height: 1.5rem' src='/src/assets/linuxthemes.png' />
 					<span>Get Theme</span>
 				</a>
 			</div>
 
 			<!-- content -->
-			<div class='flex flex-row p-4 max-[400px]:flex-col'>
-				<section id='file-preview' class='m-4 flex w-[60%] flex-col gap-4 max-[400px]:order-2 max-[400px]:m-0 max-[400px]:w-full'>
+			<div class='flex flex-row p-8 xl:w-[85%] max-[400px]:flex-col w-screen  '>
+				<section id='file-preview' class='w-3/5 m-4 flex flex-col  gap-4 max-[400px]:order-2 max-[400px]:m-0 max-[400px]:w-full'>
 					<!-- description -->
-					<div id='program-description' class='flex h-fit flex-col rounded p-4 text-xl text-(--color-text) outline-2 outline-(--color-lavender)'>{program.description}</div>
+					<div id='program-description' class='shadow-2xl bg-(--color-base) flex h-fit flex-col rounded p-4 text-xl text-(--color-text) outline-2 outline-(--color-cyan)'>{program.description}</div>
 
 					<!-- file preview -->
-					<filepreview class='flex flex-col rounded outline-2 outline-(--color-lavender)'>
-                        
-                        {dataT.map(file => (
-                            <div id='tab' class='tab rounded-top-md bg-(--color-surface)'>{file.file}</div>
-                            <div id='tabcontent'>
-                                <Code code={file.fileContents} lang='js' />
-                            </div>
-                        ))}
+					<filepreview class='shadow-2xl flex flex-col  rounded outline-2 outline-(--color-cyan)'>
+						<div id='tab' class='tab rounded-top-md bg-(--color-surface)'>
+							{files.map(file => <button class='tablinks hover:bg-(--color-cyan) cursor-pointer  px-4 py-3.5 text-(--color-text) transition duration-300 hover:text-(--color-text)'>{file.file}</button>)}
+						</div>
 
-
+						<div id='tabcontent'>
+							{
+								files.map(file => (
+									<div id={file.file} class='tabcontent'>
+										<Code code={file.fileContents} lang='js' />
+									</div>
+								))
+							}
+						</div>
 					</filepreview>
 				</section>
 
 				<!-- details  -->
-				<div class='sticky top-30 m-4 ml-auto flex h-fit flex-row max-[400px]:static max-[400px]:order-1 max-[400px]:m-0'>
-					<section id='details-container' class='flex flex-col gap-2 rounded p-4 text-(--color-text) outline-2 outline-(--color-lavender) transition duration-300 max-[400px]:mb-4 dark:bg-(--color-mantle)'>
-						<h1 id='details' class='rounded bg-(--color-lavender) p-2 dark:text-(--color-text-override)'>Program Details</h1>
+					<section id='details-container' class='shadow-2xl sticky top-30 m-4 ml-auto  h-fit  max-[400px]:static max-[400px]:order-1 max-[400px]:m-0 bg-(--color-base) flex flex-col gap-2 rounded p-4 text-(--color-text) outline-2 outline-(--color-cyan) transition duration-300 max-[400px]:mb-4 '>
+						<h1 id='details' class='rounded bg-(--color-cyan) p-2'>Program Details</h1>
 						<div id='details-home' class='flex flex-row gap-2'>
 							<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
 								<g fill='none'>
@@ -167,12 +118,37 @@ console.log(dataT)
 							Issues
 						</div>
 					</section>
-				</div>
 			</div>
 		</section>
 	</main>
-
-	<!-- <HeroProgram id={program}/> -->
-	<!-- <ProgramDetails id={program}/> -->
-	<!-- <FilePreview id={program}/> -->
 </Layout>
+
+<script define:vars={{ files }}>
+	function openTab(file) {
+		const tabcontent = document.getElementsByClassName('tabcontent')
+		for (let index = 0; index < tabcontent.length; index++) {
+			const element = tabcontent[index]
+			if (element) {
+				element.style.display = 'none'
+			}
+		}
+
+		const tablinks = document.getElementsByClassName('tablinks')
+		for (let index = 0; index < tablinks.length; index++) {
+			tablinks[index].className = tablinks[index].className.replace(' active', '')
+		}
+
+		console.log(file)
+		document.getElementById(file).style.display = 'block'
+		event.currentTarget.className += ' active'
+	}
+
+	const buttons = document.getElementsByClassName('tablinks')
+
+	for (let index = 0; index < buttons.length; index++) {
+		buttons[index].addEventListener('click', () => openTab(files[index].file))
+	}
+
+	const firstTabButton = document.querySelector('.tablinks')
+	if (firstTabButton) firstTabButton.click()
+</script>
