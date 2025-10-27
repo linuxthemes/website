@@ -8,7 +8,9 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 
 export default defineConfig({
-  integrations: [expressiveCode({
+ 
+   site: 'https://linuxthemes.org',
+    integrations: [expressiveCode({
       themes: ['catppuccin-macchiato', 'catppuccin-latte'],
     //   themeCssSelector: (theme) => `[data-theme='${theme.name}']`,
     // plugins: [pluginLineNumbers()],
