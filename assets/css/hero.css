@@ -55,9 +55,7 @@ h1 {
   overflow: hidden;
 }
 
-
-@media(max-width: 64em) {
-
+@media (max-width: 64em) {
   .hero {
     /* height: auto; */
     flex-direction: column;
@@ -71,8 +69,7 @@ h1 {
    */
 }
 
-@media(max-width: 68em) {
-
+@media (max-width: 68em) {
   .hero-header {
     place-items: center;
   }

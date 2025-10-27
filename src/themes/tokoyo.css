@@ -1,79 +1,36 @@
+/* https://github.com/tokyo-night/tokyo-night-vscode-theme */
 :root {
-    --color-pink: #ea76cb;
-    --color-purple: #8839ef;
-    --color-red: #d20f39;
-    --color-orange: #fe640b;
-    --color-yellow: #df8e1d;
-    --color-green: #40a02b;
-    --color-cyan: #04a5e5;
-    --color-blue: #1e66f5;
+  /* Tokyo Night Light */
+  --color-pink: #8c4351; /* This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red */
+  --color-purple: #d2a8ff; /* Control Keywords, Storage Types, Regex symbols and operators, HTML Attributes, Terminal Magenta */
+  --color-red: #965027; /* This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red */
+  --color-orange: #8f5e15; /* Function parameters, Regex character sets, Terminal Yellow */
+  --color-yellow: #e3b341; /* Function parameters, Regex character sets, Terminal Yellow */
+  --color-green: #33635c; /* Object literal keys, Markdown links, Regex literal strings, Terminal Green */
+  --color-cyan: #006c86; /* Language support functions, CSS HTML elements */
+  --color-blue: #2959aa; /* Function names, CSS property names, Markdown Headings, Terminal Blue */
 
-    --color-text: #4c4f69;
-    --color-subtext: #6c6f85;
-    --color-overlay: #9ca0b0;
-    --color-surface: #ccd0da;
-    --color-base: #eff1f5;
+  --color-text: #343b58; /* Editor Foreground */
+  --color-subtext: #343b58; /* Comments */
+  --color-overlay: #3b4252; /* Editor Background (Storm) */
+  --color-surface: #2e3440; /* Editor Background (Storm) */
+  --color-base: #e6e7ed; /* Editor Background (Night) */
 }
 
 .dark {
-    --color-pink: #ea76cb;
-    --color-purple: #8839ef;
-    --color-red: #d20f39;
-    --color-orange: #fe640b;
-    --color-yellow: #df8e1d;
-    --color-green: #40a02b;
-    --color-cyan: #04a5e5;
-    --color-blue: #1e66f5;
+  /* Tokyo Night */
+  --color-pink: #f7768e; /* This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red */
+  --color-purple: #bb9af7; /* Control Keywords, Storage Types, Regex symbols and operators, HTML Attributes, Terminal Magenta */
+  --color-red: #bf616a; /* This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red */
+  --color-orange: #ff9e64; /* Number and Boolean constants, Language support constants */
+  --color-yellow: #e0af68; /* Function parameters, Regex character sets, Terminal Yellow */
+  --color-green: #73daca; /* Object literal keys, Markdown links, Terminal Green */
+  --color-cyan: #2ac3de; /* Language support functions, CSS HTML elements */
+  --color-blue: #7aa2f7; /* Function names, CSS property names, Terminal Blue */
 
-    --color-text: #4c4f69;
-    --color-subtext: #6c6f85;
-    --color-overlay: #434c5e;
-    --color-surface: #3b4252;
-    --color-base: #2e3440;
+  --color-text: #cfc9c2; /* Parameters inside functions (semantic highlighting only) */
+  --color-subtext: #414868; /* Comments */
+  --color-overlay: #4c566a; /* Editor Background (Storm) */
+  --color-surface: #24283b; /* Editor Background (Storm) */
+  --color-base: #1a1b26; /* Editor Background (Night) */
 }
-/* 
-
-.theme-dark {
-  --color-red-rgb: 247, 118, 142;
-  --color-orange-rgb: 255, 158, 100;
-  --color-yellow-rgb: 224, 175, 104;
-  --color-green-rgb: 158, 206, 106;
-  --color-cyan-rgb: 125, 207, 255;
-  --color-blue-rgb: 122, 162, 247;
-  --color-purple-rgb: 187, 154, 247;
-  --color-pink-rgb: 255, 117, 160;
-  --color-red: #f7768e;
-  --color-orange: #ff9e64;
-  --color-yellow: #e0af68;
-  --color-green: #9ece6a;
-  --color-cyan: #7dcfff;
-  --color-blue: #7aa2f7;
-  --color-purple: #bb9af7;
-  --color-pink: #ff75a0;
-}
-
-.theme-dark {
-  --base-h: 235;
-  --base-s: 19%;
-  --base-l: 13%;
-  --accent-h: 202;
-  --accent-s: 100%;
-  --accent-l: 75%;
-  --bg1: #1a1b26;
-  --bg2: #16161e;
-
-  --ui1: #24283b;
-  --ui2: #414868;
-  --ui3: #2f3549;
-  --tx1: #c0caf5;
-  --tx2: #a9b1d6;
-  --tx3: #9aa5ce;
-  --sp1: #16161e;
-  --hl1: rgba(42,47,65,.7);
-}
-
-.theme-dark.minimal-dark-black {
-  --ui1: #1a1b26;
-} */
-
-

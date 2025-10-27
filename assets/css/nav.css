@@ -3,7 +3,6 @@
   position: fixed;
   top: 2rem;
 
-
   /* height: 4rem; */
   width: 100%;
   padding-left: 4rem;
@@ -27,17 +26,14 @@ input {
   width: 25em;
 }
 
-
 input:focus {
   border: none;
   outline: 2px solid var(--color-blue);
 }
 
-@media(min-width: 64em) {
-
+@media (min-width: 64em) {
   .nav {
     border-radius: 0.3em;
     font-size: var(--font-size-medium);
   }
-
 }

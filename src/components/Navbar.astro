@@ -1,168 +1,80 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css'
 ---
+
 <script>
+	function toggleMode() {
+		document.getElementById('mode-toggle')?.addEventListener('click', () => {
+			document.documentElement.classList.toggle('dark')
+			const currentTheme = document.documentElement.getAttribute('data-theme')
+			if (currentTheme != 'dark') document.documentElement.setAttribute('data-theme', 'dark')
+			if (currentTheme == 'dark') document.documentElement.setAttribute('data-theme', 'light')
+		})
+	}
 
-function toggleMode() {
-    document.getElementById("mode-toggle")?.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
-        const currentTheme =
-            document.documentElement.getAttribute("data-theme");
-        if (currentTheme != "dark")
-            document.documentElement.setAttribute("data-theme", "dark");
-        if (currentTheme == "dark")
-            document.documentElement.setAttribute("data-theme", "light");
-    });
-}
+	function toggleTheme() {
+		const options = document.querySelectorAll('#theme-option')
+		options.forEach(function (element) {
+			element.addEventListener('click', function () {
+				document.getElementById('theme')?.setAttribute('href', `/src/themes/${element.textContent.toLowerCase()}.css`)
+				const themeButton = document.getElementById('theme-button')
+				if (themeButton) {
+					themeButton.textContent = element.textContent
+				}
+			})
+		})
+	}
 
-function toggleTheme() {
-    const options = document.querySelectorAll("#theme-option");
-    options.forEach(function (element) {
-        element.addEventListener("click", function () {
-            document
-                .getElementById("theme")
-                ?.setAttribute(
-                    "href",
-                    `/src/themes/${element.textContent.toLowerCase()}.css`,
-                );
-        });
-    });
-}
+	function transitionBackground() {
+		window.addEventListener('scroll', () => {
+			const navbar = document.getElementById('navbar')
+			const search = document.getElementById('search')
+			if (window.scrollY > 50) {
+				search?.classList.remove('hidden')
+				navbar?.classList.add('bg-(--color-base)')
+			} else {
+				search?.classList.add('hidden')
+				navbar?.classList.remove('bg-(--color-base)')
+			}
+		})
+	}
 
-function transitionBackground() {
-    window.addEventListener("scroll", () => {
-        const navbar = document.getElementById("navbar");
-        const search = document.getElementById("search");
-        if (window.scrollY > 50) {
-            search?.classList.remove("hidden");
-            navbar?.classList.add("bg-(--color-base)");
-        } else {
-            search?.classList.add("hidden");
-            navbar?.classList.remove("bg-(--color-base)");
-        }
-    });
-}
-
-toggleMode()
-toggleTheme()
-transitionBackground()
+	toggleMode()
+	toggleTheme()
+	transitionBackground()
 </script>
 
+<nav id='navbar' class='z-1 flex justify-between p-4 text-(--color-text)'>
+	<div class='align-center flex flex-row justify-center'>
+		<a href='/'><img class='h-6 w-6' src='/src/assets/linuxthemes.png' /></a>
+		<a href='/' class='pl-2'>Themes</a>
+	</div>
 
-<nav
-    id="navbar"
-    class="z-1 flex text-(--color-text) p-4 justify-between"
->
-    <div class="flex flex-row align-center justify-center">
-        <a href="/"><img class="w-6 h-6" src="/src/assets/linuxthemes.png" /></a>
-        <a href="/" class="pl-2">Themes</a>
-    </div>
+	<input id='search' class='fg-(--color-text) hidden w-75 rounded-sm bg-(--color-base) p-1 outline-1 max-[400px]:hidden max-[400px]:w-30' type='search' name='query' id='search-query' placeholder='Search' />
 
-    <input
-        id="search"
-        class="outline-1 hidden max-[400px]:hidden p-1 max-[400px]:w-30 w-75 rounded-sm fg-(--color-text) bg-(--color-base)"
-        type="search"
-        name="query"
-        id="search-query"
-        placeholder="Search"
-    />
+	<section id='theme-container' class='flex flex-row items-center justify-center gap-2'>
+		<el-dropdown class='inline-block'>
+			<button class='inline-flex w-full justify-center gap-x-1 rounded-md bg-(--color-base) px-1.5 py-1 text-sm font-semibold text-(--color-text) shadow-xs outline-1 hover:bg-(--color-crust)'>
+				<p id='theme-button'>Base</p>
+				<svg viewBox='0 0 20 20' fill='currentColor' data-slot='icon' aria-hidden='true' class='-mr-1 size-5 text-gray-400'><path d='M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z' clip-rule='evenodd' fill-rule='evenodd'></path></svg>
+			</button>
 
-    <section
-        id="theme-container"
-        class="flex flex-row items-center justify-center gap-2"
-    >
-        <el-dropdown class="inline-block">
-            <button
-                id="theme-button"
-                class="inline-flex w-full justify-center gap-x-1 rounded-md bg-(--color-base) px-1.5 py-1 text-sm font-semibold text-(--color-text) shadow-xs outline-1 hover:bg-(--color-crust)"
-            >
-                Nord
-                <svg
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    data-slot="icon"
-                    aria-hidden="true"
-                    class="-mr-1 size-5 text-gray-400"
-                    ><path
-                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                        clip-rule="evenodd"
-                        fill-rule="evenodd"></path></svg
-                >
-            </button>
+			<el-menu id='theme-options' anchor='bottom end' popover class='w-56 origin-top-right rounded-md bg-(--color-base) shadow-lg outline-1 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in'>
+				<div class='py-1'>
+					<a id='theme-option' href='#' class='block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)'>Base</a>
+					<a id='theme-option' href='#' class='block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)'>Nord</a>
+					<a id='theme-option' href='#' class='block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)'>Dracula</a>
+					<a id='theme-option' href='#' class='block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)'>Tokoyo</a>
+					<a id='theme-option' href='#' class='block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)'>GitHub</a>
+					<a id='theme-option' href='#' class='block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)'>Catppuccin</a>
+				</div>
+			</el-menu>
+		</el-dropdown>
 
-            <el-menu
-                id="theme-options"
-                anchor="bottom end"
-                popover
-                class="w-56 origin-top-right rounded-md bg-(--color-base) shadow-lg outline-1 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
-            >
-                <div class="py-1">
-                    <a
-                        id="theme-option"
-                        href="#"
-                        class="block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)"
-                        >Base</a
-                    >
-                    <a
-                        id="theme-option"
-                        href="#"
-                        class="block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)"
-                        >Jade</a
-                    >
-                    <a
-                        id="theme-option"
-                        href="#"
-                        class="block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)"
-                        >Nord</a
-                    >
-                    <a
-                        id="theme-option"
-                        href="#"
-                        class="block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)"
-                        >Matte</a
-                    >
-                    <a
-                        id="theme-option"
-                        href="#"
-                        class="block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)"
-                        >Tokoyo</a
-                    >
-                    <a
-                        id="theme-option"
-                        href="#"
-                        class="block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-crust)"
-                        >Catppuccin</a
-                    >
-                </div>
-            </el-menu>
-        </el-dropdown>
-
-        <button
-            id="mode-toggle"
-            class="inline-flex items-center rounded-md border p-1 transition-colors dark:hover:bg-(--color-crust) [&_svg]:text-(--color-text) [&_svg]:dark:hover:text-(--color-text)"
-            aria-label="Toggle theme"
-        >
-            <span class="sr-only">Toggle theme</span>
-            <svg
-                id="moon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="size-4 dark:hidden"
-                ><path
-                    d="M14.438 10.148c.19-.425-.321-.787-.748-.601A5.5 5.5 0 0 1 6.453 2.31c.186-.427-.176-.938-.6-.748a6.501 6.501 0 1 0 8.585 8.586Z"
-                ></path></svg
-            >
-            <svg
-                id="sun"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                class="hidden size-4 dark:block"
-                ><path
-                    d="M8 1a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 1ZM10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM12.95 4.11a.75.75 0 1 0-1.06-1.06l-1.062 1.06a.75.75 0 0 0 1.061 1.062l1.06-1.061ZM15 8a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 15 8ZM11.89 12.95a.75.75 0 0 0 1.06-1.06l-1.06-1.062a.75.75 0 0 0-1.062 1.061l1.061 1.06ZM8 12a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 12ZM5.172 11.89a.75.75 0 0 0-1.061-1.062L3.05 11.89a.75.75 0 1 0 1.06 1.06l1.06-1.06ZM4 8a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 4 8ZM4.11 5.172A.75.75 0 0 0 5.173 4.11L4.11 3.05a.75.75 0 1 0-1.06 1.06l1.06 1.06Z"
-                ></path></svg
-            >
-        </button>
-    </section>
+		<button id='mode-toggle' class='inline-flex items-center rounded-md border p-1 transition-colors dark:hover:bg-(--color-crust) [&_svg]:text-(--color-text) [&_svg]:dark:hover:text-(--color-text)' aria-label='Toggle theme'>
+			<span class='sr-only'>Toggle theme</span>
+			<svg id='moon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor' class='size-4 dark:hidden'><path d='M14.438 10.148c.19-.425-.321-.787-.748-.601A5.5 5.5 0 0 1 6.453 2.31c.186-.427-.176-.938-.6-.748a6.501 6.501 0 1 0 8.585 8.586Z'></path></svg>
+			<svg id='sun' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='currentColor' class='hidden size-4 dark:block'><path d='M8 1a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 1ZM10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM12.95 4.11a.75.75 0 1 0-1.06-1.06l-1.062 1.06a.75.75 0 0 0 1.061 1.062l1.06-1.061ZM15 8a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 15 8ZM11.89 12.95a.75.75 0 0 0 1.06-1.06l-1.06-1.062a.75.75 0 0 0-1.062 1.061l1.061 1.06ZM8 12a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 12ZM5.172 11.89a.75.75 0 0 0-1.061-1.062L3.05 11.89a.75.75 0 1 0 1.06 1.06l1.06-1.06ZM4 8a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 4 8ZM4.11 5.172A.75.75 0 0 0 5.173 4.11L4.11 3.05a.75.75 0 1 0-1.06 1.06l1.06 1.06Z'></path></svg>
+		</button>
+	</section>
 </nav>

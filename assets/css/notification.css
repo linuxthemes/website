@@ -1,7 +1,7 @@
 .notification a {
   z-index: 1;
   position: fixed;
-  top:  0;
+  top: 0;
   height: 2rem;
   width: 100%;
   color: var(--color-base-dark);
@@ -13,15 +13,12 @@
   text-decoration: none;
   transition:
     background var(--transition),
-    color var(--transition)
-  ;
+    color var(--transition);
 }
 
-@media(hover: hover) {
-
+@media (hover: hover) {
   .notification a:hover {
     background: var(--color-teal);
     color: var(--color-base-dark);
   }
-
 }

@@ -1,0 +1,36 @@
+/* https://brand.github.com/foundations/color */
+/* https://primer.style/brand/primitives/color/ */
+
+:root {
+  --color-pink: #ff80c8; /* pink.3 */
+  --color-purple: #d8b9ff; /* purple.2 */
+  --color-red: #ff8182; /* red.3 */
+  --color-orange: #ffb77c; /* orange.2 */
+  --color-yellow: #eac54f; /* yellow.2 */
+  --color-green: #6fdd8b; /* green.2 */
+  --color-cyan: #7683ff; /* indigo.4 */
+  --color-blue: #0550ae; /* blue.6 */
+
+  --color-text: #1f1f1f; /* Foreground */
+  --color-subtext: #6e7781; /* gray.5 */
+  --color-overlay: #cfcfde; /* selection */
+  --color-surface: #fffbeb; /* background */
+  --color-base: #ffffff; /* white.0*/
+}
+
+.dark {
+  --color-pink: #f778ba; /* pink.3 */
+  --color-purple: #bc8cff; /* purple.3 */
+  --color-red: #ff7b72; /* red.3 */
+  --color-orange: #f0883e; /* orange.3 */
+  --color-yellow: #e3b341; /* yellow.2 */
+  --color-green: #56d364; /* green.2 */
+  --color-cyan: #939aff; /* indigo.3 */
+  --color-blue: #1158c7; /* blue.6 */
+
+  --color-text: #ffffff; /* gray.8 */
+  --color-subtext: #6e7681; /* gray.4 */
+  --color-overlay: #c9d1d9; /* gray.1 */
+  --color-surface: #f0f6fc; /* gray.0 */
+  --color-base: #1f2328; /* black.0*/
+}
