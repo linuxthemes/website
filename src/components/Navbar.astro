@@ -1,59 +1,74 @@
 ---
-import '../styles/global.css'
+import '../styles/global.css';
 ---
 
+	<script>
+		let theme = localStorage.getItem('theme');
+		if (theme == 'dark') document.documentElement.setAttribute('data-theme', 'catppuccin-macchio');
+		if (theme == 'light') document.documentElement.setAttribute('data-theme', 'catppuccin-latte');
+	</script>
+
+
 <script>
-	function toggleMode() {
+	function addModeToggle() {
 		document.getElementById('mode-toggle')?.addEventListener('click', () => {
-			document.documentElement.classList.toggle('dark')
-    
-      const currentTheme = document.documentElement.getAttribute('data-theme'); 
-            if (currentTheme == 'catppuccin-latte') document.documentElement.setAttribute('data-theme', 'catppuccin-macchiato');  
-      if (currentTheme == 'catppuccin-macchiato') document.documentElement.setAttribute('data-theme', 'catppuccin-latte');  
+        if (document.documentElement.classList.contains("dark")) 
+        {
+            document.documentElement.classList.toggle("dark");
 
-        })
-	}
+        }
+        
+        else 
+        {
 
-	function toggleTheme() {
-		const options = document.querySelectorAll('#theme-option')
-		options.forEach(function (element) {
-			element.addEventListener('click', function () {
-				document.getElementById('theme')?.setAttribute('href', `/src/themes/${element.textContent.toLowerCase()}.css`)
-				const themeButton = document.getElementById('theme-button')
-				if (themeButton) {
-					themeButton.textContent = element.textContent
-				}
-                            
+            document.documentElement.classList.add("dark");
+        
+        
+        
+        }
+	                            
 			const currentTheme = document.documentElement.getAttribute('data-theme')
       if (currentTheme == 'catppuccin-latte') document.documentElement.setAttribute('data-theme', 'catppuccin-macchiato');  
       if (currentTheme == 'catppuccin-macchiato') document.documentElement.setAttribute('data-theme', 'catppuccin-latte');  
-
-			})
-		})
+	
+    
+    });
 	}
 
-	function transitionBackground() {
+	function addThemeToggle() {
+		const options = document.querySelectorAll('#theme-option');
+		options.forEach(element => {
+			element.addEventListener('click', () => {
+                const themeButton = document.getElementById('theme-button');
+				if (themeButton) themeButton.textContent = element.textContent;
+
+                document.getElementById('theme')?.setAttribute('href', `/src/themes/${element.textContent.toLowerCase()}.css`);
+			});
+		});
+	}
+
+	function addBackgroundTransition() {
 		window.addEventListener('scroll', () => {
-			const navbar = document.getElementById('navbar')
-			const search = document.getElementById('search')
+			const navbar = document.getElementById('navbar');
+			const search = document.getElementById('search');
 			if (window.scrollY > 50) {
-				search?.classList.remove('hidden')
-				navbar?.classList.add('bg-(--color-base)')
+				search?.classList.remove('hidden');
+				navbar?.classList.add('bg-(--color-base)');
 			} else {
-				search?.classList.add('hidden')
-				navbar?.classList.remove('bg-(--color-base)')
+				search?.classList.add('hidden');
+				navbar?.classList.remove('bg-(--color-base)');
 			}
-		})
+		});
 	}
 
-	toggleMode()
-	toggleTheme()
-	transitionBackground()
+	addModeToggle();
+	addThemeToggle();
+	addBackgroundTransition();
 </script>
 
 <nav id='navbar' class='sticky top-10 z-1 flex justify-between p-4 text-(--color-text)'>
 	<div class='align-center flex flex-row justify-center'>
-		<a href='/'><img class='h-6 w-6' src='/src/assets/linuxthemes.png' /></a>
+		<a href='/'><img class='h-6 w-6' src='/linuxthemes.png' /></a>
 		<a href='/' class='pl-2'>Themes</a>
 	</div>
 

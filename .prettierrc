@@ -6,10 +6,10 @@
       "options": {
         "parser": "astro",
         "printWidth": 42069,
-        "bracketSameLine": true,
+        "bracketSameLine": false,
         "tabWidth": 4,
         "useTabs": true,
-        "semi": false,
+        "semi": true,
         "singleQuote": true,
         "jsxSingleQuote": true,
         "trailingComma": "all",
