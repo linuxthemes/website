@@ -55,7 +55,7 @@ import Banner from '../components/Banner.astro';
 			element.addEventListener('click', () => {
 				const themeButton = document.getElementById('theme-button');
 				if (themeButton) themeButton.textContent = element.textContent;
-				document.getElementById('theme')?.setAttribute('href', `styles/${element.textContent.toLowerCase()}.css`);
+				document.getElementById('theme')?.setAttribute('href', `/styles/${element.textContent.toLowerCase()}.css`);
 			});
 		});
 	}
