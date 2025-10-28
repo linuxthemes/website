@@ -63,7 +63,12 @@ const { program } = Astro.props
 							{
 								files.map(file => (
 									<div id={file.file} class='tabcontent'>
-										<Code code={file.fileContents} lang='js' />
+
+
+                                        {file.fileContents &&
+                                         
+										(<Code code={file.fileContents} lang='js' />)
+                                        }
 									</div>
 								))
 							}
