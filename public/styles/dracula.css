@@ -10,9 +10,9 @@
   --color-blue: #036a96; /* Using foreground as a substitute for blue if needed */
 
   --color-text: #1f1f1f;
-  --color-subtext: #6c664b;
+  --color-subtext: #282a36;
   --color-overlay: #cfcfde;
-  --color-surface: #fffbeb;
+  --color-surface: #6272A4;
   --color-base: #fffbeb; /* Assuming surface as base, adjust if needed */
 }
 

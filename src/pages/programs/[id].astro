@@ -54,7 +54,7 @@ const { program } = Astro.props;
 
 					<filepreview class='flex flex-col rounded shadow-2xl outline-2 outline-(--color-cyan)'>
 						<div id='tab' class='tab rounded-top-md bg-(--color-surface)'>
-							{files.map(file => <button class='tablinks cursor-pointer px-4 py-3.5 text-(--color-text) transition duration-300 hover:bg-(--color-cyan) hover:text-(--color-text)'>{file.file}</button>)}
+							{files.map(file => <button class='tablinks cursor-pointer px-4 py-3.5 text-(--color-text) hover:text-(--color-base) transition duration-300 hover:bg-(--color-cyan) '>{file.file}</button>)}
 						</div>
 
 						<div id='tabcontent'>
