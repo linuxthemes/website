@@ -12,7 +12,7 @@ import Banner from '../components/Banner.astro';
 
 		<title>Linux Themes</title>
 
-		<link rel='icon' type='image/svg+xml' href='/favicon.ico' />
+		<link rel='icon' type='image/svg+xml' href='website/favicon.ico' />
 		<meta name='generator' content={Astro.generator} />
 
 		<meta charset='utf-8' />
@@ -36,7 +36,7 @@ import Banner from '../components/Banner.astro';
 		<link rel='icon' href='assets/linuxthemes.png' />
 
 		<!-- theme sheet -->
-		<link id='theme' rel='stylesheet' href='styles/base.css' />
+		<link id='theme' rel='stylesheet' href='website/styles/base.css' />
 
 		<script src='https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1' type='module'></script>
 	</head>
@@ -55,7 +55,7 @@ import Banner from '../components/Banner.astro';
 			element.addEventListener('click', () => {
 				const themeButton = document.getElementById('theme-button');
 				if (themeButton) themeButton.textContent = element.textContent;
-				document.getElementById('theme')?.setAttribute('href', `styles/${element.textContent.toLowerCase()}.css`);
+				document.getElementById('theme')?.setAttribute('href', `website/styles/${element.textContent.toLowerCase()}.css`);
 			});
 		});
 	}
