@@ -76,14 +76,14 @@ import '../styles/global.css';
 <nav id='navbar' class='sticky top-10 z-1 flex justify-between p-2 pr-4 pl-4 text-(--color-text)'>
 	<div class='align-center align-center flex flex-row justify-center'>
 		<a href='/' class='flex items-center rounded-md p-2'><img class='h-6 w-6' src='/linuxthemes.png' /></a>
-		<a href='/' class='flex items-center rounded-md p-2'>Themes</a>
+		<a href='/' tabindex="-1" class='flex items-center rounded-md p-2'>Themes</a>
 	</div>
 
 	<input id='search' class='fg-(--color-text) hidden w-75 rounded-sm border bg-(--color-base) p-2 text-sm max-[400px]:hidden max-[400px]:w-30' type='search' name='query' id='search-query' placeholder='Search' />
 
-	<section id='theme-container' class='flex flex-row items-center justify-center gap-2'>
+	<section  id='theme-container' class='flex flex-row items-center justify-center gap-2'>
 		<el-dropdown class='inline-block'>
-			<button class='inline-flex w-full justify-center gap-x-1 rounded-md border bg-(--color-base) px-1.5 py-1 text-sm font-semibold text-(--color-text) shadow-xs hover:bg-(--color-crust)'>
+			<button autofocus class='inline-flex w-full justify-center  gap-x-1 rounded-md border bg-(--color-base) px-1.5 py-1 text-sm font-semibold text-(--color-text) shadow-xs hover:bg-(--color-crust)'>
 				<p id='theme-button'>Base</p>
 				<svg viewBox='0 0 20 20' fill='currentColor' data-slot='icon' aria-hidden='true' class='-mr-1 size-5 text-gray-400'><path d='M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z' clip-rule='evenodd' fill-rule='evenodd'></path></svg>
 			</button>
