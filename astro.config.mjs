@@ -9,7 +9,7 @@ import mdx from "@astrojs/mdx";
 
 export default defineConfig({
     site: 'https://linuxthemes.org',
-    base: '/website',
+    base: '/',
     integrations: [expressiveCode({
         themes: [
             // 'dark-plus', 'light-plus',

@@ -13,13 +13,13 @@ const cardsContainer = document.getElementById('cardsContainer')
 <card class="p-4 max-w-sm">
     <div class="flex rounded-lg h-full transition duration-300 bg-(--color-surface) text-(--color-text) p-8 flex-col">
         <div class="flex items-center mb-3">
-            <img class="w-[32px] h-[32px]" src="/website/${card.icon}" />
+            <img class="w-[32px] h-[32px]" src="/${card.icon}" />
             <h2 class="pl-2 text-lg font-medium">${card.id}</h2>
         </div>
 
         <div class="flex flex-col justify-between flex-grow">
             <p class="leading-relaxed text-(--color-subtext)">${card.description}</p>
-            <a href="website/programs/${card.id}" class="mt-3 text-(--color-text) hover:text-(--color-green) inline-flex items-center">Learn More
+            <a href="programs/${card.id}" class="mt-3 text-(--color-text) hover:text-(--color-green) inline-flex items-center">Learn More
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg>
             </a>
         </div>
