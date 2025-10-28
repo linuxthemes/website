@@ -2,47 +2,61 @@
 import '../styles/global.css';
 ---
 
-	<script>
-		let theme = localStorage.getItem('theme');
-		if (theme == 'dark') document.documentElement.setAttribute('data-theme', 'catppuccin-macchio');
-		if (theme == 'light') document.documentElement.setAttribute('data-theme', 'catppuccin-latte');
-	</script>
-
+<script></script>
 
 <script>
+
+    function setMode(mode: string) {
+		switch (mode) {
+			case 'dark':
+				document.documentElement.classList.add('dark');
+				document.documentElement.setAttribute('data-theme', 'github-dark');
+				break;
+
+			case 'light':
+				document.documentElement.classList.remove('dark');
+				document.documentElement.setAttribute('data-theme', 'github-light');
+				break;
+
+			default:
+				document.documentElement.classList.remove('dark');
+				document.documentElement.setAttribute('data-theme', 'github-light');
+				break;
+		}
+	}
+
+	function getPreferredMode() {
+		if (window.matchMedia) {
+			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				return 'dark';
+			} else {
+				return 'light';
+			}
+		}
+		return 'light';
+	}
+
+	function updateMode() {
+		setMode(getPreferredMode());
+	}
+
 	function addModeToggle() {
 		document.getElementById('mode-toggle')?.addEventListener('click', () => {
-        if (document.documentElement.classList.contains("dark")) 
-        {
-            document.documentElement.classList.toggle("dark");
-
-        }
-        
-        else 
-        {
-
-            document.documentElement.classList.add("dark");
-        
-        
-        
-        }
-	                            
-			const currentTheme = document.documentElement.getAttribute('data-theme')
-      if (currentTheme == 'catppuccin-latte') document.documentElement.setAttribute('data-theme', 'catppuccin-macchiato');  
-      if (currentTheme == 'catppuccin-macchiato') document.documentElement.setAttribute('data-theme', 'catppuccin-latte');  
-	
-    
-    });
+			if (document.documentElement.classList.contains('dark')) {
+				setMode('light');
+			} else {
+				setMode('dark');
+			}
+		});
 	}
 
 	function addThemeToggle() {
 		const options = document.querySelectorAll('#theme-option');
 		options.forEach(element => {
 			element.addEventListener('click', () => {
-                const themeButton = document.getElementById('theme-button');
+				const themeButton = document.getElementById('theme-button');
 				if (themeButton) themeButton.textContent = element.textContent;
-
-                document.getElementById('theme')?.setAttribute('href', `/src/themes/${element.textContent.toLowerCase()}.css`);
+				document.getElementById('theme')?.setAttribute('href', `/src/themes/${element.textContent.toLowerCase()}.css`);
 			});
 		});
 	}
@@ -61,6 +75,12 @@ import '../styles/global.css';
 		});
 	}
 
+
+	if (window.matchMedia) {
+		var colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+		colorSchemeQuery.addEventListener('change', updateMode);
+	}
+	updateMode();
 	addModeToggle();
 	addThemeToggle();
 	addBackgroundTransition();

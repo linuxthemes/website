@@ -8,15 +8,15 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 
 export default defineConfig({
- 
-   site: 'https://linuxthemes.org',
+    site: 'https://linuxthemes.org',
     integrations: [expressiveCode({
-      themes: ['catppuccin-macchiato', 'catppuccin-latte'],
-    //   themeCssSelector: (theme) => `[data-theme='${theme.name}']`,
-    // plugins: [pluginLineNumbers()],
-  }), mdx()],
-  vite: {
-    plugins: [tailwindcss()],
-  },
-  
+        themes: [
+            // 'dark-plus', 'light-plus',
+            'github-dark', 'github-light'
+        ],
+        // plugins: [pluginLineNumbers()],
+    }), mdx()],
+    vite: {
+        plugins: [tailwindcss()],
+    },
 });
