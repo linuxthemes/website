@@ -2,8 +2,6 @@
 import '../styles/global.css';
 ---
 
-<script></script>
-
 <script>
 
     function setMode(mode: string) {
@@ -50,16 +48,6 @@ import '../styles/global.css';
 		});
 	}
 
-	function addThemeToggle() {
-		const options = document.querySelectorAll('#theme-option');
-		options.forEach(element => {
-			element.addEventListener('click', () => {
-				const themeButton = document.getElementById('theme-button');
-				if (themeButton) themeButton.textContent = element.textContent;
-				document.getElementById('theme')?.setAttribute('href', `themes/${element.textContent.toLowerCase()}.css`);
-			});
-		});
-	}
 
 	function addBackgroundTransition() {
 		window.addEventListener('scroll', () => {
@@ -82,7 +70,6 @@ import '../styles/global.css';
 	}
 	updateMode();
 	addModeToggle();
-	addThemeToggle();
 	addBackgroundTransition();
 </script>
 

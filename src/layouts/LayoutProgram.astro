@@ -36,7 +36,7 @@ import Banner from '../components/Banner.astro';
 		<link rel='icon' href='assets/linuxthemes.png' />
 
 		<!-- theme sheet -->
-		<link id='theme' rel='stylesheet' href='styles/base.css' />
+		<link id='theme' rel='stylesheet' href='../styles/base.css' />
 
 		<script src='https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1' type='module'></script>
 	</head>
@@ -47,7 +47,6 @@ import Banner from '../components/Banner.astro';
 	<body class='bg-(--color-base) font-semibold'>
 		<slot />
 	</body>
-
     <script>
             	function addThemeToggle() {
 		const options = document.querySelectorAll('#theme-option');
@@ -55,11 +54,13 @@ import Banner from '../components/Banner.astro';
 			element.addEventListener('click', () => {
 				const themeButton = document.getElementById('theme-button');
 				if (themeButton) themeButton.textContent = element.textContent;
-				document.getElementById('theme')?.setAttribute('href', `styles/${element.textContent.toLowerCase()}.css`);
+				document.getElementById('theme')?.setAttribute('href', `../styles/${element.textContent.toLowerCase()}.css`);
 			});
 		});
 	}
 
 	addThemeToggle();
     </script>
+
+    
 </html>
