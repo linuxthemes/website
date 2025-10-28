@@ -1,44 +1,49 @@
 ---
+import { programData } from '../data.js';
 ---
 
 <h2 class='mt-16 w-full text-center text-2xl text-(--color-text) lg:mt-48 xl:mt-0'>Supported Programs</h2>
-<div id='cardsContainer' class='mt-10 m-4 flex flex-wrap justify-center pb-16'></div>
+<section id='cardsContainer' class='m-4 mt-10 flex flex-wrap justify-center pb-16'>
+	{
+		programData.map(program => {
+			return (
+				<card class='max-w-sm p-4'>
+					<div class='flex h-full flex-col rounded-lg bg-(--color-surface) p-8 text-(--color-text) shadow-xl transition duration-300'>
+						<div class='mb-3 flex items-center'>
+							<img class='h-8 w-8' src={`/${program.icon}`} />
+							<h2 class='pl-2 text-lg font-medium'>{program.id}</h2>
+						</div>
+
+						<div class='flex grow flex-col justify-between'>
+							<p class='leading-relaxed text-(--color-subtext)'>{program.description}</p>
+							<a href={`programs/${program.id}`} class='mt-3 inline-flex items-center text-(--color-text) hover:text-(--color-green)'>
+								Learn More
+								<svg fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' class='ml-2 h-4 w-4' viewBox='0 0 24 24'>
+									<path d='M5 12h14M12 5l7 7-7 7' />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</card>
+			);
+		})
+	}
+</section>
 
 <script>
-import { programData } from '../data.js';
+	const cardsContainer = document.getElementById('cardsContainer');
+	const searchInput = document.getElementById('search') as HTMLInputElement;
 
-const cardsContainer = document.getElementById('cardsContainer')
-	programData.forEach(card => {
-		const innerHTML = `
-<card class="p-4 max-w-sm ">
-    <div class="flex rounded-lg shadow-xl h-full transition duration-300 bg-(--color-surface) text-(--color-text) p-8 flex-col">
-        <div class="flex items-center mb-3">
-            <img class="w-[32px] h-[32px]" src="/${card.icon}" />
-            <h2 class="pl-2 text-lg font-medium">${card.id}</h2>
-        </div>
-
-        <div class="flex flex-col justify-between flex-grow">
-            <p class="leading-relaxed text-(--color-subtext)">${card.description}</p>
-            <a href="programs/${card.id}" class="mt-3 text-(--color-text) hover:text-(--color-green) inline-flex items-center">Learn More
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24"> <path d="M5 12h14M12 5l7 7-7 7"></path> </svg>
-            </a>
-        </div>
-    </div>
-</card>
-`
-		cardsContainer?.insertAdjacentHTML('beforeend', innerHTML)
-	})
-	const searchInput = document.getElementById('search') as HTMLInputElement
 	searchInput.addEventListener('input', () => {
-		const filter = searchInput.value.toLowerCase()
-		const cards = cardsContainer?.getElementsByTagName('card') as HTMLCollectionOf<Element>
+		const filter = searchInput.value.toLowerCase();
+		const cards = cardsContainer?.getElementsByTagName('card') as HTMLCollectionOf<Element>;
 		Array.from(cards).forEach(card => {
-			const text = card.textContent.toLowerCase()
+			const text = card.textContent.toLowerCase();
 			if (text.includes(filter)) {
-				card.classList.remove('hidden')
+				card.classList.remove('hidden');
 			} else {
-				card.classList.add('hidden')
+				card.classList.add('hidden');
 			}
-		})
-	})
+		});
+	});
 </script>

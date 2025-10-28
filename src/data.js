@@ -1,10 +1,60 @@
-export var programData = [
+export const themesData = [
+    {
+        id: "city",
+        icon: "",
+        description: "",
+    },
+    {
+        id: "border",
+        icon: "",
+        description: "",
+    },
+    {
+        id: "fleX",
+        icon: "",
+        description: "",
+    },
+    {
+        id: "adwaita",
+        icon: "",
+        description: "",
+    },
+]
+
+export const iconData = [
+    {
+        id: "winSur",
+        icon: "",
+        description: "",
+    },
+    {
+        id: "macOs",
+        icon: "",
+        description: "",
+    },
+    {
+        id: "win10x",
+        icon: "",
+        description: "",
+    },        {
+        id: "win11x",
+        icon: "",
+        description: "",
+    },
+    {
+        id: "morewaita",
+        icon: "",
+        description: "",
+    },
+]
+
+export const programData = [
     {
         id: "kde",
         icon: "kde.svg",
         fileArray: ["CONTRIBUTING.md",],
         description: "KDE Plasma is a graphical shell developed by the KDE community for Unix-like operating systems."
-    },    
+    },
     {
         id: "gnome",
         icon: "gnome.svg",
@@ -18,10 +68,10 @@ export var programData = [
         description: "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks."
     },
     {
-        id: "xfce",  
+        id: "xfce",
         icon: "xfce.svg",
         fileArray: ["CONTRIBUTING.md"],
-        description: "Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.", 
+        description: "Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.",
     },
     // { 
     //     id: "waybar",
@@ -47,13 +97,13 @@ export var programData = [
         fileArray: [".config/Code/User/settings.json", ".config/Code/User/keybindings.json"],
         description: "Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux, macOS and web browsers."
     },
-    { 
+    {
         id: "bash",
         icon: "bash.svg",
         fileArray: [".bashrc"],
         description: "Bash is a free software shell that supports command-line editing, job control, shell functions, arrays, and more. It is compatible with sh and conforms to the POSIX standard."
     },
-    { 
+    {
         id: "eza",
         icon: "shell.svg",
         fileArray: [".config/eza/theme.yml"],
@@ -65,13 +115,13 @@ export var programData = [
         fileArray: [".config/ghostty/config"],
         description: "Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration."
     },
-    { 
+    {
         id: "kitty",
         icon: "shell.svg",
         fileArray: ["CONTRIBUTING.md"],
         description: "kitty is a fast, feature-rich, and cross-platform terminal emulator that uses GPU and SIMD vector CPU instructions for best performance. It supports graphics, ligatures, hyperlinks, scripting, kittens, and more."
     },
-    { 
+    {
         id: "alacritty",
         icon: "shell.svg",
         fileArray: ["CONTRIBUTING.md"],
