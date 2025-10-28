@@ -5,7 +5,7 @@ import Banner from '../components/Banner.astro';
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang='en' class='bg-(--color-base)'>
 	<head>
 		<title>Linux Themes</title>
 
@@ -38,7 +38,7 @@ import Banner from '../components/Banner.astro';
 	<Banner />
 	<Navbar />
 
-	<body class='bg-(--color-base)'>
+	<body>
 		<slot />
 	</body>
 
@@ -52,4 +52,5 @@ import Banner from '../components/Banner.astro';
 			});
 		});
 	</script>
+
 </html>

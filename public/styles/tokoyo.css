@@ -1,19 +1,19 @@
 /* https://github.com/tokyo-night/tokyo-night-vscode-theme */
 :root {
-  /* Tokyo Night Light */
+  /* Tokyo Light */
   --color-pink: #8c4351; /* This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red */
   --color-purple: #d2a8ff; /* Control Keywords, Storage Types, Regex symbols and operators, HTML Attributes, Terminal Magenta */
   --color-red: #965027; /* This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red */
   --color-orange: #8f5e15; /* Function parameters, Regex character sets, Terminal Yellow */
   --color-yellow: #e3b341; /* Function parameters, Regex character sets, Terminal Yellow */
   --color-green: #33635c; /* Object literal keys, Markdown links, Regex literal strings, Terminal Green */
-  --color-cyan: #006c86; /* Language support functions, CSS HTML elements */
+  --color-cyan: #b4f9f8 ; /* Language support functions, CSS HTML elements */
   --color-blue: #2959aa; /* Function names, CSS property names, Markdown Headings, Terminal Blue */
 
   --color-text: #343b58; /* Editor Foreground */
   --color-subtext: #343b58; /* Comments */
-  --color-overlay: #3b4252; /* Editor Background (Storm) */
-  --color-surface: #2e3440; /* Editor Background (Storm) */
+  --color-overlay: #9aa5ce ; /* Editor Background (Storm) */
+  --color-surface: #a9b1d6 ; /* Editor Background (Storm) */
   --color-base: #e6e7ed; /* Editor Background (Night) */
 }
 

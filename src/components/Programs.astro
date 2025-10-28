@@ -2,7 +2,7 @@
 ---
 
 <h2 class='mt-16 w-full text-center text-2xl text-(--color-text) lg:mt-48 xl:mt-0'>Supported Programs</h2>
-<div id='cardsContainer' class='mt-10 flex flex-wrap justify-center pb-16'></div>
+<div id='cardsContainer' class='mt-10 m-4 flex flex-wrap justify-center pb-16'></div>
 
 <script>
 import { programData } from '../data.js';
@@ -10,8 +10,8 @@ import { programData } from '../data.js';
 const cardsContainer = document.getElementById('cardsContainer')
 	programData.forEach(card => {
 		const innerHTML = `
-<card class="p-4 max-w-sm">
-    <div class="flex rounded-lg h-full transition duration-300 bg-(--color-surface) text-(--color-text) p-8 flex-col">
+<card class="p-4 max-w-sm ">
+    <div class="flex rounded-lg shadow-xl h-full transition duration-300 bg-(--color-surface) text-(--color-text) p-8 flex-col">
         <div class="flex items-center mb-3">
             <img class="w-[32px] h-[32px]" src="/${card.icon}" />
             <h2 class="pl-2 text-lg font-medium">${card.id}</h2>

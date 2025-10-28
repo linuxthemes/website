@@ -14,7 +14,7 @@
   --color-text: #1f1f1f; /* Foreground */
   --color-subtext: #6e7781; /* gray.5 */
   --color-overlay: #cfcfde; /* selection */
-  --color-surface: #fffbeb; /* background */
+  --color-surface: #eaeef2; /* gray.1 */
   --color-base: #ffffff; /* white.0*/
 }
 
@@ -31,6 +31,6 @@
   --color-text: #ffffff; /* gray.8 */
   --color-subtext: #6e7681; /* gray.4 */
   --color-overlay: #c9d1d9; /* gray.1 */
-  --color-surface: #f0f6fc; /* gray.0 */
-  --color-base: #1f2328; /* black.0*/
+  --color-surface: #24292f; /* gray.9 */
+  --color-base: #1f2328; /* black.1*/
 }
