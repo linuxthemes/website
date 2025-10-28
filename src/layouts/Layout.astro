@@ -5,11 +5,8 @@ import Banner from '../components/Banner.astro';
 ---
 
 <!doctype html>
-<html lang='en' >
+<html lang='en'>
 	<head>
-		<link rel='stylesheet' href='https://unpkg.com/flickity@2/dist/flickity.min.css' />
-		<script src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js'></script>
-
 		<title>Linux Themes</title>
 
 		<link rel='icon' type='image/svg+xml' href='/favicon.ico' />
@@ -18,26 +15,26 @@ import Banner from '../components/Banner.astro';
 		<meta charset='utf-8' />
 		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 		<!-- <meta name="viewport" content="initial-scale=1, width=device-width" /> -->
-		<meta name='description' content='Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command.' />
+		<meta name='description' content='Turn any Linux installation into a fully-configured, beautiful, and modern system by running a single command.' />
 
 		<meta property='og:site_name' content='Linux Themes' />
 		<meta property='og:title' content='Linux Themes' />
-		<meta property='og:description' content='Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command.' />
+		<meta property='og:description' content='Turn any Linux installation into a fully-configured, beautiful, and modern system by running a single command.' />
 		<!-- <meta property="og:image" content="https://linuxthemes.org/assets/opengraph.png"> -->
 		<!-- <meta property="og:url" content="https://linuxthemes.org"> -->
 		<meta property='og:type' content='website' />
 
 		<meta name='twitter:title' content='Linux Themes' />
-		<meta name='twitter:description' content='Turn a fresh Linux installation into a fully-configured, beautiful, and modern system by running a single command.' />
+		<meta name='twitter:description' content='Turn any Linux installation into a fully-configured, beautiful, and modern system by running a single command.' />
 		<!-- <meta name="twitter:image" content="https://linuxthemes.org/assets/opengraph.png"> -->
 		<meta name='twitter:image:alt' content='Linux Themes' />
 		<meta name='twitter:card' content='summary_large_image' />
 
-		<link rel='icon' href='assets/linuxthemes.png' />
-
 		<!-- theme sheet -->
 		<link id='theme' rel='stylesheet' href='/styles/base.css' />
+		<link rel='stylesheet' href='https://unpkg.com/flickity@2/dist/flickity.min.css' />
 
+		<script src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js'></script>
 		<script src='https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1' type='module'></script>
 	</head>
 
@@ -48,8 +45,7 @@ import Banner from '../components/Banner.astro';
 		<slot />
 	</body>
 
-    <script>
-            	function addThemeToggle() {
+	<script>
 		const options = document.querySelectorAll('#theme-option');
 		options.forEach(element => {
 			element.addEventListener('click', () => {
@@ -58,8 +54,5 @@ import Banner from '../components/Banner.astro';
 				document.getElementById('theme')?.setAttribute('href', `/styles/${element.textContent.toLowerCase()}.css`);
 			});
 		});
-	}
-
-	addThemeToggle();
-    </script>
+	</script>
 </html>
