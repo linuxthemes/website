@@ -1,0 +1,36 @@
+/* https://github.com/tokyo-night/tokyo-night-vscode-theme */
+:root {
+  /* Tokyo Night Light */
+  --color-pink: #8c4351; /* This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red */
+  --color-purple: #d2a8ff; /* Control Keywords, Storage Types, Regex symbols and operators, HTML Attributes, Terminal Magenta */
+  --color-red: #965027; /* This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red */
+  --color-orange: #8f5e15; /* Function parameters, Regex character sets, Terminal Yellow */
+  --color-yellow: #e3b341; /* Function parameters, Regex character sets, Terminal Yellow */
+  --color-green: #33635c; /* Object literal keys, Markdown links, Regex literal strings, Terminal Green */
+  --color-cyan: #006c86; /* Language support functions, CSS HTML elements */
+  --color-blue: #2959aa; /* Function names, CSS property names, Markdown Headings, Terminal Blue */
+
+  --color-text: #343b58; /* Editor Foreground */
+  --color-subtext: #343b58; /* Comments */
+  --color-overlay: #3b4252; /* Editor Background (Storm) */
+  --color-surface: #2e3440; /* Editor Background (Storm) */
+  --color-base: #e6e7ed; /* Editor Background (Night) */
+}
+
+.dark {
+  /* Tokyo Night */
+  --color-pink: #f7768e; /* This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red */
+  --color-purple: #bb9af7; /* Control Keywords, Storage Types, Regex symbols and operators, HTML Attributes, Terminal Magenta */
+  --color-red: #bf616a; /* This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red */
+  --color-orange: #ff9e64; /* Number and Boolean constants, Language support constants */
+  --color-yellow: #e0af68; /* Function parameters, Regex character sets, Terminal Yellow */
+  --color-green: #73daca; /* Object literal keys, Markdown links, Terminal Green */
+  --color-cyan: #2ac3de; /* Language support functions, CSS HTML elements */
+  --color-blue: #7aa2f7; /* Function names, CSS property names, Terminal Blue */
+
+  --color-text: #cfc9c2; /* Parameters inside functions (semantic highlighting only) */
+  --color-subtext: #414868; /* Comments */
+  --color-overlay: #4c566a; /* Editor Background (Storm) */
+  --color-surface: #24283b; /* Editor Background (Storm) */
+  --color-base: #1a1b26; /* Editor Background (Night) */
+}

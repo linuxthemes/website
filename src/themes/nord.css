@@ -1,0 +1,34 @@
+/* https://www.nordtheme.com/docs/colors-and-palettes */
+:root {
+  --color-pink: #bf616a; /* nord11 */
+  --color-purple: #b48ead; /* nord15 */
+  --color-red: #bf616a; /* nord11 */
+  --color-orange: #d08770; /* nord12 */
+  --color-yellow: #ebcb8b; /* nord13 */
+  --color-green: #a3be8c; /* nord14 */
+  --color-cyan: #88c0d0; /* nord8 */
+  --color-blue: #5e81ac; /* nord10 */
+
+  --color-text: #2e3440; /* nord0 */
+  --color-subtext: #4c566a; /* nord3 */
+  --color-overlay: #eceff4; /* nord6 */
+  --color-surface: #e5e9f0; /* nord5 */
+  --color-base: #eceff4; /* nord6 */
+}
+
+.dark {
+  --color-pink: #bf616a; /* nord11 */
+  --color-purple: #b48ead; /* nord15 */
+  --color-red: #bf616a; /* nord11 */
+  --color-orange: #d08770; /* nord12 */
+  --color-yellow: #ebcb8b; /* nord13 */
+  --color-green: #a3be8c; /* nord14 */
+  --color-cyan: #88c0d0; /* nord8 */
+  --color-blue: #5e81ac; /* nord10 */
+
+  --color-text: #d8dee9; /* nord4 */
+  --color-subtext: #434c5e; /* nord2 */
+  --color-overlay: #3b4252; /* nord1 */
+  --color-surface: #2e3440; /* nord0 */
+  --color-base: #2e3440; /* nord0 */
+}
