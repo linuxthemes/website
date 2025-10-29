@@ -70,10 +70,10 @@ import '../styles/global.css';
 	});
 </script>
 
-<nav id='navbar' class='sticky top-10 z-1 flex justify-between rounded-b-md p-2 pr-4 pl-4 text-(--color-text)'>
-	<div class='align-center align-center flex flex-row justify-center'>
+<nav id='navbar' class='sticky max-[]:top-15 top-10 z-1000 flex justify-between rounded-b-md p-2 pr-4 pl-4 text-(--color-text)'>
+	<div class='flex flex-row place-items-center'>
 		<a href='/' class='flex items-center rounded-md p-2 shadow-xl'><img class='h-6 w-6' src='/linuxthemes.png' /></a>
-		<a href='/' tabindex='-1' class='flex items-center rounded-md p-2'>Themes</a>
+		<a href='/' tabindex='-1' class='flex place-items-center rounded-md p-2'>Themes</a>
 	</div>
 
 	<input id='search' class='fg-(--color-text) hidden w-75 rounded-sm border bg-(--color-base) p-2 text-sm max-[400px]:hidden max-[400px]:w-30' type='search' name='query' id='search-query' placeholder='Search' />

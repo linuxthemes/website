@@ -2,13 +2,13 @@
 import { programData } from '../data.js';
 ---
 
-<h2 class='mt-16 w-full text-center text-2xl text-(--color-text) lg:mt-48 xl:mt-0'>Supported Programs</h2>
-<section id='cardsContainer' class='m-4 mt-10 flex flex-wrap justify-center pb-16'>
+<h2 class='p-4 w-full text-center text-2xl text-(--color-text)'>Supported Programs</h2>
+<section id='cardsContainer' class='flex flex-wrap justify-center xl:m-16'>
 	{
 		programData.map(program => {
 			return (
-				<card class='max-w-sm p-4'>
-					<div class='flex h-full flex-col rounded-lg bg-(--color-surface) p-8 text-(--color-text) shadow-xl transition duration-300'>
+				<card class='p-8 md:w-15/32 xl:w-1/4'>
+					<div class='flex h-fit flex-col rounded-lg bg-(--color-surface) p-8 text-(--color-text) shadow-xl transition duration-300'>
 						<div class='mb-3 flex items-center'>
 							<img class='h-8 w-8' src={`/${program.icon}`} />
 							<h2 class='pl-2 text-lg font-medium'>{program.id}</h2>
@@ -17,7 +17,7 @@ import { programData } from '../data.js';
 						<div class='flex grow flex-col justify-between'>
 							<p class='leading-relaxed text-(--color-subtext)'>{program.description}</p>
 							<a href={`programs/${program.id}`} class='mt-3 inline-flex items-center text-(--color-text) hover:text-(--color-green)'>
-								Learn More
+								Configuration
 								<svg fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' class='ml-2 h-4 w-4' viewBox='0 0 24 24'>
 									<path d='M5 12h14M12 5l7 7-7 7' />
 								</svg>

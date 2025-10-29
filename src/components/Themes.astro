@@ -2,26 +2,24 @@
 import { themesData } from '../data';
 ---
 
-<section class='pb-32 text-(--color-text)'>
-	<h2 class='mt-16 w-full text-center text-2xl text-(--color-text) lg:mt-48 xl:mt-0'>Available Window .themes</h2>
-	<ul class='m-4 mt-16 flex flex-col items-center gap-4'>
-		{
-			themesData.map(theme => {
-				return (
-					<li class='flex w-[60%] flex-row justify-between rounded bg-(--color-surface) p-4 shadow-xl'>
-						{theme.id}
-						<div>
-							<a href='' class='hover:text-(--color-green)'>
-								Preview
-							</a>
-							|
-							<a href='' class='hover:text-(--color-green)'>
-								Package Details
-							</a>
-						</div>
-					</li>
-				);
-			})
-		}
-	</ul>
-</section>
+<h2 class=' w-full p-4 text-center text-2xl text-(--color-text)'>Available Window .themes</h2>
+<ul class=' w-full p-4 flex flex-col items-center gap-4'>
+	{
+		themesData.map(theme => {
+			return (
+				<li class='w-15/16 xl:w-21/32 flex flex-row justify-between rounded bg-(--color-surface) p-4 shadow-xl'>
+					{theme.id}
+					<div>
+						<a href={theme.link} class='hover:text-(--color-green)'>
+							Preview
+						</a>
+						|
+						<a href={theme.link} class='hover:text-(--color-green)'>
+							Package Details
+						</a>
+					</div>
+				</li>
+			);
+		})
+	}
+</ul>

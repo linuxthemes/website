@@ -3,21 +3,25 @@ export const themesData = [
         id: "city",
         icon: "",
         description: "",
+        link: "",
     },
     {
         id: "border",
         icon: "",
         description: "",
+        link: "",
     },
     {
         id: "fleX",
         icon: "",
         description: "",
+        link: "",
     },
     {
         id: "adwaita",
         icon: "",
         description: "",
+        link: "",
     },
 ]
 
@@ -26,25 +30,30 @@ export const iconData = [
         id: "winSur",
         icon: "",
         description: "",
+        link: "",
     },
     {
         id: "macOs",
         icon: "",
         description: "",
+        link: "",
     },
     {
         id: "win10x",
         icon: "",
         description: "",
+        link: "",
     },        {
         id: "win11x",
         icon: "",
         description: "",
+        link: "",
     },
     {
         id: "morewaita",
         icon: "",
         description: "",
+        link: "",
     },
 ]
 
