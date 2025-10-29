@@ -5,19 +5,19 @@ import { Code } from 'astro-expressive-code/components';
 <script src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js'></script>
 <script src='https://buttons.github.io/buttons.js'></script>
 
-<section class='flex xl:flex-row w-screen xl:w-full flex-col items-center justify-between p-16  md:items-centers'>
-	<div class='flex flex-col items-center pt-16 text-center text-(--color-text)'>
+<section class='flex xl:flex-row w-screen xl:w-full flex-col items-center justify-between p-8  md:items-centers'>
+	<div class='flex flex-col items-center  text-center text-(--color-text)'>
 		
-        <div class='flex flex-row items-center'>
+        <div class='flex flex-row items-center justify-center p-4' >
 			<img class='h-16 w-16' src='/linuxthemes.png' />
-			<h1 class='bg-linear-to-br from-orange-500 via-green-500 to-blue-500 bg-clip-text p-4 font-mono text-4xl text-transparent'>Linux Themes</h1>
+			<h1 class='px-4 md:text-6xl bg-linear-to-br from-orange-500 via-green-500 to-blue-500 bg-clip-text font-mono text-4xl text-transparent'>Themes</h1>
 		</div>
 		
         <p class='xl:w-full w-screen p-4'>
 			Themes and program state configuration by the <a target='_blank' href='https://linuxthemes'>Community</a>
 		</p>
 
-		<div class='z-[-99] md:w-3/4   sm:w-full w-screen p-4'>
+		<div class='z-[-99] sm:w-3/4   w-screen p-4'>
 			<Code lang='bash' code='git init $HOME; git remote add origin https://github.com/linuxthemes/base; git pull' />
 		</div>
 
