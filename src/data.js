@@ -52,25 +52,25 @@ export const themesData = [
 
 export const iconData = [
     {
-        id: "whiteSur",
-        icon: "https://raw.githubusercontent.com/vinceliuice/WhiteSur-icon-theme/master/logo.png",
-        description: "MacOS Big Sur style icon theme for linux desktops ",
-        link: "https://github.com/vinceliuice/WhiteSur-icon-theme",
-        preview: "https://raw.githubusercontent.com/vinceliuice/WhiteSur-icon-theme/refs/heads/master/preview.png",
-    },
-    {
         id: "win10x",
         icon: "",
         description: "A colorful design icon theme for linux desktops ",
         link: "https://github.com/yeyushengfan258/We10X-icon-theme",
         preview: "https://raw.githubusercontent.com/yeyushengfan258/We10X-icon-theme/refs/heads/master/View-1.png",
-    },        
+    },
     {
         id: "win11x",
         icon: "",
         description: "A colorful design icon theme for linux desktops ",
         link: "https://github.com/yeyushengfan258/Win11-icon-theme",
         preview: "https://raw.githubusercontent.com/yeyushengfan258/Win11-icon-theme/refs/heads/main/View-1.png",
+    },
+    {
+        id: "whiteSur",
+        icon: "https://raw.githubusercontent.com/vinceliuice/WhiteSur-icon-theme/master/logo.png",
+        description: "MacOS Big Sur style icon theme for linux desktops ",
+        link: "https://github.com/vinceliuice/WhiteSur-icon-theme",
+        preview: "https://raw.githubusercontent.com/vinceliuice/WhiteSur-icon-theme/refs/heads/master/preview.png",
     },
     {
         id: "morewaita",
@@ -85,7 +85,13 @@ export const programData = [
     {
         id: "kde",
         icon: "kde.svg",
-        fileArray: [ ".config/plasmarc", ".config/plasmashellrc", ".config/ksplashrc", ".config/konsolerc", ".config/plasma-org.kde.plasma.desktop-appletsrc"],
+        fileArray: [
+            ".config/plasma-org.kde.plasma.desktop-appletsrc",
+            ".config/plasmashellrc",
+            ".config/plasmarc",
+            ".config/ksplashrc",
+            ".config/konsolerc",
+        ],
         description: "KDE Plasma is a graphical shell developed by the KDE community for Unix-like operating systems.",
         homepage: "https://kde.org/plasma-desktop/",
         documentation: "https://docs.kde.org/",
@@ -95,7 +101,9 @@ export const programData = [
     {
         id: "gnome",
         icon: "gnome.svg",
-        fileArray: ["CONTRIBUTING.md"],
+        fileArray: [
+            "CONTRIBUTING.md"
+        ],
         description: "GNOME is a free and open-source desktop environment for Linux and other Unix-like operating systems.",
         homepage: "https://www.gnome.org/",
         documentation: "https://developer.gnome.org/documentation/",
@@ -105,7 +113,11 @@ export const programData = [
     {
         id: "hyprland",
         icon: "hyprland.svg",
-        fileArray: [".config/hypr/hyprland.conf", ".config/hypr/hyprlock.conf", ".config/hypr/hyprpaper.conf",],
+        fileArray: [
+            ".config/hypr/hyprland.conf",
+            ".config/hypr/hyprlock.conf",
+            ".config/hypr/hyprpaper.conf",
+        ],
         description: "Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.",
         homepage: "https://hypr.land/",
         documentation: "https://wiki.hypr.land/",
@@ -115,7 +127,12 @@ export const programData = [
     {
         id: "xfce",
         icon: "xfce.svg",
-        fileArray: [".config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml", ".config/xfce4/xfconf/xfce-perchannel-xml/xfce4-terminal.xml", ".config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml", ".config/xfce4/terminal/accels.scm"],
+        fileArray: [
+            ".config/xfce4/terminal/accels.scm",
+            ".config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml",
+            ".config/xfce4/xfconf/xfce-perchannel-xml/xfce4-terminal.xml",
+            ".config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml",
+        ],
         description: "Xfce is a lightweight desktop environment for UNIX-like operating systems. It aims to be fast and low on system resources, while still being visually appealing and user friendly.",
         homepage: "https://xfce.org/",
         documentation: "https://docs.xfce.org/",
@@ -125,7 +142,10 @@ export const programData = [
     {
         id: "micro",
         icon: "micro.svg",
-        fileArray: [".config/micro/bindings.json",".config/micro/settings.json"],
+        fileArray: [
+            ".config/micro/bindings.json",
+            ".config/micro/settings.json"
+        ],
         description: "Micro is a modern and intuitive text editor that runs in your terminal. It has features like multiple cursors, syntax highlighting, colorschemes, plugins, and a terminal emulator.",
         homepage: "https://micro-editor.github.io/",
         documentation: "https://micro-editor.github.io/about.html",
@@ -135,7 +155,9 @@ export const programData = [
     {
         id: "neovim",
         icon: "neovim.svg",
-        fileArray: ["CONTRIBUTING.md"],
+        fileArray: [
+            "CONTRIBUTING.md"
+        ],
         description: "Neovim is a modern, fast and feature-rich editor that is fully compatible with Vim. It supports plugins, GUIs, LSP, Lua, and more.",
         homepage: "https://neovim.io/",
         documentation: "https://neovim.io/doc/",
@@ -145,7 +167,10 @@ export const programData = [
     {
         id: "vscode",
         icon: "vscode.svg",
-        fileArray: [".config/Code/User/settings.json", ".config/Code/User/keybindings.json"],
+        fileArray: [
+            ".config/Code/User/settings.json",
+            ".config/Code/User/keybindings.json"
+        ],
         description: "Visual Studio Code is a source-code editor developed by Microsoft for Windows, Linux, macOS and web browsers.",
         homepage: "https://code.visualstudio.com/",
         documentation: "https://code.visualstudio.com/Docs",
@@ -155,7 +180,9 @@ export const programData = [
     {
         id: "bash",
         icon: "bash.svg",
-        fileArray: [".bashrc"],
+        fileArray: [
+            ".bashrc"
+        ],
         description: "Bash is a free software shell that supports command-line editing, job control, shell functions, arrays, and more. It is compatible with sh and conforms to the POSIX standard.",
         homepage: "https://www.gnu.org/software/bash/",
         documentation: "https://www.gnu.org/software/bash/manual/bash.html",
@@ -165,7 +192,15 @@ export const programData = [
     {
         id: "eza",
         icon: "shell.svg",
-        fileArray: [".config/eza/theme.yml"],
+        fileArray: [
+            ".config/eza/theme.yml",
+            ".config/eza/base.yml",
+            ".config/eza/nord.yml",
+            ".config/eza/github.yml",
+            ".config/eza/tokoyo.yml",
+            ".config/eza/dracula.yml",
+            ".config/eza/catppuccin.yml",
+        ],
         description: "eza is a modern alternative for the venerable file-listing command-line program ls that ships with Unix and Linux operating systems, giving it more features and better defaults.",
         homepage: "https://eza.rocks/",
         documentation: "https://github.com/eza-community/eza",
@@ -175,7 +210,9 @@ export const programData = [
     {
         id: "ghostty",
         icon: "ghostty.png",
-        fileArray: [".config/ghostty/config"],
+        fileArray: [
+            ".config/ghostty/config"
+        ],
         description: "Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.",
         homepage: "https://ghostty.org/",
         documentation: "https://ghostty.org/docs",
@@ -185,7 +222,9 @@ export const programData = [
     {
         id: "kitty",
         icon: "shell.svg",
-        fileArray: ["CONTRIBUTING.md"],
+        fileArray: [
+            "CONTRIBUTING.md"
+        ],
         description: "kitty is a fast, feature-rich, and cross-platform terminal emulator that uses GPU and SIMD vector CPU instructions for best performance. It supports graphics, ligatures, hyperlinks, scripting, kittens, and more.",
         homepage: "https://sw.kovidgoyal.net/kitty/",
         documentation: "https://sw.kovidgoyal.net/kitty/overview/",
@@ -195,7 +234,9 @@ export const programData = [
     {
         id: "alacritty",
         icon: "shell.svg",
-        fileArray: ["CONTRIBUTING.md"],
+        fileArray: [
+            "CONTRIBUTING.md"
+        ],
         description: "Alacritty is a modern terminal emulator that integrates with other applications and allows for extensive configuration.",
         homepage: "https://alacritty.org/",
         documentation: "https://alacritty.org/config-alacritty.html",
