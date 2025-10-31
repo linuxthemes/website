@@ -1,0 +1,68 @@
+---
+import { Code } from 'astro-expressive-code/components'
+
+type Program = {
+	id: string
+	icon: string
+	files: string[]
+	description: string
+	homepage: string
+	documentation: string
+	themes: string
+	issues: string
+}
+
+const { program } = Astro.props as { program: Program }
+
+const contents = await Promise.all(
+	program.files.map(async file => {
+		let response = await fetch(`https://raw.githubusercontent.com/linuxthemes/base/refs/heads/base/${file}`)
+		if (response.status == 404) {
+			response = await fetch(`https://raw.githubusercontent.com/linuxthemes/base/refs/heads/base/CONTRIBUTING.md`)
+		}
+		const data = await response.text()
+		if (data == '') {
+			response = await fetch(`https://raw.githubusercontent.com/linuxthemes/base/refs/heads/base/CONTRIBUTING.md`)
+		}
+		return { file: file, content: data }
+	}),
+)
+---
+
+<filepreview class='flex flex-col rounded shadow-2xl outline-2 outline-(--color-cyan)'>
+	<tabs id='tab' class='tab rounded-top-md flex flex-wrap overflow-hidden bg-(--color-surface)'>
+		{program.files.map(file => <button class='tablinks cursor-pointer px-2 py-3 text-sm text-(--color-text) transition duration-300 hover:bg-(--color-cyan) hover:text-(--color-base)'>{file}</button>)}
+	</tabs>
+	{
+		contents.map(file => (
+			<div id={file.file} class='tabcontent'>
+				{file.content && <Code code={file.content} lang='js' />}
+			</div>
+		))
+	}
+</filepreview>
+
+<script>
+	function openTab(event: Event, file: string) {
+		console.log('sfsf')
+
+		Array.from(document.getElementsByClassName('tabcontent')).forEach(element => {
+			;(element as HTMLElement).style.display = 'none'
+		})
+
+		Array.from(document.getElementsByClassName('tablinks')).forEach(element => {
+			element.classList.remove('active')
+		})
+
+		const content = document.getElementById(file)
+		if (content) content.style.display = 'block'
+		;(event.currentTarget as HTMLButtonElement).classList.add('active')
+	}
+
+	Array.from(document.getElementsByClassName('tablinks')).forEach(element => {
+		element.addEventListener('click', event => {
+			openTab(event, element.textContent)
+		})
+	})
+	;(document.querySelector('.tablinks') as HTMLButtonElement).click()
+</script>

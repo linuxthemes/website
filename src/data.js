@@ -85,7 +85,7 @@ export const programData = [
     {
         id: "kde",
         icon: "kde.svg",
-        fileArray: [
+        files: [
             ".config/plasma-org.kde.plasma.desktop-appletsrc",
             ".config/plasmashellrc",
             ".config/plasmarc",
@@ -101,7 +101,7 @@ export const programData = [
     {
         id: "gnome",
         icon: "gnome.svg",
-        fileArray: [
+        files: [
             "CONTRIBUTING.md"
         ],
         description: "GNOME is a free and open-source desktop environment for Linux and other Unix-like operating systems.",
@@ -113,7 +113,7 @@ export const programData = [
     {
         id: "hyprland",
         icon: "hyprland.svg",
-        fileArray: [
+        files: [
             ".config/hypr/hyprland.conf",
             ".config/hypr/hyprlock.conf",
             ".config/hypr/hyprpaper.conf",
@@ -127,7 +127,7 @@ export const programData = [
     {
         id: "xfce",
         icon: "xfce.svg",
-        fileArray: [
+        files: [
             ".config/xfce4/terminal/accels.scm",
             ".config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml",
             ".config/xfce4/xfconf/xfce-perchannel-xml/xfce4-terminal.xml",
@@ -142,7 +142,7 @@ export const programData = [
     {
         id: "micro",
         icon: "micro.svg",
-        fileArray: [
+        files: [
             ".config/micro/bindings.json",
             ".config/micro/settings.json"
         ],
@@ -155,7 +155,7 @@ export const programData = [
     {
         id: "neovim",
         icon: "neovim.svg",
-        fileArray: [
+        files: [
             "CONTRIBUTING.md"
         ],
         description: "Neovim is a modern, fast and feature-rich editor that is fully compatible with Vim. It supports plugins, GUIs, LSP, Lua, and more.",
@@ -167,7 +167,7 @@ export const programData = [
     {
         id: "vscode",
         icon: "vscode.svg",
-        fileArray: [
+        files: [
             ".config/Code/User/settings.json",
             ".config/Code/User/keybindings.json"
         ],
@@ -180,7 +180,7 @@ export const programData = [
     {
         id: "bash",
         icon: "bash.svg",
-        fileArray: [
+        files: [
             ".bashrc"
         ],
         description: "Bash is a free software shell that supports command-line editing, job control, shell functions, arrays, and more. It is compatible with sh and conforms to the POSIX standard.",
@@ -192,7 +192,7 @@ export const programData = [
     {
         id: "eza",
         icon: "shell.svg",
-        fileArray: [
+        files: [
             ".config/eza/theme.yml",
             ".config/eza/base.yml",
             ".config/eza/nord.yml",
@@ -210,7 +210,7 @@ export const programData = [
     {
         id: "ghostty",
         icon: "ghostty.png",
-        fileArray: [
+        files: [
             ".config/ghostty/config"
         ],
         description: "Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.",
@@ -222,7 +222,7 @@ export const programData = [
     {
         id: "kitty",
         icon: "shell.svg",
-        fileArray: [
+        files: [
             "CONTRIBUTING.md"
         ],
         description: "kitty is a fast, feature-rich, and cross-platform terminal emulator that uses GPU and SIMD vector CPU instructions for best performance. It supports graphics, ligatures, hyperlinks, scripting, kittens, and more.",
@@ -234,7 +234,7 @@ export const programData = [
     {
         id: "alacritty",
         icon: "shell.svg",
-        fileArray: [
+        files: [
             "CONTRIBUTING.md"
         ],
         description: "Alacritty is a modern terminal emulator that integrates with other applications and allows for extensive configuration.",
