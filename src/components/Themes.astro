@@ -1,25 +1,44 @@
 ---
-import { themesData } from '../data';
+import { themesData } from '../data'
 ---
 
-<h2 class=' w-full p-4 text-center text-2xl text-(--color-text)'>Available Window .themes</h2>
-<ul class=' w-full p-4 flex flex-col items-center gap-4'>
+<h2 class='w-full p-4 text-center text-2xl text-(--color-text)'>Available Window .themes</h2>
+<ul id='themesContainer' class='flex w-full flex-col items-center gap-4 p-4'>
 	{
 		themesData.map(theme => {
 			return (
-				<li class='text-(--color-text) w-15/16 xl:w-21/32 flex flex-row justify-between rounded bg-(--color-surface) p-4 shadow-xl'>
+				<li class='themes flex w-15/16 flex-row justify-between rounded bg-(--color-surface) p-4 text-(--color-text) shadow-xl xl:w-21/32'>
 					{theme.id}
 					<div>
-						<a target="_blank" href={theme.preview} class='hover:text-(--color-green)'>
+						<a target='_blank' href={theme.preview} class='hover:text-(--color-green)'>
 							Preview
 						</a>
 						|
-						<a target="_blank" href={theme.link} class='underline hover:text-(--color-green)'>
+						<a target='_blank' href={theme.link} class='underline hover:text-(--color-green)'>
 							Package Details
 						</a>
 					</div>
+					<span class='hidden'>{theme.tags}</span>
 				</li>
-			);
+			)
 		})
 	}
 </ul>
+
+<script>
+	const themesContainer = document.getElementById('themesContainer')
+	const searchInput = document.getElementById('search') as HTMLInputElement
+
+	searchInput.addEventListener('input', () => {
+		const filter = searchInput.value.toLowerCase()
+		const themes = themesContainer?.getElementsByClassName('themes') as HTMLCollectionOf<Element>
+		Array.from(themes).forEach(card => {
+			const text = card.textContent.toLowerCase()
+			if (text.includes(filter)) {
+				card.classList.remove('hidden')
+			} else {
+				card.classList.add('hidden')
+			}
+		})
+	})
+</script>

@@ -1,8 +1,8 @@
 ---
-import { programData } from '../data.js';
+import { programData } from '../data.js'
 ---
 
-<h2 class='p-4 w-full text-center text-2xl text-(--color-text)'>Supported Programs</h2>
+<h2 class='w-full p-4 text-center text-2xl text-(--color-text)'>Supported Programs</h2>
 <section id='cardsContainer' class='flex flex-wrap justify-center xl:m-16'>
 	{
 		programData.map(program => {
@@ -24,26 +24,27 @@ import { programData } from '../data.js';
 							</a>
 						</div>
 					</div>
+					<span class='hidden'>{program.tags}</span>
 				</card>
-			);
+			)
 		})
 	}
 </section>
 
 <script>
-	const cardsContainer = document.getElementById('cardsContainer');
-	const searchInput = document.getElementById('search') as HTMLInputElement;
+	const cardsContainer = document.getElementById('cardsContainer')
+	const searchInput = document.getElementById('search') as HTMLInputElement
 
 	searchInput.addEventListener('input', () => {
-		const filter = searchInput.value.toLowerCase();
-		const cards = cardsContainer?.getElementsByTagName('card') as HTMLCollectionOf<Element>;
+		const filter = searchInput.value.toLowerCase()
+		const cards = cardsContainer?.getElementsByTagName('card') as HTMLCollectionOf<Element>
 		Array.from(cards).forEach(card => {
-			const text = card.textContent.toLowerCase();
+			const text = card.textContent.toLowerCase()
 			if (text.includes(filter)) {
-				card.classList.remove('hidden');
+				card.classList.remove('hidden')
 			} else {
-				card.classList.add('hidden');
+				card.classList.add('hidden')
 			}
-		});
-	});
+		})
+	})
 </script>

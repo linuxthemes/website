@@ -5,6 +5,7 @@ export const themesData = [
         description: "Dark theme for GTK",
         link: "https://github.com/dracula/gtk",
         preview: "https://images.pling.com/img/00/00/36/61/48/1687249/big-dracula1.jpg",
+        tags: ""
     },
     {
         id: "whitesur",
@@ -12,6 +13,7 @@ export const themesData = [
         description: " MacOS like theme for all gtk based desktops.",
         link: "https://github.com/vinceliuice/WhiteSur-gtk-theme",
         preview: "https://images.pling.com/img/00/00/32/24/44/1403328/ef3a77dd79e583851b8d38e4d98fcdf694c6c9d6a22bdda79d52208b0f9d4e553917.png",
+        tags: ""
     },
     {
         id: "nord",
@@ -19,6 +21,7 @@ export const themesData = [
         description: "Dark Gtk3.20+ theme created using the awesome Nord color pallete. ",
         link: "https://github.com/EliverLara/Nordic",
         preview: "https://raw.githubusercontent.com/EliverLara/Nordic/refs/heads/master/Art/_banner-github.jpg",
+        tags: ""
     },
     {
         id: "tokoyo",
@@ -26,6 +29,7 @@ export const themesData = [
         description: "A GTK theme based on the Tokyo Night colour palette. ",
         link: "https://github.com/Fausto-Korpsvart/Tokyonight-GTK-Theme",
         preview: "https://raw.githubusercontent.com/Fausto-Korpsvart/Tokyo-Night-GTK-Theme/master/extra/screenshots/Tokyonight.png",
+        tags: ""
     },
     {
         id: "city",
@@ -33,6 +37,7 @@ export const themesData = [
         description: "xfce theme",
         link: "https://github.com/linuxthemes/city",
         preview: "https://images.pling.com/img/00/00/11/23/80/1165653/346b8a6a162e1c8115e2577f6712dadb3ae5.png",
+        tags: ""
     },
     {
         id: "border",
@@ -40,6 +45,7 @@ export const themesData = [
         description: "border only, no title",
         link: "https://www.pling.com/p/1016214",
         preview: "https://www.pling.com/p/1016214",
+        tags: ""
     },
     {
         id: "flex",
@@ -47,6 +53,7 @@ export const themesData = [
         description: "xfce theme",
         link: "https://github.com/sawsedge/fleX",
         preview: "https://images.pling.com/img/00/00/82/73/09/2269263/screenshot-2025-03-07-15-40-55.png",
+        tags: ""
     },
 ]
 
@@ -57,6 +64,7 @@ export const iconData = [
         description: "A colorful design icon theme for linux desktops ",
         link: "https://github.com/yeyushengfan258/We10X-icon-theme",
         preview: "https://raw.githubusercontent.com/yeyushengfan258/We10X-icon-theme/refs/heads/master/View-1.png",
+        tags: ""
     },
     {
         id: "win11x",
@@ -64,6 +72,7 @@ export const iconData = [
         description: "A colorful design icon theme for linux desktops ",
         link: "https://github.com/yeyushengfan258/Win11-icon-theme",
         preview: "https://raw.githubusercontent.com/yeyushengfan258/Win11-icon-theme/refs/heads/main/View-1.png",
+        tags: ""
     },
     {
         id: "whiteSur",
@@ -71,6 +80,7 @@ export const iconData = [
         description: "MacOS Big Sur style icon theme for linux desktops ",
         link: "https://github.com/vinceliuice/WhiteSur-icon-theme",
         preview: "https://raw.githubusercontent.com/vinceliuice/WhiteSur-icon-theme/refs/heads/master/preview.png",
+        tags: ""
     },
     {
         id: "morewaita",
@@ -78,6 +88,7 @@ export const iconData = [
         description: "An expanded Adwaita-styled companion icon theme with extra icons for popular apps and MIME types to complement Gnome Shell's original icons. ",
         link: "https://github.com/somepaulo/MoreWaita",
         preview: "https://github.com/somepaulo/MoreWaita?tab=readme-ov-file#apps",
+        tags: ""
     },
 ]
 
@@ -97,6 +108,7 @@ export const programData = [
         documentation: "https://docs.kde.org/",
         themes: "",
         issues: "https://bugs.kde.org/index.cgi",
+        tags: "dracula nord border "
     },
     {
         id: "gnome",
@@ -109,6 +121,7 @@ export const programData = [
         documentation: "https://developer.gnome.org/documentation/",
         themes: "",
         issues: "https://gitlab.gnome.org/groups/GNOME/-/issues",
+        tags: "dracula nord border"
     },
     {
         id: "hyprland",
@@ -123,6 +136,7 @@ export const programData = [
         documentation: "https://wiki.hypr.land/",
         themes: "",
         issues: "https://github.com/hyprwm/Hyprland/issues",
+        tags: "dracula nord"
     },
     {
         id: "xfce",
@@ -138,6 +152,7 @@ export const programData = [
         documentation: "https://docs.xfce.org/",
         themes: "",
         issues: "https://gitlab.xfce.org/explore/groups?sort=name_desc",
+        tags: "dracula nord border city flex"
     },
     {
         id: "micro",
@@ -151,6 +166,7 @@ export const programData = [
         documentation: "https://micro-editor.github.io/about.html",
         themes: "",
         issues: "https://github.com/zyedidia/micro/issues",
+        tags: "dracula nord catppuccin"
     },
     {
         id: "neovim",
@@ -163,6 +179,7 @@ export const programData = [
         documentation: "https://neovim.io/doc/",
         themes: "",
         issues: "https://github.com/neovim/neovim/issues",
+        tags: "dracula catppuccin github"
     },
     {
         id: "vscode",
@@ -176,6 +193,7 @@ export const programData = [
         documentation: "https://code.visualstudio.com/Docs",
         themes: "",
         issues: "https://github.com/microsoft/vscode/issues",
+        tags: "dracula nord catppuccin github"
     },
     {
         id: "bash",
@@ -188,6 +206,7 @@ export const programData = [
         documentation: "https://www.gnu.org/software/bash/manual/bash.html",
         themes: "",
         issues: "https://savannah.gnu.org/bugs/?group=bash",
+        tags: "apt pacman emerge dnf rpm yum nala"
     },
     {
         id: "eza",
@@ -206,6 +225,7 @@ export const programData = [
         documentation: "https://github.com/eza-community/eza",
         themes: "",
         issues: "https://github.com/eza-community/eza/issues",
+        tags: "base dracula nord catppuccin  tokoyo"
     },
     {
         id: "ghostty",
@@ -218,6 +238,7 @@ export const programData = [
         documentation: "https://ghostty.org/docs",
         themes: "",
         issues: "https://github.com/ghostty-org/ghostty/issues",
+        tags: "dracula dracula nord catppuccin  tokoyo"
     },
     {
         id: "kitty",
@@ -230,6 +251,7 @@ export const programData = [
         documentation: "https://sw.kovidgoyal.net/kitty/overview/",
         themes: "",
         issues: "https://github.com/kovidgoyal/kitty/issues",
+        tags: ""
     },
     {
         id: "alacritty",
@@ -242,5 +264,6 @@ export const programData = [
         documentation: "https://alacritty.org/config-alacritty.html",
         themes: "",
         issues: "https://github.com/alacritty/alacritty/issues",
+        tags: ""
     },
 ]

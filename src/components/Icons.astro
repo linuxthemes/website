@@ -1,25 +1,44 @@
 ---
-import { iconData } from '../data';
+import { iconData } from '../data'
 ---
 
-<h2 class='w-full p-4 text-(--color-text) text-center text-2xl'>Available .icon Packages</h2>
-<ul class='w-full p-4 flex flex-col items-center gap-4'>
+<h2 class='w-full p-4 text-center text-2xl text-(--color-text)'>Available .icon Packages</h2>
+<ul id='iconsContainer' class='flex w-full flex-col items-center gap-4 p-4'>
 	{
 		iconData.map(icon => {
 			return (
-				<li class='text-(--color-text) p-4 w-15/16 xl:w-19/32 flex flex-row justify-between rounded bg-(--color-surface) shadow-xl'>
+				<li class='icons flex w-15/16 flex-row justify-between rounded bg-(--color-surface) p-4 text-(--color-text) shadow-xl xl:w-19/32'>
 					{icon.id}
 					<div>
-						<a target="_blank" href={icon.preview} class='hover:text-(--color-green)'>
+						<a target='_blank' href={icon.preview} class='hover:text-(--color-green)'>
 							Preview
 						</a>
 						|
-						<a target="_blank" href={icon.link} class='underline hover:text-(--color-green)'>
+						<a target='_blank' href={icon.link} class='underline hover:text-(--color-green)'>
 							Package Details
 						</a>
 					</div>
+					<span class='hidden'>{icon.tags}</span>
 				</li>
-			);
+			)
 		})
 	}
 </ul>
+
+<script>
+	const iconsContainer = document.getElementById('iconsContainer')
+	const searchInput = document.getElementById('search') as HTMLInputElement
+
+	searchInput.addEventListener('input', () => {
+		const filter = searchInput.value.toLowerCase()
+		const icons = iconsContainer?.getElementsByClassName('icons') as HTMLCollectionOf<Element>
+		Array.from(icons).forEach(card => {
+			const text = card.textContent.toLowerCase()
+			if (text.includes(filter)) {
+				card.classList.remove('hidden')
+			} else {
+				card.classList.add('hidden')
+			}
+		})
+	})
+</script>
