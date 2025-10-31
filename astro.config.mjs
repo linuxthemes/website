@@ -12,8 +12,17 @@ export default defineConfig({
     base: '/',
     integrations: [expressiveCode({
         themes: [
-            // 'dark-plus', 'light-plus',
-            'github-dark', 'github-light'
+            'tokyo-night',
+            'nord',
+            'rose-pine-dawn',
+            'material-theme-lighter',
+            'dracula', 'dracula-soft',
+            'min-dark', 'min-light',
+            'dark-plus', 'light-plus',
+            'one-dark-pro', 'one-light',
+            'github-dark', 'github-light',
+            'everforest-dark', 'everforest-light',
+            'catppuccin-mocha', 'catppuccin-latte',
         ],
         // plugins: [pluginLineNumbers()],
     }), mdx()],

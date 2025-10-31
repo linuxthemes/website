@@ -44,10 +44,8 @@ const contents = await Promise.all(
 
 <script>
 	function openTab(event: Event, file: string) {
-		console.log('sfsf')
-
 		Array.from(document.getElementsByClassName('tabcontent')).forEach(element => {
-			;(element as HTMLElement).style.display = 'none'
+			(element as HTMLElement).style.display = 'none'
 		})
 
 		Array.from(document.getElementsByClassName('tablinks')).forEach(element => {
@@ -55,14 +53,15 @@ const contents = await Promise.all(
 		})
 
 		const content = document.getElementById(file)
-		if (content) content.style.display = 'block'
-		;(event.currentTarget as HTMLButtonElement).classList.add('active')
+		if (content) content.style.display = 'block';
+        (event.currentTarget as HTMLButtonElement).classList.add('active')
 	}
 
 	Array.from(document.getElementsByClassName('tablinks')).forEach(element => {
 		element.addEventListener('click', event => {
 			openTab(event, element.textContent)
 		})
-	})
-	;(document.querySelector('.tablinks') as HTMLButtonElement).click()
+	});
+    
+	(document.querySelector('.tablinks') as HTMLButtonElement).click()
 </script>

@@ -1,73 +1,122 @@
 ---
-import '../styles/global.css';
+
 ---
 
 <script src='https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1' type='module'></script>
 
 <script>
-	function setMode(mode: string) {
-		switch (mode) {
-			case 'dark':
-				localStorage.setItem('theme', 'dark');
-				document.documentElement.classList.add('dark');
-				document.documentElement.setAttribute('data-theme', 'github-dark');
-				document.documentElement.setAttribute('prefers-color-scheme', 'dark');
-				break;
+	const colorThemeMap = {
+		base: {
+			dark: 'min-dark',
+			light: 'min-light',
+		},
+		nord: {
+			dark: 'nord',
+			light: 'one-light',
+		},
+		dracula: {
+			dark: 'dracula',
+			light: 'rose-pine-dawn',
+		},
+		tokoyo: {
+			dark: 'tokoyo-night',
+			light: 'min-light',
+		},
+		github: {
+			dark: 'github-dark',
+			light: 'github-light',
+		},
+		catppuccin: {
+			dark: 'catppuccin-matte',
+			light: 'catppuccin-latte',
+		},
+	}
 
-			case 'light':
-				localStorage.setItem('theme', 'light');
-				document.documentElement.classList.remove('dark');
-				document.documentElement.setAttribute('data-theme', 'github-light');
-				document.documentElement.setAttribute('prefers-color-scheme', 'light');
-				break;
-		}
+    // type ThemeOptions = "base" | "nord" | "dracula" | "tokoyo" | "github" | "catppuccin"
+	type ThemeKeys = keyof typeof colorThemeMap
+	type Mode = 'dark' | 'light'
+
+    let themeKey: ThemeKeys = 'base'
+    let modeKey: Mode = 'light'
+
+
+	function setMode(mode: Mode) {
+		const themeVariant = colorThemeMap[themeKey][mode]
+
+		if (mode === 'dark') {
+            modeKey = 'dark'
+            document.documentElement.classList.add('dark')
+        }
+		if (mode === 'light') {
+            modeKey = 'light'
+            document.documentElement.classList.remove('dark')
+        }
+
+        console.log(themeVariant)
+
+		document.documentElement.setAttribute('data-theme', themeVariant)
+		// document.documentElement.setAttribute('prefers-color-scheme', mode)
 	}
 
 	function getPreferredMode() {
 		if (window.matchMedia) {
 			if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				return 'dark';
+				return 'dark'
 			} else {
-				return 'light';
+				return 'light'
 			}
 		}
-		return 'light';
+		return 'light'
 	}
 
-	function updateMode() {
-		setMode(getPreferredMode());
-	}
-
+	setMode(getPreferredMode())
 	if (window.matchMedia) {
-		var colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-		colorSchemeQuery.addEventListener('change', updateMode);
+		var colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)')
+		colorSchemeQuery.addEventListener('change', () => {
+			setMode(getPreferredMode())
+		})
 	}
-	updateMode();
 
 	document.getElementById('mode-toggle')?.addEventListener('click', () => {
 		if (document.documentElement.classList.contains('dark')) {
-			setMode('light');
+			setMode('light')
 		} else {
-			setMode('dark');
+			setMode('dark')
 		}
-	});
+	})
 
 	window.addEventListener('scroll', () => {
-		const navbar = document.getElementById('navbar');
-		const search = document.getElementById('search');
+		const navbar = document.getElementById('navbar')
+		const search = document.getElementById('search')
 
 		if (window.scrollY > 50) {
 			if (!document.querySelector('filepreview')) {
-				search?.classList.remove('hidden');
+				search?.classList.remove('hidden')
 			}
-			navbar?.classList.add('bg-(--color-base)');
-			navbar?.classList.add('shadow-xl');
+			navbar?.classList.add('bg-(--color-base)')
+			navbar?.classList.add('shadow-xl')
 			// navbar?.classList.add('shadow-cyan-500/50');
 		} else {
-			search?.classList.add('hidden');
-			navbar?.classList.remove('bg-(--color-base)');
+			search?.classList.add('hidden')
+			navbar?.classList.remove('bg-(--color-base)')
 		}
-	});
+	})
+
+    const themeOptions = new Set(["base", "nord", "dracula", "tokoyo", "github", "catppuccin"]);
+	document.querySelectorAll('#theme-option').forEach(element => {
+		element.addEventListener('click', () => {
+            const selectedTheme = element.textContent.toLowerCase();
+            if (selectedTheme && themeOptions.has(selectedTheme)){
+                themeKey = selectedTheme as ThemeKeys
+                setMode(modeKey);
+            } else {
+                console.log("typescript sux")
+            }
+
+            (document.getElementById('theme-button') as HTMLButtonElement).textContent = element.textContent
+            document.getElementById('theme')?.setAttribute('href', `/styles/${element.textContent.toLowerCase()}.css`)
+		})
+	})
 </script>
 
 <nav id='navbar' class='sticky top-10 z-1000 flex justify-between rounded-b-md p-2 pr-4 pl-4 text-(--color-text)'>
@@ -78,14 +127,14 @@ import '../styles/global.css';
 
 	<input id='search' class='fg-(--color-text) hidden w-75 rounded-sm border bg-(--color-base) p-2 text-sm max-[600px]:hidden max-[600px]:w-30' type='search' name='query' id='search-query' placeholder='Search' />
 
-	<section id='theme-container' class='flex flex-row items-center justify-center gap-2'>
+	<section class='flex flex-row items-center justify-center gap-2'>
 		<el-dropdown class='inline-block'>
 			<button autofocus class='inline-flex w-full justify-center gap-x-1 rounded-md border bg-(--color-base) px-1.5 py-1 text-sm font-semibold text-(--color-text) shadow-xl hover:bg-(--color-crust)'>
 				<p id='theme-button'>Base</p>
 				<svg viewBox='0 0 20 20' fill='currentColor' data-slot='icon' aria-hidden='true' class='-mr-1 size-5 text-gray-400'><path d='M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z' clip-rule='evenodd' fill-rule='evenodd'></path></svg>
 			</button>
 
-			<el-menu id='theme-options' anchor='bottom end' popover class='w-56 origin-top-right rounded-md bg-(--color-base) shadow-xl outline-1 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in'>
+			<el-menu anchor='bottom end' popover class='w-56 origin-top-right rounded-md bg-(--color-base) shadow-xl outline-1 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in'>
 				<div class='py-1'>
 					<a id='theme-option' href='#' class='block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-overlay)'>Base</a>
 					<a id='theme-option' href='#' class='block px-4 py-2 text-sm text-(--color-text) focus:bg-(--color-overlay)'>Nord</a>

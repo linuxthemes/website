@@ -4,17 +4,6 @@ import Navbar from '../components/Navbar.astro';
 import Banner from '../components/Banner.astro';
 ---
 
-<script>
-	const options = document.querySelectorAll('#theme-option');
-	options.forEach(element => {
-		element.addEventListener('click', () => {
-			const themeButton = document.getElementById('theme-button');
-			if (themeButton) themeButton.textContent = element.textContent;
-			document.getElementById('theme')?.setAttribute('href', `/styles/${element.textContent.toLowerCase()}.css`);
-		});
-	});
-</script>
-
 <html lang='en' class='bg-(--color-base)'>
 	<head>
 		<title>Themes</title>
