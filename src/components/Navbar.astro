@@ -32,16 +32,13 @@
 		},
 	}
 
-    // type ThemeOptions = "base" | "nord" | "dracula" | "tokoyo" | "github" | "catppuccin"
 	type ThemeKeys = keyof typeof colorThemeMap
-	type Mode = 'dark' | 'light'
+	type ModeKey = 'dark' | 'light'
 
     let themeKey: ThemeKeys = 'base'
-    let modeKey: Mode = 'light'
+    let modeKey: ModeKey = 'light'
 
-
-	function setMode(mode: Mode) {
-		const themeVariant = colorThemeMap[themeKey][mode]
+	function setMode(mode: ModeKey) {
 
 		if (mode === 'dark') {
             modeKey = 'dark'
@@ -52,9 +49,7 @@
             document.documentElement.classList.remove('dark')
         }
 
-        console.log(themeVariant)
-
-		document.documentElement.setAttribute('data-theme', themeVariant)
+		document.documentElement.setAttribute('data-theme', colorThemeMap[themeKey][mode])
 		// document.documentElement.setAttribute('prefers-color-scheme', mode)
 	}
 
@@ -93,9 +88,8 @@
 			if (!document.querySelector('filepreview')) {
 				search?.classList.remove('hidden')
 			}
-			navbar?.classList.add('bg-(--color-base)')
 			navbar?.classList.add('shadow-xl')
-			// navbar?.classList.add('shadow-cyan-500/50');
+			navbar?.classList.add('bg-(--color-base)')
 		} else {
 			search?.classList.add('hidden')
 			navbar?.classList.remove('bg-(--color-base)')
