@@ -35,8 +35,11 @@
 	type ThemeKeys = keyof typeof colorThemeMap
 	type ModeKey = 'dark' | 'light'
 
-	let themeKey: ThemeKeys = 'base'
+	let themeKey: ThemeKeys = (Object.keys(colorThemeMap) as ThemeKeys[])[Math.floor(Math.random() * (Object.keys(colorThemeMap) as ThemeKeys[]).length)]
 	let modeKey: ModeKey = 'light'
+
+    ;(document.getElementById('theme-button') as HTMLButtonElement).textContent = themeKey.charAt(0).toUpperCase() + themeKey.slice(1)
+	document.getElementById('theme')?.setAttribute('href', `/styles/${themeKey}.css`)
 
 	function setMode(mode: ModeKey) {
 		if (mode === 'dark') {
@@ -47,9 +50,7 @@
 			modeKey = 'light'
 			document.documentElement.classList.remove('dark')
 		}
-
 		document.documentElement.setAttribute('data-theme', colorThemeMap[themeKey][mode])
-		// document.documentElement.setAttribute('prefers-color-scheme', mode)
 	}
 
 	function getPreferredMode() {
@@ -79,6 +80,19 @@
 		}
 	})
 
+	const themeOptions = new Set(['base', 'nord', 'dracula', 'tokoyo', 'github', 'catppuccin'])
+
+	document.querySelectorAll('#theme-option').forEach(element => {
+		element.addEventListener('click', () => {
+			const selectedTheme = element.textContent.toLowerCase()
+			if (selectedTheme && themeOptions.has(selectedTheme)) {
+				themeKey = selectedTheme as ThemeKeys
+			}
+			;(document.getElementById('theme-button') as HTMLButtonElement).textContent = element.textContent
+			document.getElementById('theme')?.setAttribute('href', `/styles/${element.textContent.toLowerCase()}.css`)
+		})
+	})
+
 	window.addEventListener('scroll', () => {
 		const navbar = document.getElementById('navbar')
 		const search = document.getElementById('search')
@@ -94,26 +108,6 @@
 			navbar?.classList.remove('bg-(--color-base)')
 		}
 	})
-
-	const themeOptions = new Set(['base', 'nord', 'dracula', 'tokoyo', 'github', 'catppuccin'])
-
-	document.querySelectorAll('#theme-option').forEach(element => {
-		element.addEventListener('click', () => {
-			const selectedTheme = element.textContent.toLowerCase()
-			if (selectedTheme && themeOptions.has(selectedTheme)) {
-				themeKey = selectedTheme as ThemeKeys
-			}
-			;(document.getElementById('theme-button') as HTMLButtonElement).textContent = element.textContent
-			document.getElementById('theme')?.setAttribute('href', `/styles/${element.textContent.toLowerCase()}.css`)
-		})
-	})
-
-	window.onload = () => {
-		const randomTheme = Object.keys(colorThemeMap)[Math.floor(Math.random() * Object.keys(colorThemeMap).length)];
-
-        (document.getElementById('theme-button') as HTMLButtonElement).textContent = randomTheme.charAt(0).toUpperCase() + randomTheme.slice(1);
-		document.getElementById('theme')?.setAttribute('href', `/styles/${randomTheme}.css`)
-	}
 </script>
 
 <nav id='navbar' class='sticky top-10 z-1000 flex justify-between rounded-b-md p-2 pr-4 pl-4 text-(--color-text)'>
