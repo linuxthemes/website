@@ -38,7 +38,7 @@
 	let themeKey: ThemeKeys = (Object.keys(colorThemeMap) as ThemeKeys[])[Math.floor(Math.random() * (Object.keys(colorThemeMap) as ThemeKeys[]).length)]
 	let modeKey: ModeKey = 'light'
 
-    ;(document.getElementById('theme-button') as HTMLButtonElement).textContent = themeKey.charAt(0).toUpperCase() + themeKey.slice(1)
+	;(document.getElementById('theme-button') as HTMLButtonElement).textContent = themeKey.charAt(0).toUpperCase() + themeKey.slice(1)
 	document.getElementById('theme')?.setAttribute('href', `/styles/${themeKey}.css`)
 
 	function setMode(mode: ModeKey) {
@@ -95,7 +95,8 @@
 
 	window.addEventListener('scroll', () => {
 		const navbar = document.getElementById('navbar')
-		const search = document.getElementById('search')
+		const search = document.getElementById('search-container')
+		const searchInput = document.getElementById('search') as HTMLInputElement
 
 		if (window.scrollY > 50) {
 			if (!document.querySelector('filepreview')) {
@@ -104,7 +105,8 @@
 			navbar?.classList.add('shadow-xl')
 			navbar?.classList.add('bg-(--color-base)')
 		} else {
-			search?.classList.add('hidden')
+			search?.classList.add('hidden') 
+            // searchInput.value = "" // "input" action not detected
 			navbar?.classList.remove('bg-(--color-base)')
 		}
 	})
@@ -116,7 +118,17 @@
 		<a href='/' tabindex='-1' class='flex place-items-center rounded-md p-2'>Themes</a>
 	</div>
 
-	<input id='search' class='fg-(--color-text) hidden w-75 rounded-sm border bg-(--color-base) p-2 text-sm max-[600px]:hidden max-[600px]:w-30' type='search' name='query' id='search-query' placeholder='Search' />
+	<div class='mx-auto max-w-sm hidden max-[600px]:hidden max-[600px]:w-30' id="search-container">
+		<form>
+			<label class='relative block'>
+				<span class='absolute inset-y-0 left-0 flex items-center pl-2'>
+					<svg class='h-5 w-5 fill-gray-300' viewBox='0 0 20 20'><path fill-rule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clip-rule='evenodd'></path></svg>
+				</span>
+				<span class='sr-only'>Search</span>
+				<input id="search" class='block w-full rounded-md border border-gray-300 py-2 pr-3 pl-9 text-gray-700 shadow-sm placeholder:text-gray-400 placeholder:italic focus:border-sky-500 focus:outline focus:outline-sky-500 sm:text-sm dark:border-gray-600 dark:text-white' placeholder='Search Themes   ' name='search' />
+			</label>
+		</form>
+	</div>
 
 	<section class='flex flex-row items-center justify-center gap-2'>
 		<el-dropdown class='inline-block'>
