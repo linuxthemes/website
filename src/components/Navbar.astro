@@ -35,19 +35,18 @@
 	type ThemeKeys = keyof typeof colorThemeMap
 	type ModeKey = 'dark' | 'light'
 
-    let themeKey: ThemeKeys = 'base'
-    let modeKey: ModeKey = 'light'
+	let themeKey: ThemeKeys = 'base'
+	let modeKey: ModeKey = 'light'
 
 	function setMode(mode: ModeKey) {
-
 		if (mode === 'dark') {
-            modeKey = 'dark'
-            document.documentElement.classList.add('dark')
-        }
+			modeKey = 'dark'
+			document.documentElement.classList.add('dark')
+		}
 		if (mode === 'light') {
-            modeKey = 'light'
-            document.documentElement.classList.remove('dark')
-        }
+			modeKey = 'light'
+			document.documentElement.classList.remove('dark')
+		}
 
 		document.documentElement.setAttribute('data-theme', colorThemeMap[themeKey][mode])
 		// document.documentElement.setAttribute('prefers-color-scheme', mode)
@@ -96,21 +95,25 @@
 		}
 	})
 
-    const themeOptions = new Set(["base", "nord", "dracula", "tokoyo", "github", "catppuccin"]);
+	const themeOptions = new Set(['base', 'nord', 'dracula', 'tokoyo', 'github', 'catppuccin'])
+
 	document.querySelectorAll('#theme-option').forEach(element => {
 		element.addEventListener('click', () => {
-            const selectedTheme = element.textContent.toLowerCase();
-            if (selectedTheme && themeOptions.has(selectedTheme)){
-                themeKey = selectedTheme as ThemeKeys
-                setMode(modeKey);
-            } else {
-                console.log("typescript sux")
-            }
-
-            (document.getElementById('theme-button') as HTMLButtonElement).textContent = element.textContent
-            document.getElementById('theme')?.setAttribute('href', `/styles/${element.textContent.toLowerCase()}.css`)
+			const selectedTheme = element.textContent.toLowerCase()
+			if (selectedTheme && themeOptions.has(selectedTheme)) {
+				themeKey = selectedTheme as ThemeKeys
+			}
+			;(document.getElementById('theme-button') as HTMLButtonElement).textContent = element.textContent
+			document.getElementById('theme')?.setAttribute('href', `/styles/${element.textContent.toLowerCase()}.css`)
 		})
 	})
+
+	window.onload = () => {
+		const randomTheme = Object.keys(colorThemeMap)[Math.floor(Math.random() * Object.keys(colorThemeMap).length)];
+
+        (document.getElementById('theme-button') as HTMLButtonElement).textContent = randomTheme.charAt(0).toUpperCase() + randomTheme.slice(1);
+		document.getElementById('theme')?.setAttribute('href', `/styles/${randomTheme}.css`)
+	}
 </script>
 
 <nav id='navbar' class='sticky top-10 z-1000 flex justify-between rounded-b-md p-2 pr-4 pl-4 text-(--color-text)'>
@@ -124,7 +127,7 @@
 	<section class='flex flex-row items-center justify-center gap-2'>
 		<el-dropdown class='inline-block'>
 			<button autofocus class='inline-flex w-full justify-center gap-x-1 rounded-md border bg-(--color-base) px-1.5 py-1 text-sm font-semibold text-(--color-text) shadow-xl hover:bg-(--color-crust)'>
-				<p id='theme-button'>Base</p>
+				<p id='theme-button'></p>
 				<svg viewBox='0 0 20 20' fill='currentColor' data-slot='icon' aria-hidden='true' class='-mr-1 size-5 text-gray-400'><path d='M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z' clip-rule='evenodd' fill-rule='evenodd'></path></svg>
 			</button>
 
