@@ -24,7 +24,6 @@ export default defineConfig({
             'everforest-dark', 'everforest-light',
             'catppuccin-mocha', 'catppuccin-latte',
         ],
-        // plugins: [pluginLineNumbers()],
     }), mdx()],
     vite: {
         plugins: [tailwindcss()],
