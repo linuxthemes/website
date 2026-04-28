@@ -1,5 +1,19 @@
-git init $HOME
-git remote add origin https://github.com/linuxthemes/base
-git pull
 
-cp post-checkout .git/hooks/post-checkout
+echo
+echo "> Installing themes..."
+git init $HOME                                              # Initialize home
+git remote add origin https://github.com/linuxthemes/base   # Add Themes base
+git pull origin $(git branch --show-current)                # Pull current branch
+
+echo
+echo "User program settings back up located on branch: $(git branch --show-current)"
+git add .; git commit -m "Themes: Save user settings."      # Back up user settings
+
+echo
+echo "> Switching to base..."
+git switch base                                             # Checkout to base
+cp post-checkout .git/hooks/post-checkout                   # Copy post-checkout
+git switch base                                             # Checkout to base to post-checkout
+
+echo
+echo "> Install complete."
